@@ -1,0 +1,189 @@
+(excitement_level kExcitementOkay)
+(lighter off)
+(enter
+   {{$this dir} add_sinks $this
+      intro_start_msg
+      crowd_update
+      excitement
+      crowd_hide
+      crowd_show
+      crowd_lighters_slow
+      crowd_lighters_fast
+      crowd_lighters_off
+      crowd_half_tempo
+      crowd_double_tempo
+      crowd_normal_tempo
+      camera_control_on
+      camera_control_off
+      camera_cycle_shot
+      camera_intro_fast
+      camera_intro_encore
+      camera_intro
+      camera_win_encore
+      camera_win
+      camera_lose
+      camera_solo_far
+      camera_solo_near
+      camera_balcony_right
+      camera_balcony_left
+      camera_band_pov
+      camera_floor_farleft
+      camera_floor_farright
+      camera_floor_nearleft
+      camera_floor_nearright
+      camera_lighter
+      clap_on
+      clap_off
+      music_end}
+   {set [excitement_level] kExcitementOkay}
+   {set [lighter] off})
+(intro_start_msg
+   ($fast $encore)
+   {set $crowd.play_flags {'|' kPlayNoBlend kPlayGraphLoop kPlayRealTime}}
+   {if_else
+      $encore
+      {do
+         {set [excitement_level] kExcitementGreat}
+         {$this crowd_update}}
+      {do
+         {$this set_fullness 0.5 0.5}
+         {$this
+            iterate_frac
+            (0.8 {main.drv play_group ok $crowd.play_flags})
+            (0.2 {main.drv play_group great $crowd.play_flags})}}}
+   {set $crowd.play_flags {'|' kPlayNoBlend kPlayGraphLoop}})
+(animate
+   ($bad $ok $great $idle $lighter)
+   {do
+      ($lighter_group lighter_slow)
+      ($frac 0)
+      {if_else {== [lighter] off}
+         {set $lighter 0}
+         {set $lighter_group
+            {if_else {== [lighter] slow}
+               lighter_slow
+               lighter_fast}}}
+      {set $frac {- 1 $lighter}}
+      {'*=' $lighter $great}
+      {'*=' $great $frac}
+      {$this iterate_frac
+         ($bad {main.drv play_group bad $crowd.play_flags})
+         ($ok {main.drv play_group ok $crowd.play_flags})
+         ($great {main.drv play_group great $crowd.play_flags})
+         ($idle {main.drv play_group idle $crowd.play_flags})
+         ($lighter {main.drv play_group $lighter_group $crowd.play_flags})}})
+(crowd_update
+   {if {exists game}
+      {$this set show_3d_only FALSE}
+      {do
+         ($peak_fullness 1)
+         {if {== {rnd aspect} kWidescreenAspect}
+            {set $peak_fullness 0.7}}
+         {switch [excitement_level]
+            (kExcitementBoot {$this set_fullness 0.1 0.1})
+            (kExcitementBad {$this set_fullness 0.25 0.25})
+            (kExcitementOkay {$this set_fullness 0.5 0.5})
+            (kExcitementGreat {$this set_fullness $peak_fullness $peak_fullness})
+            (kExcitementPeak {$this set_fullness $peak_fullness $peak_fullness})}}
+      {switch [excitement_level]
+         (kExcitementBoot {$this animate 1.0 0.0 0.0 0.0 0.0})
+         (kExcitementBad {$this animate 0.8 0.2 0.0 0.0 0.0})
+         (kExcitementOkay {$this animate 0.0 0.8 0.2 0.0 0.0})
+         (kExcitementGreat {$this animate 0.0 0.0 1.0 0.0 1.0})
+         (kExcitementPeak {$this animate 0.0 0.0 1.0 0.0 1.0})}})
+(excitement
+   ($level)
+   {set [excitement_level] $level})
+(crowd_hide
+   {if {exists game}
+      {$this set show_3d_only TRUE}})
+(crowd_show
+   {if {exists game}
+      {$this set show_3d_only FALSE}})
+(crowd_lighters_slow
+   {do
+      ($lighter [lighter])
+      {set [lighter] slow}
+      {if {&& {== {world get did_lighter_cam} FALSE} {== $lighter off}}
+         {world pick_lighter_shot}}})
+(crowd_lighters_fast
+   {do
+      ($lighter [lighter])
+      {set [lighter] fast}
+      {if {&& {== {world get did_lighter_cam} FALSE} {== $lighter off}}
+         {world pick_lighter_shot}}})
+(crowd_lighters_off
+   {set [lighter] off}
+   {world force_pick_shot})
+(crowd_half_tempo
+   {$this iterate_frac (1 {main.drv set beat_scale 0.5})})
+(crowd_double_tempo
+   {$this iterate_frac (1 {main.drv set beat_scale 2})})
+(crowd_normal_tempo
+   {$this iterate_frac (1 {main.drv set beat_scale 1})})
+(camera_control_on
+   {if {&& $camera_control_master {'||' {== {gamecfg get mode} attract} {== {gamecfg get mode} career} {== {gamecfg get mode} quickplay}}}
+      {set $extracam TRUE}})
+(camera_control_off
+   {if {&& $camera_control_master {'||' {== {gamecfg get mode} attract} {== {gamecfg get mode} career} {== {gamecfg get mode} quickplay}}}
+      {set $extracam FALSE}})
+(camera_cycle_shot
+   {if {&& {world_panel showing} $extracam}
+      {handle (world cycle_shot)}})
+(camera_intro_fast
+   {if {&& {world_panel showing} $extracam}
+      {handle (world pick_shot INTRO_FAST)}})
+(camera_intro_encore
+   {if {&& {world_panel showing} $extracam}
+      {handle (world pick_shot INTRO_ENCORE)}})
+(camera_intro
+   {if {&& {world_panel showing} $extracam}
+      {handle (world pick_shot INTRO)}})
+(camera_win_encore
+   {if {&& {world_panel showing} $extracam}
+      {handle (world pick_shot WIN_ENCORE)}})
+(camera_win
+   {if {&& {world_panel showing} $extracam}
+      {handle (world pick_shot WIN)}})
+(camera_lose
+   {if {&& {world_panel showing} $extracam}
+      {handle (world pick_shot LOSE)}})
+(camera_solo_far
+   {if {&& {world_panel showing} $extracam}
+      {handle (world pick_shot SOLO_FAR)}})
+(camera_solo_near
+   {if {&& {world_panel showing} $extracam}
+      {handle (world pick_shot SOLO_NEAR)}})
+(camera_balcony_right
+   {if {&& {world_panel showing} $extracam}
+      {handle (world pick_shot balcony_rt)}})
+(camera_balcony_left
+   {if {&& {world_panel showing} $extracam}
+      {handle (world pick_shot balcony_lft)}})
+(camera_band_pov
+   {if {&& {world_panel showing} $extracam}
+      {handle (world pick_shot band_POV)}})
+(camera_floor_farleft
+   {if {&& {world_panel showing} $extracam}
+      {handle (world pick_shot flr_far_lft)}})
+(camera_floor_farright
+   {if {&& {world_panel showing} $extracam}
+      {handle (world pick_shot flr_near_rt)}})
+(camera_floor_nearleft
+   {if {&& {world_panel showing} $extracam}
+      {handle (world pick_shot flr_near_lft)}})
+(camera_floor_nearright
+   {if {&& {world_panel showing} $extracam}
+      {handle (world pick_shot flr_near_rt)}})
+(camera_lighter
+   {if {&& {world_panel showing} $extracam}
+      {handle (world pick_shot LIGHTER)}})
+(clap_on
+   {if {&& {! $entering_jukebox_mode} {! {== {gamecfg get mode} practice}} {== {world get excitement_level} kExcitementGreat}}
+      {set $oktoclap TRUE}})
+(clap_off
+   {if {&& {! $entering_jukebox_mode} {! {== {gamecfg get mode} practice}} {== {world get excitement_level} kExcitementGreat}}
+      {set $oktoclap FALSE}})
+(music_end
+   {if {&& {! $entering_jukebox_mode} {! {== {gamecfg get mode} practice}} {== {world get excitement_level} kExcitementGreat}}
+      {handle (world play_sfx crowd_upto_good)}})
