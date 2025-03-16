@@ -1,0 +1,34 @@
+; The scores of each difficulty's player 1 and player 2 part added together.
+; Easy, Medium, Hard, Expert.
+; Onyx has a calculator for this and it gets pretty close to HMX's values.
+; 
+; This isn't strictly needed, but debug will throw a warning if a song
+; doesn't have specified coop_max_scores when playing co-op, so I like to
+; include it. We think the game falls back to calculating it on the fly if
+; it's not specified, and it's used for calculating star totals.
+(allday (29246 38091 53945 74595))
+(baseline (25566 43945 58809 67984))
+(bombtrack (19417 36822 57854 84075))
+(breakonthrough (16950 27909 44611 62113))
+(codemonkey (23736 58611 88014 94594))
+(crash (21403 48451 77641 90605))
+(dimension (30541 60305 77962 84018))
+(december (30618 55148 88360 109650))
+(dontlookbackinanger (42873 53763 76890 91110))
+(dopenose (45478 62948 75620 82070))
+(girlslikeyou (30142 58565 79971 93142))
+(ikea (30506 61737 81416 117263))
+(iwannabeyourdog (19111 50417 76427 102466))
+(montyontherun (42094 71263 114424 146474))
+(passport (17213 23728 33954 39504))
+(push (27819 65094 83985 98136))
+(retribution (44367 71818 106623 128544))
+(soulsforsale (10800 26500 33500 45500))
+(substitution (37115 74742 102995 117442))
+(subterrain (34982 60605 74853 93121))
+(tutorial (14360 25399 34157 37397))
+(venturahighway (33419 79194 101528 130227))
+(veryape (19113 44439 61569 74959))
+(wedieyoung (19437 35354 60112 78581))
+(worstmistake (23800 50727 78977 88427))
+(xlr8r (19300 46520 59408 63363))

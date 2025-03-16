@@ -1,0 +1,42 @@
+#include splash.dta
+#include loading.dta
+#include game.dta
+#include career.dta
+#include endgame.dta
+#include lose.dta
+#include quickplay.dta
+#include multiplayer.dta
+#include main.dta
+#include options.dta
+#include modifiers.dta
+#include practice.dta
+#include pause.dta
+{foreach $p (pause_panel pause_controller_panel pract_pause_panel lose_panel helpbar)
+   {$p load}}
+{meta set_defaults}
+
+; main_screen is main menu, splash_screen is copyright splash
+; splash_screen has been removed from this disc,,,
+{set $first_screen main_screen}
+
+; Set various defaults on startup, including ELF specific bootups. $speedmod
+; is the song speed, $trackspd is the note speed, $interval refers to the
+; streak popups, and $rbdrum is pademu drum input mapping, which we want off
+; by default.
+{ui my_init}
+{set $speedmod 1.0}
+{set $trackspd 1.0}
+{set $interval_p0 50}
+{set $interval_p1 50}
+{set $interval_p2 50}
+
+; Rudimentary marfGH debug settings live here. This allows me to enable
+; and disable various custom disc functions if I need to for some reason.
+{set $bootup_unlock_all TRUE}
+{set $alterna_default_char TRUE}
+{set $trivia_display TRUE}
+{set $author_display TRUE}
+{set $camera_control_master TRUE}
+{set $bootup_progressive FALSE}
+
+{ui goto_screen $first_screen}

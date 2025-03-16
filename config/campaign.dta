@@ -1,0 +1,27 @@
+(order
+   (battle randomsong)
+   (small1 starch montyontherun anang upsidedown shootingstar ikea tutorial veryape december understood doctorworm dimension venturahighway passport badattraction soulsforsale codemonkey dearkate takeoutthetrash station)
+   (small2 iamhated baseline worstmistake boom xlr8r push dopenose)
+   (big strangetimes aspartame retribution sunshineofyourlove girlslikeyou subterrain substitution graveyardshift trippolette bangyourhead)
+   (theatre)
+   (fest)
+   (arena)
+   (stone))
+(required_songs
+   (kDifficultyEasy 69 69)
+   (kDifficultyMedium 69 69)
+   (kDifficultyHard 69 69)
+   (kDifficultyExpert 69 69))
+(cash
+   (starting 50)
+   (star_awards
+      (kDifficultyEasy 0 0 0)
+      (kDifficultyMedium 150 200 250)
+      (kDifficultyHard 150 200 250)
+      (kDifficultyExpert 200 250 300))
+   (status_awards
+      (kDifficultyEasy 0 0 0 0 0 0 0 0)
+      (kDifficultyMedium 100 200 300 400 500 700 800 1000 0)
+      (kDifficultyHard 100 200 300 400 500 700 800 1000 0)
+      (kDifficultyExpert 100 200 300 400 500 700 800 501000 0)))
+(unlock_game_modes multi_fo)

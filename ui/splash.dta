@@ -1,0 +1,26 @@
+#define CUT_SCENE_VIDEO (intro.pss)
+#define DELAY_BEFORE_ATTRACT_SEC (20)
+
+{new HelpBarPanel helpbar
+   (file helpbar.milo)
+   (max_labels 4)
+   (max_buttons 4)
+   (button_spacing 35)
+   (strumbar_spacing 70)
+   (text_spacing 30)}
+{new MetaPanel meta
+   (file "")
+   (won_campaign FALSE)
+   (load {set_loader_period 13})
+   (enter {set_loader_period 5})
+   (set_defaults
+      {set $first_screen main_screen}
+      {set $autosave FALSE}
+      {set $main_entered FALSE}
+      {gamecfg set mode quickplay})}
+{new GHScreen cut_scene_screen
+   (allow_back FALSE)
+   (animate_transition FALSE)
+   (TRANSITION_COMPLETE_MSG
+      {meta play_movie CUT_SCENE_VIDEO}
+      {ui goto_screen main_screen})}

@@ -1,0 +1,26 @@
+(base_dir "BAMARF-99999") ; folder name on memory card
+(elf_name "MARF_999.99") ; not sure if this is strictly necessary but can't hurt
+(ps2_icon
+   (file "marf_gold.icn") ; it always looks for this in mc
+   (bg_transparency 110) ; this maxes at 128 I think, default 128
+   (bg_colors
+      (0 0 0) ; top left
+      (0 0 0) ; top right
+      (195 160 104) ; bottom left
+      (195 160 104)) ; bottom right
+   (lit_dirs
+   ; three lights, positions as floats
+   ; these are annoying but my best guesses...
+   ; first value, -1 is far left of the model, 1 is far right of the model
+   ; second value, -1 is back of the model, 1 is front of the model
+   ; third value, -1 is underneath, 1 is above
+   ; by default, these all skew right, meaning the left side of the model is a bit dark
+      (0.2 0.5 0) ; XYZ, light one (default 0.2 1 0)
+      (0 0.75 0.75) ; XYZ, light two (default 1 0 1)
+      (1 0 0)) ; XYZ, light three (default 1 -1 0)
+   (lit_colors
+      (0.4 0.4 0.4) ; rgb floats
+      (0.3 0.3 0.3) ; this sucks to debug so i just set it to white light
+      (0.4 0.4 0.4)); white light always just multiplies the albedo so
+   (ambient 0.3 0.3 0.3))
+(testing FALSE)

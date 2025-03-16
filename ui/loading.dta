@@ -1,0 +1,36 @@
+{new UIPanel loading_panel
+   (file loading.milo)
+   (enter
+      {if_else {&& $entering_jukebox_mode $trivia_display} ; check for jukebox (and if trivia is enabled) and force if both are true
+	     {tip.lbl set_localized_text {localize {sprint "loading_trivia_" {gamecfg get_song}}}}
+		 {do
+            {set $trivia_chance {random_int 0 3}} ; You got a 25% chance of getting a trivia tip as opposed to a normal loading tip
+            {if_else {&& {== $trivia_chance 0} $trivia_display} ; Trivia tip!
+               {tip.lbl set_localized_text {localize {sprint "loading_trivia_" {gamecfg get_song}}}}
+               {tip.lbl set_localized_text {tips random_tip}}}}} ; Not trivia, in which case, use the normal pool
+      {{game get_bank_loader} reset}
+      {meta set won_campaign FALSE}
+	  {set $extracam FALSE}
+      {script_task
+         (units kTaskUISeconds)
+         (script
+            {animate_forever_30fps $this flyingtape2.grp}
+            {animate_forever_30fps $this loading_word.grp})})}
+{new GHScreen loading_screen
+   (panels loading_panel)
+   (allow_back FALSE)
+   (animate_transition FALSE)
+   (enter
+      {$this reset_ambient})
+   (TRANSITION_COMPLETE_MSG
+      {ui goto_screen game_screen})}
+{new GHScreen practice_loading_screen
+   (panels loading_panel)
+   (allow_back FALSE)
+   (animate_transition FALSE)
+   (enter
+      {$this reset_ambient})
+   (TRANSITION_COMPLETE_MSG
+      {if_else {'||' $focusmode $credits_song}
+         {ui goto_screen practice_game_focus_screen}
+         {ui goto_screen practice_game_screen}})}
