@@ -1,7 +1,7 @@
 #include splash.dta
 #include loading.dta
 #include game.dta
-#include career.dta
+#include common.dta
 #include endgame.dta
 #include lose.dta
 #include quickplay.dta
