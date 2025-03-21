@@ -21,9 +21,8 @@
 		{do
 			{game set_song {campaign pick_attract_song}}
 			{set $random_picked TRUE}}}
-      {if_else $entering_jukebox_mode
+      {if_else {== {gamecfg get mode} jukebox}
 	     {do
-		    {gamecfg set mode attract}
 		    {{game get_player_config 0} set_difficulty kDifficultyExpert}
 			{game set_quickplay}
 			{game_screen set attract_mode TRUE}

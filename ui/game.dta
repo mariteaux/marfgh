@@ -13,7 +13,7 @@
 {new GHPanel mtv_overlay_panel
    (file mtv_overlay.milo)
    (enter
-      {if_else {|| $credits_song {game is_tutorial_running}}
+      {if_else {|| {== {{ui current_screen} name} credits_game_screen} {game is_tutorial_running}}
          {$this show_overlay FALSE}
          {$this setup_text}})
    (setup_text
@@ -123,11 +123,11 @@
       {if $do_streak {streak_overlay_panel setup_streak}}
       kDataUnhandled)
    (extend_track
-      {if {! $entering_jukebox_mode}
-         {if {&& {|| $focusmode $credits_song} {! $entering_jukebox_mode}}
+      {if {! {gamecfg get mode} jukebox}
+         {if {|| $focusmode {== {gamecfg get mode} credits}}
             {world do_force_shot lighter}
             {world_panel set_showing FALSE}}}
-      {if {&& {|| $focusmode $credits_song} {|| {== {gamecfg get mode} career} {== {gamecfg get mode} quickplay} {== {gamecfg get mode} multi_coop}}}
+      {if {&& {|| $focusmode {== {gamecfg get mode} credits}} {|| {== {gamecfg get mode} career} {== {gamecfg get mode} quickplay} {== {gamecfg get mode} multi_coop}}}
          {if {exists world}
             {world toggle_pick_shot}}}
       {if {&& {! $neckless} {! $cheat_enabled_performance_mode}}
@@ -178,15 +178,15 @@
       {if {&& $focusmode {|| {== {gamecfg get mode} career} {== {gamecfg get mode} quickplay} {== {gamecfg get mode} multi_coop}}}
          {if {exists world}
             {world toggle_pick_shot}}}
-      {if {! $credits_song} {world_panel set_showing TRUE}}
+      {if {! {gamecfg get mode} credits} {world_panel set_showing TRUE}}
       {if_else {gamecfg get game_over_sequence}
          {do
-            {if {! $credits_song} {track_panel explode}}
+            {if {! {gamecfg get mode} credits} {track_panel explode}}
             {game set_realtime TRUE}
             {beatmatch set_paused TRUE}
-            {if {|| {! $entering_jukebox_mode} {! $credits_song}} {play_game_sfx TRACK_EXPLODE_SFX}}
-            {if $credits_song {meta_loading_nosave_goto options_screen}}
-            {if $entering_jukebox_mode {meta_loading_goto qp_selsong_screen}}
+            {if {|| {! {gamecfg get mode} jukebox} {! {gamecfg get mode} credits}} {play_game_sfx TRACK_EXPLODE_SFX}}
+            {if {== {gamecfg get mode} credits} {meta_loading_nosave_goto options_screen}}
+            {if {== {gamecfg get mode} jukebox} {meta_loading_goto qp_selsong_screen}}
             {if $encore {encore_stream play}}
             kDataUnhandled}
          0})
@@ -285,11 +285,11 @@
    (finish_load
       {{$this loaded_dir} set_name world main})
    (enter
-      {if {|| $focusmode $credits_song} {crowd_audio set_enabled FALSE}}
+      {if $focusmode {crowd_audio set_enabled FALSE}}
       {if_else {game multiplayer}
          {handle ($this multi_player)}
          {handle ($this single_player)}}
-      {if {&& {|| $focusmode $credits_song} {! $entering_jukebox_mode}}
+      {if {&& {|| $focusmode {== {gamecfg get mode} credits}} {! {gamecfg get mode} jukebox}}
 	     {$this set_showing FALSE}}
       {$this set_paused FALSE})}
 
@@ -348,4 +348,3 @@
       {game set_paused TRUE}
       {cheat_display show "Reloading track..."}
       {game_restart_fast})}
-; #include hud_budget.dta (commented because it's otherwise unused)

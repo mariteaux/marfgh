@@ -21,7 +21,7 @@
          (free_ride 0.2)
          (warning_level 0.15)
          (lose_level
-            {if_else {|| $nofail $credits_song}
+            {if_else $nofail
                0.0
                1.0e-2}))
       (kDifficultyMedium
@@ -30,7 +30,7 @@
          (free_ride 0.1)
          (warning_level 0.15)
          (lose_level
-            {if_else {|| $nofail $credits_song}
+            {if_else $nofail
                0.0
                1.0e-2}))
       (kDifficultyHard
@@ -39,7 +39,7 @@
          (free_ride 0.0)
          (warning_level 0.15)
          (lose_level
-            {if_else {|| $nofail $credits_song}
+            {if_else $nofail
                 0.0
                 1.0e-2}))
       (kDifficultyExpert
@@ -48,7 +48,7 @@
          (free_ride 0.0)
          (warning_level 0.15)
          (lose_level
-            {if_else {|| $nofail $credits_song}
+            {if_else $nofail
                 0.0
                 1.0e-2})))
    (star_power

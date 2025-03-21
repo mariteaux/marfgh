@@ -33,7 +33,7 @@
       ($slot $hopoable $hopoed)
       {switch
          {gamecfg get mode}
-            (career {note_streak_p0})
+            (credits {note_streak_p0})
             (quickplay {note_streak_p0})
             (multi_vs {note_streak_p0})
             (multi_fo {note_streak_p0})
@@ -176,7 +176,7 @@
    (enter
       {if_else {||
       {game is_tutorial_running} ;check for tutorial mode
-      {== {gamecfg get mode} attract} ;check for attract mode
+      {== {gamecfg get mode} jukebox} ;check for jukebox mode
       $cheat_enabled_performance_mode} ;check for performance mode
          {do
             {$this show_overlay FALSE}
@@ -229,7 +229,7 @@
       
       {switch
          {gamecfg get mode}
-            (career
+            (credits
                {do
                   {set $stk_view_p0 "stk_campaign_song_id.view"}
                   {set $stk_prefix_p0 "stk_campaign_line"}
@@ -393,7 +393,7 @@
       {$this set_meters_showing TRUE}
       {streak_overlay_panel animate_streak}
       {meters_slide_in.view animate (period 0.5) (units kTaskSeconds)}
-      {if {!= {gamecfg get mode} attract}
+      {if {!= {gamecfg get mode} jukebox}
          {script_task
             (delay 0.25)
             (script

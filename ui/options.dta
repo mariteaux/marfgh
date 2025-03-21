@@ -17,9 +17,8 @@
 			{play_bonus_video_screen set video {{game video_provider} get_video_file video2}}
 			{ui goto_screen play_bonus_video_screen})
          (op_credit.btn
-			{gamecfg set mode quickplay}
+			{gamecfg set mode credits}
 			{game_screen set attract_mode FALSE}
-			{set $credits_song TRUE}
 			{{game get_player_config 0} set_difficulty kDifficultyExpert}
 			{game set_quickplay}
 			{game set_song starch}

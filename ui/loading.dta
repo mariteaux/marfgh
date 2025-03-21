@@ -1,7 +1,7 @@
 {new UIPanel loading_panel
    (file loading.milo)
    (enter
-      {if_else {&& $entering_jukebox_mode $trivia_display} ; check for jukebox (and if trivia is enabled) and force if both are true
+      {if_else {&& {== {gamecfg get mode} jukebox} $trivia_display} ; check for jukebox (and if trivia is enabled) and force if both are true
 	     {tip.lbl set_localized_text {localize {sprint "loading_trivia_" {gamecfg get_song}}}}
 		 {do
             {set $trivia_chance {random_int 0 3}} ; You got a 25% chance of getting a trivia tip as opposed to a normal loading tip

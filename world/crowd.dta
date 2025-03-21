@@ -122,10 +122,10 @@
 (crowd_normal_tempo
    {$this iterate_frac (1 {main.drv set beat_scale 1})})
 (camera_control_on
-   {if {&& $camera_control_master {'||' {== {gamecfg get mode} attract} {== {gamecfg get mode} career} {== {gamecfg get mode} quickplay}}}
+   {if {&& $camera_control_master {'||' {== {gamecfg get mode} jukebox} {== {gamecfg get mode} career} {== {gamecfg get mode} quickplay}}}
       {set $extracam TRUE}})
 (camera_control_off
-   {if {&& $camera_control_master {'||' {== {gamecfg get mode} attract} {== {gamecfg get mode} career} {== {gamecfg get mode} quickplay}}}
+   {if {&& $camera_control_master {'||' {== {gamecfg get mode} jukebox} {== {gamecfg get mode} career} {== {gamecfg get mode} quickplay}}}
       {set $extracam FALSE}})
 (camera_cycle_shot
    {if {&& {world_panel showing} $extracam}
@@ -179,11 +179,9 @@
    {if {&& {world_panel showing} $extracam}
       {handle (world pick_shot LIGHTER)}})
 (clap_on
-   {if {&& {! $entering_jukebox_mode} {! {== {gamecfg get mode} practice}} {== {world get excitement_level} kExcitementGreat}}
-      {set $oktoclap TRUE}})
+   {set $oktoclap TRUE})
 (clap_off
-   {if {&& {! $entering_jukebox_mode} {! {== {gamecfg get mode} practice}} {== {world get excitement_level} kExcitementGreat}}
-      {set $oktoclap FALSE}})
+   {set $oktoclap FALSE})
 (music_end
-   {if {&& {! $entering_jukebox_mode} {! {== {gamecfg get mode} practice}} {== {world get excitement_level} kExcitementGreat}}
+   {if {crowd_audio enabled}
       {handle (world play_sfx crowd_upto_good)}})

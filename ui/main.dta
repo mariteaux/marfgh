@@ -28,18 +28,13 @@
       {switch
          $component
          (main_career.btn
-		    {set $credits_song FALSE}
-		    {set $entering_jukebox_mode FALSE}
             {ui goto_screen qp_selsong_screen})
          (main_quickspin.btn
-		    {set $credits_song FALSE}
-            {set $entering_jukebox_mode TRUE}
+		    {gamecfg set mode jukebox}
             {ui goto_screen qp_selsong_screen})
          (main_multiplayer.btn
-		    {set $credits_song FALSE}
             {ui goto_screen multi_screen})
          (main_tutorial.btn
-		    {set $credits_song FALSE}
             {gamecfg set mode practice}
             {ui goto_screen practice_selsong_screen})
          (main_options.btn

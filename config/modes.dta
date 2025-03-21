@@ -27,12 +27,20 @@
    (win_preload_panel '')
    (practice_speed 0)
    (practice_sections (0 0)))
-(attract
+(jukebox
    (star_power_disable TRUE)
    (show_hud FALSE)
    (show_track FALSE)
    (force_autoplay TRUE)
    (crowd_audio FALSE))
+(credits
+   (skip_intro TRUE)
+   (star_power_disable TRUE)
+   (crowd_rating_active FALSE)
+   (crowd_audio FALSE)
+   (hud_file hud_practice.milo)
+   (continue_screen options_screen)
+   (track_surface_override rosewood))
 (practice
    (skip_intro TRUE)
    (star_power_disable TRUE)
@@ -72,17 +80,8 @@
       {!= {find_exists $syscfg songs {gamecfg get_song} practice_speeds}
          kDataUnhandled}))
 (quickplay
-   (star_power_disable {if_else $credits_song TRUE FALSE})
-   (continue_screen qp_selsong_screen)
-   (hud_file {if_else $credits_song hud_practice.milo hud_sp.milo})
-   (win_preload_panel endgame_panel)
-   (track_surface_override {if_else $credits_song rosewood ''}))
-(career
-   (main_screen career_screen)
-   (continue_screen sel_song_screen)
-   (win_preload_panel endgame_panel)
    (hud_file hud_sp.milo)
-   (encore_fx TRUE))
+   (win_preload_panel endgame_panel))
 (multi_vs
    (num_players 2)
    (competitive TRUE)
@@ -123,13 +122,3 @@
          {play_game_sfx_player sp_deploystart.cue sp_deploystart.cue $player}
          {stop_sfx sp_deploystart.cue}}
       kDataUnhandled))
-(tutorial
-   (skip_intro TRUE)
-   (crowd_rating_active FALSE)
-   (show_hud FALSE)
-   (crowd_audio FALSE)
-   (game_screen tut_script_screen)
-   (loading_screen tut_loading_screen)
-   (blown_streak_feedback FALSE)
-   (hud_file hud_sp.milo)
-   (track_surface_override {if_else $focusmode streamer rosewood}))

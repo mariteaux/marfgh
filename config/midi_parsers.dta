@@ -818,10 +818,10 @@
          (events
             (52 ({handle (world venue_effect)}))
             (58
-			   ({if {&& $camera_control_master {'||' {== {gamecfg get mode} attract} {== {gamecfg get mode} career} {== {gamecfg get mode} quickplay}}}
+			   ({if {&& $camera_control_master {'||' {== {gamecfg get mode} jukebox} {== {gamecfg get mode} career} {== {gamecfg get mode} quickplay}}}
 			      {set $extracam TRUE}}))
             (59
-			   ({if {&& $camera_control_master {'||' {== {gamecfg get mode} attract} {== {gamecfg get mode} career} {== {gamecfg get mode} quickplay}}}
+			   ({if {&& $camera_control_master {'||' {== {gamecfg get mode} jukebox} {== {gamecfg get mode} career} {== {gamecfg get mode} quickplay}}}
 			      {set $extracam FALSE}}))
             (60
                ({if {&& {world_panel showing} $extracam}
@@ -878,13 +878,11 @@
                ({if {&& {world_panel showing} $extracam}
                   {handle (world pick_shot INTRO_FAST)}}))
             (80
-			   ({if {&& {! $entering_jukebox_mode} {! {== {gamecfg get mode} practice}}}
-                  {set $oktoclap TRUE}}))
+			   ({set $oktoclap TRUE}))
             (81
-			   ({if {&& {! $entering_jukebox_mode} {! {== {gamecfg get mode} practice}}}
-                  {set $oktoclap FALSE}}))
+			   ({set $oktoclap FALSE}))
             (82
-               ({if {&& {! $entering_jukebox_mode} {! {== {gamecfg get mode} practice}}}
+               ({if {crowd_audio enabled}
 			      {handle (world play_sfx crowd_upto_good)}}))))))
 
 #define BIG_NOTE_MAPPING ((mappings (default (events (110 110)))))

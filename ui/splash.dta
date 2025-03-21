@@ -1,5 +1,4 @@
 #define CUT_SCENE_VIDEO (intro.pss)
-#define DELAY_BEFORE_ATTRACT_SEC (20)
 
 {new HelpBarPanel helpbar
    (file helpbar.milo)
