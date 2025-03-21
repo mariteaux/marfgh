@@ -816,74 +816,7 @@
    (mappings
       (default
          (events
-            (52 ({handle (world venue_effect)}))
-            (58
-			   ({if {&& $camera_control_master {'||' {== {gamecfg get mode} jukebox} {== {gamecfg get mode} career} {== {gamecfg get mode} quickplay}}}
-			      {set $extracam TRUE}}))
-            (59
-			   ({if {&& $camera_control_master {'||' {== {gamecfg get mode} jukebox} {== {gamecfg get mode} career} {== {gamecfg get mode} quickplay}}}
-			      {set $extracam FALSE}}))
-            (60
-               ({if {&& {world_panel showing} $extracam}
-                  {handle (world cycle_shot)}}))
-            (60
-               ({if {&& {world_panel showing} $extracam}
-                  {handle (world cycle_shot)}}))
-            (61
-               ({if {&& {world_panel showing} $extracam}
-                   {handle (world pick_shot LIGHTER)}}))
-            (62
-               ({if {&& {world_panel showing} $extracam}
-                  {handle (world pick_shot flr_near_lft)}}))
-            (63
-               ({if {&& {world_panel showing} $extracam}
-                  {handle (world pick_shot flr_near_rt)}}))
-            (64
-               ({if {&& {world_panel showing} $extracam}
-                  {handle (world pick_shot flr_far_lft)}}))
-            (65
-               ({if {&& {world_panel showing} $extracam}
-                  {handle (world pick_shot flr_far_rt)}}))
-            (66
-               ({if {&& {world_panel showing} $extracam}
-                  {handle (world pick_shot band_POV)}}))
-            (67
-               ({if {&& {world_panel showing} $extracam}
-                  {handle (world pick_shot balcony_lft)}}))
-            (68
-               ({if {&& {world_panel showing} $extracam}
-                  {handle (world pick_shot balcony_rt)}}))
-            (69
-               ({if {&& {world_panel showing} $extracam}
-                  {handle (world pick_shot SOLO_NEAR)}}))
-            (70
-               ({if {&& {world_panel showing} $extracam}
-                  {handle (world pick_shot SOLO_FAR)}}))
-            (71
-               ({if {&& {world_panel showing} $extracam}
-                  {handle (world pick_shot LOSE)}}))
-            (72
-               ({if {&& {world_panel showing} $extracam}
-                  {handle (world pick_shot WIN)}}))
-            (73
-               ({if {&& {world_panel showing} $extracam}
-                  {handle (world pick_shot WIN_ENCORE)}}))
-            (74
-               ({if {&& {world_panel showing} $extracam}
-                  {handle (world pick_shot INTRO)}}))
-            (75
-               ({if {&& {world_panel showing} $extracam}
-                  {handle (world pick_shot INTRO_ENCORE)}}))
-            (76
-               ({if {&& {world_panel showing} $extracam}
-                  {handle (world pick_shot INTRO_FAST)}}))
-            (80
-			   ({set $oktoclap TRUE}))
-            (81
-			   ({set $oktoclap FALSE}))
-            (82
-               ({if {crowd_audio enabled}
-			      {handle (world play_sfx crowd_upto_good)}}))))))
+            (52 ({handle (world venue_effect)}))))))
 
 #define BIG_NOTE_MAPPING ((mappings (default (events (110 110)))))
 
