@@ -125,6 +125,7 @@
 (controller_loss_msg "Please ensure a Guitar Controller is connected to controller port 1")
 (controller_loss_msg_multi "Please ensure Guitar Controllers are connected to controller ports 1 and 2")
 (tut_guitar_loss_msg "Please ensure a Guitar Controller is connected to controller port 1")
+(percent_complete_format "%d%% complete")
 (lose_diff "DIFFICULTY:")
 (lose_title "SONG FAILED")
 (lose_quit "EXIT")

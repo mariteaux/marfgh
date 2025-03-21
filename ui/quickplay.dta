@@ -28,7 +28,6 @@
 			{game_screen set attract_mode TRUE}
 			{ui goto_screen loading_screen}}
          {do
-		    {gamecfg set mode quickplay}
 			{game_screen set attract_mode FALSE}
 		    {ui goto_screen qp_selpart_screen}}}
       kDataUnhandled)}

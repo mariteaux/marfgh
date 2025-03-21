@@ -1,5 +1,3 @@
-#define CUT_SCENE_VIDEO (intro.pss)
-
 {new HelpBarPanel helpbar
    (file helpbar.milo)
    (max_labels 4)
@@ -17,9 +15,3 @@
       {set $autosave FALSE}
       {set $main_entered FALSE}
       {gamecfg set mode quickplay})}
-{new GHScreen cut_scene_screen
-   (allow_back FALSE)
-   (animate_transition FALSE)
-   (TRANSITION_COMPLETE_MSG
-      {meta play_movie CUT_SCENE_VIDEO}
-      {ui goto_screen main_screen})}
