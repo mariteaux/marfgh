@@ -1,7 +1,6 @@
-#include splash.dta
+#include common.dta
 #include loading.dta
 #include game.dta
-#include common.dta
 #include endgame.dta
 #include lose.dta
 #include quickplay.dta
