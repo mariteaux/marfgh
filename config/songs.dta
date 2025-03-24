@@ -253,7 +253,8 @@
    (quickplay
       (character_outfit metal1)
       (guitar sg)
-      (venue fest)))
+      (venue fest))
+   (band metal_bass metal_drummer))
 (veryape
    (name "Very Ape")
    (artist "Nirvana")
@@ -1154,4 +1155,5 @@
    (quickplay
       (character_outfit metal1)
       (guitar sg)
-      (venue fest)))
+      (venue fest))
+   (band metal_bass metal_drummer))

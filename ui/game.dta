@@ -178,13 +178,13 @@
       {if {&& $focusmode {|| {== {gamecfg get mode} career} {== {gamecfg get mode} quickplay} {== {gamecfg get mode} multi_coop}}}
          {if {exists world}
             {world toggle_pick_shot}}}
-      {if {! {gamecfg get mode} credits} {world_panel set_showing TRUE}}
+      {if {!= {gamecfg get mode} credits} {world_panel set_showing TRUE}}
       {if_else {gamecfg get game_over_sequence}
          {do
-            {if {! {gamecfg get mode} credits} {track_panel explode}}
+            {if {!= {gamecfg get mode} credits} {track_panel explode}}
             {game set_realtime TRUE}
             {beatmatch set_paused TRUE}
-            {if {|| {! {gamecfg get mode} jukebox} {! {gamecfg get mode} credits}} {play_game_sfx TRACK_EXPLODE_SFX}}
+            {if {|| {!= {gamecfg get mode} jukebox} {!= {gamecfg get mode} credits}} {play_game_sfx TRACK_EXPLODE_SFX}}
             {if {== {gamecfg get mode} credits} {meta_loading_nosave_goto options_screen}}
             {if {== {gamecfg get mode} jukebox} {meta_loading_goto qp_selsong_screen}}
             {if $encore {encore_stream play}}
