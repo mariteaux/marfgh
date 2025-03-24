@@ -33,7 +33,6 @@
 ((kPad_Select kPad_Select)
    {if {&& {exists ui} {! {ui in_transition}}
       {'||'
-         {== {ui current_screen} sel_song_screen}
          {== {ui current_screen} qp_selsong_screen}
          {== {ui current_screen} multi_vs_selsong_screen}
          {== {ui current_screen} multi_coop_selsong_screen}

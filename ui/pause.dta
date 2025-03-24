@@ -33,14 +33,13 @@
          (change_speed.btn {ui goto_screen pause_audio_settings_screen})
          (section.btn {ui goto_screen pause_video_settings_screen})
          (newsong.btn
-		    {set $credits_song FALSE}
+            {set $shuffle FALSE}
             {gamecfg set mode practice}
             {gamecfg set_track 0 0}
             {practice_selpart_screen set career_mode FALSE}
             {meta_loading_goto practice_selpart_screen})
          (quit.btn
-            {if {== career {gamecfg get mode}}
-               {gamecfg set continue_screen sel_song_screen}}
+            {set $shuffle FALSE}
             {meta_loading_goto {gamecfg get continue_screen}})}))
 {new GHScreen pause_screen
    (panels GAME_PANELS pause_panel)

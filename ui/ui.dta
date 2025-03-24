@@ -9,8 +9,7 @@
 
 ; originally from ui/sfx.dta
 (SELECT_START_MSG
-   {if_else {'||'
-   {== {{ui current_screen} name} sel_song_screen}
+   {if_else {||
    {== {{ui current_screen} name} multi_seldiff_screen}
    {== {{ui current_screen} name} seldiff_screen}
    {== $component pause_restart.btn}

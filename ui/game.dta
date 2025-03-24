@@ -78,10 +78,7 @@
       {set [encore_song]
          {&&
             {!= {gamecfg get mode} tutorial}
-            {campaign is_encore_song {gamecfg get_song}}}}
-      {if {== {gamecfg get_song} tonightimgonna}
-         {{{world_panel loaded_dir} find drummer}
-         show_drummer}})
+            {campaign is_encore_song {gamecfg get_song}}}})
    (intro_start_msg
       ($fast $encore)
       {track_panel intro_start_msg}
@@ -182,12 +179,9 @@
       {if_else {gamecfg get game_over_sequence}
          {do
             {if {!= {gamecfg get mode} credits} {track_panel explode}}
+            {if {|| {!= {gamecfg get mode} jukebox} {!= {gamecfg get mode} credits}} {play_game_sfx TRACK_EXPLODE_SFX}}
             {game set_realtime TRUE}
             {beatmatch set_paused TRUE}
-            {if {|| {!= {gamecfg get mode} jukebox} {!= {gamecfg get mode} credits}} {play_game_sfx TRACK_EXPLODE_SFX}}
-            {if {== {gamecfg get mode} credits} {meta_loading_nosave_goto options_screen}}
-            {if {== {gamecfg get mode} jukebox} {meta_loading_goto qp_selsong_screen}}
-            {if $encore {encore_stream play}}
             kDataUnhandled}
          0})
    (game_lost
@@ -207,20 +201,9 @@
    (game_outro_complete
       {synth stop_all_sfx}
       {game set_paused TRUE}
-      {if_else
-         [won]
-         {do
-            {if {&&
-            {== {gamecfg get mode} career}
-            {campaign final_song}}
-               {meta set won_campaign TRUE}}
-            {ui goto_screen
-               {if_else $auto_restart
-                  loading_screen
-                  post_show_screen}}}
-         {ui
-            goto_screen
-            {gamecfg get lose_screen}}}
+      {if_else [won]
+         {ui goto_screen post_show_screen}
+         {ui goto_screen {gamecfg get lose_screen}}}
       kDataUnhandled)
    (blew_big_note
       ($player)

@@ -17,19 +17,17 @@
             {ui goto_screen main_screen}}
       kDataUnhandled)
    (SELECT_START_MSG
-      {if {== {game get_song} randomsong}
-		{do
-			{game set_song {campaign pick_attract_song}}
-			{set $random_picked TRUE}}}
-      {if_else {== {gamecfg get mode} jukebox}
-	     {do
-		    {{game get_player_config 0} set_difficulty kDifficultyExpert}
-			{game set_quickplay}
-			{game_screen set attract_mode TRUE}
-			{ui goto_screen loading_screen}}
-         {do
-			{game_screen set attract_mode FALSE}
-		    {ui goto_screen qp_selpart_screen}}}
+      {switch {game get_song}
+         ("randomsong"
+            {set $random_picked TRUE}
+            {random_song}
+            {post_song_select})
+         ("shufflemode"
+            {set $random_picked TRUE}
+            {set $shuffle TRUE}
+            {random_song}
+            {post_song_select})}
+      {post_song_select}
       kDataUnhandled)}
 {new
    UIPanel
@@ -108,7 +106,7 @@
                   {$this set_line $prefix 1 {sprint $song_text " (" {int {'+' 0.5 {'*' $speedmod 100}}} "%)"}}}
                {$this set_line $prefix 1 $song_text}}
             {$this set_line $prefix 2 $song_caption}
-			{$this set_line $prefix 3 $artist_text}}})
+            {$this set_line $prefix 3 $artist_text}}})
    (set_line
       ($prefix $i $text)
       {{sprint $prefix $i ".lbl"} set_localized_text $text}
@@ -165,12 +163,12 @@
    (file manage_gig.milo)
    (focus speed0.btn)
    (set_button_text
-	{if_else $focusmode
-		{speed2.btn set_state kDisabled}
-		{speed2.btn set_showing TRUE}}
-	{if_else $focusmode
-		{speed3.btn set_state kDisabled}
-		{speed3.btn set_showing TRUE}})
+    {if_else $focusmode
+        {speed2.btn set_state kDisabled}
+        {speed2.btn set_showing TRUE}}
+    {if_else $focusmode
+        {speed3.btn set_state kDisabled}
+        {speed3.btn set_showing TRUE}})
    (SELECT_START_MSG
       {switch
          $component
@@ -190,7 +188,7 @@
    (panels meta manage_gig_panel helpbar)
    (focus manage_gig_panel)
    (enter
-	  {$this set_button_text})
+      {$this set_button_text})
    (helpbar
       (default
          ((fret1 help_continue)
@@ -226,7 +224,7 @@
          (0 {do
                {lefty6.chk set_check FALSE}
                {lefty7.chk set_check FALSE}})}
-	   {lefty8.chk set_check $roygb}
+       {lefty8.chk set_check $roygb}
       {$this update_help_display})
    (update_help_display
       {if_else
@@ -326,7 +324,7 @@
          (gs_left_p8.btn
             {lefty8.chk toggle}
             {set $roygb {lefty8.chk get_check}})
-			
+            
          (calibrate_lag.btn
                       {game set_character streamer TRUE})
                   kDataUnhandled}

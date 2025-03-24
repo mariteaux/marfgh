@@ -28,12 +28,15 @@
    (practice_speed 0)
    (practice_sections (0 0)))
 (jukebox
+   (crowd_rating_active FALSE)
+   (skip_intro TRUE)
    (star_power_disable TRUE)
    (show_hud FALSE)
    (show_track FALSE)
    (force_autoplay TRUE)
    (crowd_audio FALSE))
 (credits
+   (crowd_rating_active FALSE)
    (skip_intro TRUE)
    (star_power_disable TRUE)
    (crowd_rating_active FALSE)

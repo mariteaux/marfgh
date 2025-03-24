@@ -346,10 +346,9 @@
    (focus sv_battle.btn)}
 {new GHPanel sel_song_panel
    (file
-      {switch {gamecfg get mode}
-         ((career multi_coop)
-            sel_song.milo)
-         sel_song_quickplay.milo})
+      {if_else {|| {== {{ui current_screen} name} qp_playlist_select} {== {gamecfg get mode} multi_coop}}
+	     sel_song.milo
+		 sel_song_quickplay.milo})
    (metamusic_on_exit TRUE)
    (focus ss_song.lst)
    (joypad
@@ -414,22 +413,22 @@
       {if {== {game get_song_index} -1}
          {game set_song_index 0}}
       {$this update_song_info})}
-{new GHScreen sel_song_screen
-   (panels meta sel_song_panel helpbar)
-   (focus sel_song_panel)
-   (helpbar
-      (default
-         ((fret1 help_continue)
-            (fret2 help_back)
-            (strum help_updown))))
-   (sel_song_career TRUE)
-   (BUTTON_DOWN_MSG
-      {if {== $button kPad_Tri}
-         {$this backwards_anim}
-         {synth play_sequence button_back.cue}
-         {ui goto_screen sel_venue_screen}}
-      kDataUnhandled)
-   (SELECT_START_MSG
-      {sel_song_panel set metamusic_on_exit TRUE}
-      {ui goto_screen career_selpart_screen}
-      kDataUnhandled)}
+{func post_song_select
+   {if_else {|| {== {{ui current_screen} name} post_show_screen} {== {{ui current_screen} name} complete_screen}}
+      {ui goto_screen loading_screen}
+      {if_else {== {gamecfg get mode} jukebox}
+         {do
+            {{game get_player_config 0} set_difficulty kDifficultyExpert}
+            {game set_quickplay}
+            {game_screen set attract_mode TRUE}
+            {ui goto_screen loading_screen}}
+         {do
+            {game_screen set attract_mode FALSE}
+            {ui goto_screen qp_selpart_screen}}}}}
+{func random_song
+   {game set_song {campaign pick_attract_song}}
+   {if {||
+   {== {game get_song} randomsong}
+   {== {game get_song} shufflemode}
+   {== {game get_song} playlist}}
+      {random_song}}}

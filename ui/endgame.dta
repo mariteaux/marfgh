@@ -13,7 +13,13 @@
             (units kTaskUISeconds)
             (delay 0.3)
             (script {play_sfx postshow_loop})}
-         {ui goto_screen $win_screen}})}
+         {if_else {== {gamecfg get mode} jukebox}
+            {if_else $shuffle
+               {do
+                  {random_song}
+                  {post_song_select}}
+                {meta_loading_goto {gamecfg get continue_screen}}}
+            {ui goto_screen $win_screen}}})}
 {func goto_endgame_complete
    {ui goto_screen complete_screen}}
 
@@ -330,22 +336,29 @@
 {new GHPanel complete_panel
    (file complete.milo)
    (enter
-      {if {!= $playlist_index {- {size (starch tutorial december)} 1}}
+      {if {|| {!= $playlist_index {- {size (starch tutorial december)} 1}} $shuffle}
          {comp_selsong.btn set_localized_text "NEXT SONG"}}
       {$this set_focus comp_selsong.btn})
    (SELECT_START_MSG
       {switch $component
          (comp_selsong.btn
-            {if_else {== $playlist_index {- {size (starch tutorial december)} 1}}
+            {if_else $shuffle
                {do
-			      {set $playlist_index 0}
-			      {meta_loading_goto {gamecfg get continue_screen}}}
-               {do
-                  {set $playlist_index {+ $playlist_index 1}}
-                  {gamecfg set_song {elem (starch tutorial december) $playlist_index}}
-                  {ui goto_screen loading_screen}}})
+                  {random_song}
+                  {post_song_select}}
+               {if_else {== $playlist_index {- {size (starch tutorial december)} 1}}
+                  {do
+                     {set $playlist_index 0}
+                     {meta_loading_goto {gamecfg get continue_screen}}}
+                  {do
+                     {set $playlist_index {+ $playlist_index 1}}
+                     {gamecfg set_song {elem (starch tutorial december) $playlist_index}}
+                     {ui goto_screen loading_screen}}}
+            })
          (comp_restart.btn {game_restart_fast})
-         (comp_quit.btn {meta_loading_goto main_screen})}
+         (comp_quit.btn
+            {set $shuffle FALSE}
+            {meta_loading_goto main_screen})}
       {stop_sfx postshow_loop})}
 {new GHScreen complete_screen
    (panels GAME_PANELS complete_panel helpbar)
