@@ -17,6 +17,8 @@
 (help_deleteletter "DELETE")
 (help_buyitem "BUY ITEM")
 (help_skins "TOGGLE SKINS")
+(help_playlist "MAKE A SETLIST")
+(help_finishplaylist "PLAY SETLIST")
 (lag_title "HDTV Lag")
 (lag_button_calibrate "Calibrate")
 (lag_button_recalibrate "Recalibrate")

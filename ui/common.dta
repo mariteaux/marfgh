@@ -345,10 +345,7 @@
    (file sel_venue.milo)
    (focus sv_battle.btn)}
 {new GHPanel sel_song_panel
-   (file
-      {if_else {|| {== {{ui current_screen} name} qp_playlist_select} {== {gamecfg get mode} multi_coop}}
-	     sel_song.milo
-		 sel_song_quickplay.milo})
+   (file sel_song_quickplay.milo)
    (metamusic_on_exit TRUE)
    (focus ss_song.lst)
    (joypad
@@ -356,8 +353,7 @@
       (repeat_ms 80))
    (enter
       {{ui current_screen} turn_off_ambient}
-      {if {! {{ui current_screen} sel_song_career}}
-         {song_provider set_quickplay TRUE}}
+      {song_provider set_quickplay TRUE}
       {ss_song.lst set_provider song_provider}
       {if {== {game get_song_index} -1}
          {game set_song_index 0}}
@@ -367,8 +363,39 @@
             {game set_song_index 0}}}
       {$this update_song_info})
    (update_song_info
-      {if {== 0 {song_provider get_quickplay}}
-         {game set_career_song}}
+      {ss_song.lst set_selected {game get_song_index}}
+      {meta_music stop}
+      {$this update_pos})
+   (exit
+      {song_preview ''}
+      {if [metamusic_on_exit]
+         {meta_music start}}
+      {set [metamusic_on_exit] TRUE}
+      {song_provider set_quickplay FALSE})
+   (SCROLL_MSG
+      {$this update_pos})
+   (update_pos
+      {do
+         ($pos {ss_song.lst selected_pos})
+         ($frame {'+' $pos {song_provider num_headers $pos}})
+         {game set_song_index $pos}
+         {song_preview {game get_song}}
+         {sel_song.view set_frame $frame}})}
+{new GHPanel sel_playlist_panel
+   (file sel_song.milo)
+   (metamusic_on_exit TRUE)
+   (focus ss_song.lst)
+   (joypad
+      (hold_ms 500)
+      (repeat_ms 80))
+   (enter
+      {{ui current_screen} turn_off_ambient}
+      {song_provider set_quickplay TRUE}
+      {ss_song.lst set_provider song_provider}
+      {if {== {game get_song_index} -1}
+         {game set_song_index 0}}
+      {$this update_song_info})
+   (update_song_info
       {ss_song.lst set_selected {game get_song_index}}
       {meta_music stop}
       {$this update_pos})
@@ -387,28 +414,35 @@
          {game set_song_index $pos}
          {song_preview {game get_song}}
          {sel_song.view set_frame $frame}})
-   (beat_song
-      ($score)
-      {if {$this is_up}
-         {do
-            ($index {ss_song.lst selected_pos})
-            ($song {song_provider get_symbol $index})
-            {campaign cheat_beat_song $song $score}
-            {$this refresh}}})
-   (beat_song
-      {if {$this is_up}
-         {do
-            ($index {ss_song.lst selected_pos})
-            ($song {song_provider get_symbol $index})
-            {campaign beat_song $song}
-            {$this refresh}}})
-   (gold_song
-      {if {$this is_up}
-         {campaign cheat_gold_song {song_provider get_symbol {ss_song.lst selected_pos}}}
+   (playlist_select_song ($added_song)
+      {push_back $playlist $added_song}
+      {set $current_song_index {song_provider get_symbol {ss_song.lst selected_pos}}}
+      {push_back $song_index_list $current_song_index}
+      {set $playlist_index {+ $playlist_index 1}}
+      {do
+         ($index {ss_song.lst selected_pos})
+         ($song {song_provider get_symbol $index})
+         {campaign cheat_beat_song $song {+ $playlist_index 1}}
          {$this refresh}})
+   (playlist_unselect_song
+      {if_else {== {size $playlist} 0}
+         {$this go_back}
+         {do
+            {campaign cheat_beat_song $current_song_index ' '}
+            {$this refresh}
+            {{resize $playlist {- {size $playlist} 1}}}
+            {{resize $song_index_list {- {size $song_index_list} 1}}}
+            {set $playlist_index {- $playlist_index 1}}
+            {set $current_song_index {elem {size $song_index_list}}}}})
+   (start_playlist
+      {if_else {== {size $playlist} 0}
+         {play_sfx button_error (volume 1) (stop TRUE)}
+         {do
+            {game set_song {elem $playlist 0}}
+			{set $playlist_index 0}
+            {post_song_select}}})
    (refresh
-      {if {! {{ui current_screen} sel_song_career}}
-         {song_provider set_quickplay TRUE}}
+      {song_provider set_quickplay TRUE}
       {ss_song.lst set_provider song_provider}
       {if {== {game get_song_index} -1}
          {game set_song_index 0}}
@@ -432,3 +466,8 @@
    {== {game get_song} shufflemode}
    {== {game get_song} playlist}}
       {random_song}}}
+{func clear_playlist
+   {set $playlist ()}
+   {set $song_index_list ()}
+   {set $current_song_index 0}
+   {set $playlist_index 0}}

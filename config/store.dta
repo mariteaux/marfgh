@@ -94,9 +94,6 @@
    (whygo (price 200))
    (youreawolf (price 200)))
 (character
-   (grim (price 7000))
-)
+   (grim (price 7000)))
 (outfit)
-(video
-   (video3 (file venue.pss) (price 900))
-   (video2 (file wg360.pss) (price 900)))
+(video)

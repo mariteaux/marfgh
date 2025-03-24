@@ -1158,7 +1158,7 @@
       (venue fest))
    (band metal_bass metal_drummer))
 (shufflemode
-   (name "Shuffle Songs")
+   (name {if_else {== {{ui current_screen} name} qp_playlist_select} "Start Playlist" "Shuffle Songs"})
    (artist "Harmonix")
    (song
       (name songs/tutorial/tutorial)
