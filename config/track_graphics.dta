@@ -2,11 +2,11 @@
 ; This is a nice microcosm of the mess going on in synth.dta, where we have
 ; to if_else the items in the array instead of the array itself.
 (slot_colors
-   {if_else $roygb green red}
-   {if_else $roygb red orange}
-   {if_else $roygb yellow yellow}
-   {if_else $roygb blue green}
-   {if_else $roygb orange blue})
+   {if_else $roygb red green}
+   {if_else $roygb orange red}
+   yellow
+   {if_else $roygb green blue}
+   {if_else $roygb blue orange})
 (smasher
    (mats
       (normal gem_smasher)
@@ -28,11 +28,11 @@
 ; Same goes for the sustain tails, which the game calls "strings".
 #define STRING_SET
 ((gems
-   ({if_else $roygb green red}
-    {if_else $roygb red orange}
-    {if_else $roygb yellow yellow}
-    {if_else $roygb blue green}
-    {if_else $roygb orange blue})))
+   ({if_else $roygb red green}
+    {if_else $roygb orange red}
+    yellow
+    {if_else $roygb green blue}
+    {if_else $roygb blue orange})))
 
 (gem
    (fps 30)
