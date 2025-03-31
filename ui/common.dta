@@ -391,6 +391,8 @@
    (enter
       {{ui current_screen} turn_off_ambient}
       {song_provider set_quickplay TRUE}
+      {clear_playlist}
+      {debug_print_playlist}
       {ss_song.lst set_provider song_provider}
       {if {== {game get_song_index} -1}
          {game set_song_index 0}}
@@ -403,8 +405,7 @@
       {song_preview ''}
       {if [metamusic_on_exit]
          {meta_music start}}
-      {set [metamusic_on_exit] TRUE}
-      {song_provider set_quickplay FALSE})
+      {set [metamusic_on_exit] TRUE})
    (SCROLL_MSG
       {$this update_pos})
    (update_pos
@@ -414,33 +415,15 @@
          {game set_song_index $pos}
          {song_preview {game get_song}}
          {sel_song.view set_frame $frame}})
-   (playlist_select_song ($added_song)
+   (playlist_add_song ($added_song)
       {push_back $playlist $added_song}
-      {set $current_song_index {song_provider get_symbol {ss_song.lst selected_pos}}}
-      {push_back $song_index_list $current_song_index}
       {set $playlist_index {+ $playlist_index 1}}
-      {do
-         ($index {ss_song.lst selected_pos})
-         ($song {song_provider get_symbol $index})
-         {campaign cheat_beat_song $song {+ $playlist_index 1}}
-         {$this refresh}})
-   (playlist_unselect_song
-      {if_else {== {size $playlist} 0}
-         {$this go_back}
-         {do
-            {campaign cheat_beat_song $current_song_index ' '}
-            {$this refresh}
-            {{resize $playlist {- {size $playlist} 1}}}
-            {{resize $song_index_list {- {size $song_index_list} 1}}}
-            {set $playlist_index {- $playlist_index 1}}
-            {set $current_song_index {elem {size $song_index_list}}}}})
+      {debug_print_playlist})
    (start_playlist
-      {if_else {== {size $playlist} 0}
-         {play_sfx button_error (volume 1) (stop TRUE)}
-         {do
-            {game set_song {elem $playlist 0}}
-			{set $playlist_index 0}
-            {post_song_select}}})
+      {game set_song {elem $playlist 0}}
+      {set $in_playlist TRUE}
+      {set $playlist_index 0}
+      {post_song_select})
    (refresh
       {song_provider set_quickplay TRUE}
       {ss_song.lst set_provider song_provider}
@@ -463,11 +446,12 @@
    {game set_song {campaign pick_attract_song}}
    {if {||
    {== {game get_song} randomsong}
-   {== {game get_song} shufflemode}
-   {== {game get_song} playlist}}
+   {== {game get_song} shufflemode}}
       {random_song}}}
 {func clear_playlist
-   {set $playlist ()}
-   {set $song_index_list ()}
-   {set $current_song_index 0}
+   {set $in_playlist FALSE}
+   {resize $playlist 0}
    {set $playlist_index 0}}
+{func debug_print_playlist
+   {print "playlist songs: " $playlist "\n"}
+   {print "playlist index: " $playlist_index "\n"}}

@@ -336,16 +336,13 @@
 {new GHPanel complete_panel
    (file complete.milo)
    (enter
-      {if {|| {!= $playlist_index {- {size $playlist} 1}} $shuffle}
+      {if {|| {<= $playlist_index {- {size $playlist} 1}} $shuffle}
          {comp_selsong.btn set_localized_text "NEXT SONG"}}
       {$this set_focus comp_selsong.btn})
    (SELECT_START_MSG
       {switch $component
          (comp_selsong.btn
-            {if_else $shuffle
-               {do
-                  {random_song}
-                  {post_song_select}}
+            {if_else $in_playlist
                {if_else {== $playlist_index {- {size $playlist} 1}}
                   {do
                      {clear_playlist}
@@ -354,13 +351,17 @@
                      {set $playlist_index {+ $playlist_index 1}}
                      {gamecfg set_song {elem $playlist $playlist_index}}
                      {post_song_select}}}
-            })
-         (comp_restart.btn {game_restart_fast})
-         (comp_quit.btn
-            {clear_playlist}
-            {set $shuffle FALSE}
-            {meta_loading_goto main_screen})}
-      {stop_sfx postshow_loop})}
+               {if_else $shuffle
+                  {do
+                     {random_song}
+                     {post_song_select}}
+                  {meta_loading_goto {gamecfg get continue_screen}}}})
+                    (comp_restart.btn {game_restart_fast})
+                    (comp_quit.btn
+                       {clear_playlist}
+                       {set $shuffle FALSE}
+                       {meta_loading_goto main_screen})}
+                 {stop_sfx postshow_loop})}
 {new GHScreen complete_screen
    (panels GAME_PANELS complete_panel helpbar)
    (focus complete_panel)

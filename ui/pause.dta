@@ -33,12 +33,14 @@
          (change_speed.btn {ui goto_screen pause_audio_settings_screen})
          (section.btn {ui goto_screen pause_video_settings_screen})
          (newsong.btn
+            {clear_playlist}
             {set $shuffle FALSE}
             {gamecfg set mode practice}
             {gamecfg set_track 0 0}
             {practice_selpart_screen set career_mode FALSE}
             {meta_loading_goto practice_selpart_screen})
          (quit.btn
+            {clear_playlist}
             {set $shuffle FALSE}
             {meta_loading_goto {gamecfg get continue_screen}})}))
 {new GHScreen pause_screen
@@ -119,12 +121,10 @@
             {career_screen resume_from_practice}
             {meta_loading_goto career_screen})
          (quit.btn {meta_loading_goto {gamecfg get continue_screen}})})}
-{func meta_loading_goto
-   ($next_screen)
+{func meta_loading_goto ($next_screen)
    {meta_loading_screen set next_screen $next_screen}
    {ui goto_screen meta_loading_screen}}
-{func meta_loading_nosave_goto
-   ($next_screen)
+{func meta_loading_nosave_goto ($next_screen)
    {meta_loading_screen set autosave FALSE}
    {meta_loading_goto $next_screen}}
 {new UIPanel meta_loading_panel

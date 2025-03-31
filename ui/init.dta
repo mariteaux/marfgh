@@ -38,4 +38,6 @@
 {set $camera_control_master TRUE}
 {set $bootup_progressive FALSE}
 
+{set $playlist ()}
+
 {ui goto_screen $first_screen}

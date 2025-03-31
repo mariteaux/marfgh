@@ -14,6 +14,7 @@
             {synth play_sequence button_back.cue}
             {ui goto_screen main_screen})
          (kPad_Square
+            {synth play_sequence button_select}
             {ui goto_screen qp_playlist_select})}
       kDataUnhandled)
    (SELECT_START_MSG
@@ -38,23 +39,30 @@
             (fret2 help_back)
             (start help_finishplaylist))))
    (sel_song_career FALSE)
-   (enter
-      {clear_playlist})
+   (enter)
    (BUTTON_DOWN_MSG
       {switch $button
          (kPad_Tri
-            {sel_playlist_panel playlist_unselect_song})
+            {clear_playlist}
+            {$this backwards_anim}
+            {synth play_sequence button_back.cue}
+            {ui goto_screen qp_selsong_screen})
          (kPad_Start
-            {sel_playlist_panel start_playlist})}
+            {if_else {== {size $playlist} 0}
+               {play_sfx button_error (volume 1) (stop TRUE)}
+               {sel_playlist_panel start_playlist}})}
       kDataUnhandled)
    (SELECT_START_MSG
       {switch {game get_song}
          ("randomsong"
-            {random_song})
+            {random_song}
+            {sel_playlist_panel update_song_info})
          ("shufflemode"
-            {sel_playlist_panel start_playlist})}
-      {set $added_song {game get_song}}
-      {sel_playlist_panel playlist_select_song $added_song}
+            {if_else {== {size $playlist} 0}
+               {play_sfx button_error (volume 1) (stop TRUE)}
+               {sel_playlist_panel start_playlist}})
+      {if {!= {game get_song} "shufflemode"}
+            {sel_playlist_panel playlist_add_song {game get_song}}}}
       kDataUnhandled)}
 {new UIPanel qp_selpart_bg_panel
    (file selpart_bg.milo)}
