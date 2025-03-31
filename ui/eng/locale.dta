@@ -187,3 +187,4 @@
 (star_ready "STAR POWER READY!")
 (song_failed "SONG FAILED!")
 (deploy_star "DEPLOY YOUR STAR POWER!")
+(song_current_venue_encore " ") ; game wanted this for some reason

@@ -257,5 +257,5 @@
 (store #include store.dta)
 (campaign #include campaign.dta)
 (tips #include tips.dta)
-(version "Build: 211107") ; originally from config/gh2_version.dta
+(version "Build: marfGH Alpha") ; originally from config/gh2_version.dta
 #merge ../../../system/run/config/default.dta

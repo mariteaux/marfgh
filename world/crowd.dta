@@ -178,9 +178,9 @@
 (camera_lighter
    {if {&& {world_panel showing} $extracam}
       {handle (world pick_shot LIGHTER)}})
-(clap_on
+(crowd_clap
    {set $oktoclap TRUE})
-(clap_off
+(crowd_noclap
    {set $oktoclap FALSE})
 (music_end
    {if {crowd_audio enabled}
