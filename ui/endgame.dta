@@ -13,7 +13,7 @@
             (units kTaskUISeconds)
             (delay 0.3)
             (script {play_sfx postshow_loop})}
-         {if_else {== {gamecfg get mode} jukebox}
+         {if_else {|| {== {gamecfg get mode} jukebox} {== {gamecfg get mode} credits}}
             {if_else $shuffle
                {do
                   {random_song}

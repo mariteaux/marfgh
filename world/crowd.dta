@@ -122,10 +122,10 @@
 (crowd_normal_tempo
    {$this iterate_frac (1 {main.drv set beat_scale 1})})
 (camera_control_on
-   {if {&& $camera_control_master {'||' {== {gamecfg get mode} jukebox} {== {gamecfg get mode} career} {== {gamecfg get mode} quickplay}}}
+   {if {&& $camera_control_master {gamecfg get manual_camera_cuts}}
       {set $extracam TRUE}})
 (camera_control_off
-   {if {&& $camera_control_master {'||' {== {gamecfg get mode} jukebox} {== {gamecfg get mode} career} {== {gamecfg get mode} quickplay}}}
+   {if {&& $camera_control_master {gamecfg get manual_camera_cuts}}
       {set $extracam FALSE}})
 (camera_cycle_shot
    {if {&& {world_panel showing} $extracam}

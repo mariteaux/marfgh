@@ -18,6 +18,7 @@
    (crowd_audio TRUE)
    (star_power_disable FALSE)
    (shared_star_meter FALSE)
+   (manual_camera_cuts TRUE)
    (main_screen main_screen)
    (continue_screen qp_selsong_screen)
    (loading_screen loading_screen)
@@ -36,9 +37,10 @@
    (force_autoplay TRUE)
    (crowd_audio FALSE))
 (credits
-   (crowd_rating_active FALSE)
+   (game_over_sequence FALSE)
    (skip_intro TRUE)
    (star_power_disable TRUE)
+   (manual_camera_cuts FALSE)
    (crowd_rating_active FALSE)
    (crowd_audio FALSE)
    (hud_file hud_practice.milo)
@@ -47,6 +49,7 @@
 (practice
    (skip_intro TRUE)
    (star_power_disable TRUE)
+   (manual_camera_cuts FALSE)
    (game_over_sequence FALSE)
    (crowd_rating_active FALSE)
    (crowd_audio FALSE)
@@ -88,6 +91,7 @@
 (multi_vs
    (num_players 2)
    (competitive TRUE)
+   (manual_camera_cuts FALSE)
    (continue_screen multi_vs_selsong_screen)
    (win_screen multi_compete_screen)
    (win_preload_panel multi_compete_panel)
@@ -97,6 +101,7 @@
 (multi_fo
    (num_players 2)
    (competitive TRUE)
+   (manual_camera_cuts FALSE)
    (continue_screen multi_fo_selsong_screen)
    (win_screen multi_compete_fo_screen)
    (win_preload_panel multi_compete_fo_panel)
@@ -112,6 +117,7 @@
    (num_players 2)
    (shared_star_meter TRUE)
    (separate_parts FALSE)
+   (manual_camera_cuts FALSE)
    (score_config coop_config)
    (hud_file hud_coop.milo)
    (continue_screen multi_coop_selsong_screen)
