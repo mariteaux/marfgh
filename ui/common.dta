@@ -357,10 +357,6 @@
       {ss_song.lst set_provider song_provider}
       {if {== {game get_song_index} -1}
          {game set_song_index 0}}
-      {if $random_picked
-         {do
-            {set $random_picked FALSE}
-            {game set_song_index 0}}}
       {$this update_song_info})
    (update_song_info
       {ss_song.lst set_selected {game get_song_index}}
@@ -423,13 +419,7 @@
       {game set_song {elem $playlist 0}}
       {set $in_playlist TRUE}
       {set $playlist_index 0}
-      {post_song_select})
-   (refresh
-      {song_provider set_quickplay TRUE}
-      {ss_song.lst set_provider song_provider}
-      {if {== {game get_song_index} -1}
-         {game set_song_index 0}}
-      {$this update_song_info})}
+      {post_song_select})}
 {func post_song_select
    {if_else {|| {== {{ui current_screen} name} post_show_screen} {== {{ui current_screen} name} complete_screen}}
       {ui goto_screen loading_screen}
@@ -444,10 +434,17 @@
             {ui goto_screen qp_selpart_screen}}}}}
 {func random_song
    {game set_song {campaign pick_attract_song}}
+   {if {== {game get_song} playlist}
+      {random_song}}
    {if {||
-   {== {game get_song} randomsong}
-   {== {game get_song} shufflemode}}
-      {random_song}}}
+   {== {ui current_screen} qp_selsong_screen}
+   {== {ui current_screen} qp_playlist_select}
+   {== {ui current_screen} multi_coop_selsong_screen}
+   {== {ui current_screen} multi_vs_selsong_screen}
+   {== {ui current_screen} multi_fo_selsong_screen}}
+      {if_else {== {{ui current_screen} name} qp_playlist_select}
+         {sel_playlist_panel update_song_info}
+         {sel_song_panel update_song_info}}}}
 {func clear_playlist
    {set $in_playlist FALSE}
    {resize $playlist 0}

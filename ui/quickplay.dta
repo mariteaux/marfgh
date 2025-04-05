@@ -5,7 +5,7 @@
       (default
          ((fret1 help_continue)
             (fret2 help_back)
-            (fret3 help_playlist))))
+            (fret3 help_randomsong))))
    (sel_song_career FALSE)
    (BUTTON_DOWN_MSG
       {switch $button
@@ -13,22 +13,19 @@
             {$this backwards_anim}
             {synth play_sequence button_back.cue}
             {ui goto_screen main_screen})
-         (kPad_Square
+         (kPad_Circle
             {synth play_sequence button_select}
-            {ui goto_screen qp_playlist_select})}
+            {random_song})}
       kDataUnhandled)
    (SELECT_START_MSG
-      {switch {game get_song}
-         ("randomsong"
-            {set $random_picked TRUE}
-            {random_song}
-            {post_song_select})
-         ("shufflemode"
-            {set $random_picked TRUE}
-            {set $shuffle TRUE}
-            {random_song}
-            {post_song_select})}
-      {post_song_select}
+      {if_else {== {game get_song} playlist}
+         {if_else {== {gamecfg get mode} jukebox}
+            {do
+               {set $shuffle TRUE}
+               {random_song}
+               {post_song_select}}
+            {ui goto_screen qp_playlist_select}}
+         {post_song_select}}
       kDataUnhandled)}
 {new GHScreen qp_playlist_select
    (panels meta sel_playlist_panel helpbar)
@@ -37,7 +34,8 @@
       (default
          ((fret1 help_continue)
             (fret2 help_back)
-            (start help_finishplaylist))))
+            (fret3 help_randomsong)
+            (start help_startplaylist))))
    (sel_song_career FALSE)
    (enter)
    (BUTTON_DOWN_MSG
@@ -50,19 +48,17 @@
          (kPad_Start
             {if_else {== {size $playlist} 0}
                {play_sfx button_error (volume 1) (stop TRUE)}
-               {sel_playlist_panel start_playlist}})}
+               {sel_playlist_panel start_playlist}})
+         (kPad_Circle
+            {synth play_sequence button_select}
+            {random_song})}
       kDataUnhandled)
    (SELECT_START_MSG
-      {switch {game get_song}
-         ("randomsong"
-            {random_song}
-            {sel_playlist_panel update_song_info})
-         ("shufflemode"
-            {if_else {== {size $playlist} 0}
-               {play_sfx button_error (volume 1) (stop TRUE)}
-               {sel_playlist_panel start_playlist}})
-      {if {!= {game get_song} "shufflemode"}
-            {sel_playlist_panel playlist_add_song {game get_song}}}}
+      {if_else {== {game get_song} playlist}
+         {if_else {== {size $playlist} 0}
+            {play_sfx button_error (volume 1) (stop TRUE)}
+            {sel_playlist_panel start_playlist}}
+         {sel_playlist_panel playlist_add_song {game get_song}}}
       kDataUnhandled)}
 {new UIPanel qp_selpart_bg_panel
    (file selpart_bg.milo)}
