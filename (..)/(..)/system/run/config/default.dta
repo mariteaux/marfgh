@@ -110,17 +110,10 @@
    (scratcher))  ; include to dotdot/system/runconfig/scratcher.dta removed
 (disable_cheats FALSE)
 (quick_cheats
-   ; left cheats moved to cheats.dta for ease of access
+   ; all debug binds moved to debug_binds.dta for ease of access
    (left)
    (right)
-   (keyboard
-      (KB_LEFT {paramedit inc -1})
-      (KB_RIGHT {paramedit inc 1})
-      (KB_UP {paramedit scroll -1})
-      (KB_DOWN {paramedit scroll 1})
-      (KB_PAGE_DOWN {paramedit step 0.1})
-      (KB_PAGE_UP {paramedit step 10})
-      (KB_ESCAPE {rnd show_console})))
+   (keyboard))
 (long_cheats)
 (spew)
 (math

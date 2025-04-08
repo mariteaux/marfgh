@@ -10,13 +10,10 @@
    (enter
       {main_buttons.view set_local_pos -5 0 -170}
       {set $main_entered TRUE}
-	  {if $bootup_progressive
-         {rnd reset 640 448 16 0 1}}
-	  {if $bootup_unlock_all
-	     {set $cheat_enabled_unlock_all 1}
-		 {campaign set_all_access 1}
-		 {set $disable_save 1}
-		 {set $disable_career 1}}
+	  {set $cheat_enabled_unlock_all 1}
+	  {campaign set_all_access 1}
+	  {set $disable_save 1}
+	  {set $disable_career 1}
       {$this reset_player_settings}
       {if {! [already_entered]}
          {synth play_sequence meta_lick}
@@ -47,13 +44,8 @@
       {main_msg.view set_showing {< {taskmgr ui_seconds} {$this get msg_last_frame}}})
    (reset_player_settings
       {{game get_player_config 0} set_difficulty kDifficultyExpert}
-	  {if_else $alterna_default_char
-	     {do
-		    {game set_venue small2}
-		    {game set_character alterna1 TRUE}}
-	     {do
-		    {game set_venue fest}
-		    {game set_character metal1 TRUE}}}
+      {game set_venue small2}
+      {game set_character alterna1 TRUE}
       {game set_song_index 0}
       {game set_guitar_index 1}
       {do

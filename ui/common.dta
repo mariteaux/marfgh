@@ -449,6 +449,3 @@
    {set $in_playlist FALSE}
    {resize $playlist 0}
    {set $playlist_index 0}}
-{func debug_print_playlist
-   {print "playlist songs: " $playlist "\n"}
-   {print "playlist index: " $playlist_index "\n"}}

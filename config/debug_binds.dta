@@ -1,49 +1,29 @@
 ; File originally named cheats.dta and renamed for clarity
 ;
-; These only work in the debug executables, obviously. Not all these binds
-; work (I know 0 and r don't), but USB keyboard binds were left as-is for
-; completeness. I totally rebound the controller stuff though.
+; These only work in the debug executables, obviously. I have gotten rid of
+; any known non-working funcs and rebound others, largely for ease of emulator
+; use. marfGH-specific debug stuff now lives in here as well.
 (keyboard
-   (KB_F1 {fake_player1_cheat 0})
-   (KB_F2 {fake_player1_cheat 1})
-   (KB_F4 {toggle_lights_debug})
-   (KB_F5 {cheat_empty_star_power})
-   (KB_F6 {track_panel toggle_gems})
-   (KB_F7 {track_panel toggle_surface})
-   (KB_F8 {track_panel toggle_nowbar})
-   (KB_F9 {toggle_scoring_debug})
-   (KB_F10 {track_panel toggle_mask})
-   (KB_F11 {test_screen_transitions})
-   (0 {toggle_time_paused})
+   (1 {rnd show_console})
    (2 {next_character_driver})
    (3 {toggle_char_lod})
-   (5 {if {meta is_up} {sel_song_panel beat_song 1000000}})
-   (6 {if {meta is_up} {sel_song_panel gold_song}})
-   (# {if {game is_up} {player0 win 3}})
-   ('$' {if_else {game is_up}
-           {player0 win 4}
-           {cheat_add_cash}})
-   ('%' {if {game is_up} {player0 win 5}})
-   ('+' {game cheat_force_encore})
-   (a {a_cheat})
-   (A {A_cheat})
-   (b {b_cheat})
-   (B {if_else $barf_cheat
-         {do
-            {set $barf_cheat FALSE}
-            {cheat_display show "Quick Roxbury: OFF"}}
-         {do
-            {set $barf_cheat TRUE}
-            {cheat_display show "Quick Roxbury: ON"}}})
+   (4 {if {game is_up} {rnd toggle_overlay score}})
+   (5 {track_panel toggle_gems})
+   (6 {track_panel toggle_surface})
+   (7 {track_panel toggle_nowbar})
+   (8 {track_panel toggle_mask})
+   (9 {toggle_scoring_debug})
+   (a {toggle_world})
+   (A {authored_cuts_toggle})
+   (b {tempomap_debug})
    (c {if {game is_up} {world cycle_shot}})
    (C {rnd toggle_overlay camera})
-   (d {toggle_dual_perspective})
+   (d {toggle_lights_debug})
    (e {adjust_crowd_rating -0.1})
    (E {adjust_crowd_rating 0.1})
    (f {toggle_fretboard})
    (F {cycle_free_camera})
-   (g {waypoint_toggle_show}
-      {cheat_display show "Waypoint visibility toggled"})
+   (g {waypoint_toggle})
    (G {rnd toggle_overlay guitar})
    (h {toggle_fretboard}
       {handle (hud set_showing {! {hud showing}})})
@@ -51,70 +31,58 @@
    (i {handle (world toggle_lighting_events)}
       {cheat_display show "World lighting toggled, starting on next lighting call"})
    (I {rnd toggle_overlay light_preset})
-   (j {handle ({find_obj world guitarist0} start_walk)}
-      {cheat_display show "Walking to next waypoint (if supported by venue)"})
+   (j {waypoint_walk})
    (J {set $guitarist_debug {mod {'+' $guitarist_debug 1} 3}}
       {if_else {> $guitarist_debug 0}
          {cheat_display show {sprint "Player " $guitarist_debug " debug"}}
          {cheat_display show "Player debug: OFF"}})
-   (k {handle ({find_obj world guitarist0} teleport_next)}
-      {cheat_display show "Teleporting to next waypoint (if supported by venue)"})
+   (k {waypoint_teleport})
    (l {handle (player0 lose)})
-   (m {toggle_crowd_meter})
+   (m {toggle_crowd_audio})
    (M {toggle_mute_global})
    (n {toggle_normalization})
-   (o {toggle_auto_solo})
-   (O {rnd save_objects dump.rnd ui})
-   (p {toggle_auto_play})
+   (p {cycle_multiplayer_auto_play})
    (P {cycle_music_speed})
-   (q {toggle_solo_quantize})
+   (q {quick_intro})
    (Q {meta print_current_screen})
-   (r {reload_song})
-   (R {reload_track})
-   (s {if {game is_up} {rnd toggle_overlay score}})
-   (S {fill_star_meter})
+   (r {trivia_toggle})
+   (R {author_toggle})
+   (s {fill_star_meter})
+   (S {empty_star_meter})
    (t {rnd toggle_overlay time})
    (T {rnd toggle_timers}
       {rnd toggle_overlay rate})
-   (u {next_tutorial_lesson})
-   (U {prev_tutorial_lesson})
+   (u {debug_print_playlist})
    (v {show_version})
-   (V {world toggle_pick_shot}
-      {cheat_display show "Static camera toggled"})
-   (w {handle (player0 win 3)})
+   (V {static_camera})
    (W {toggle_walks})
-   (x {toggle_cam})
-   (X {toggle_shuttle})
-   (> {tutorial reset_vo}))
+   (x {toggle_crowd_meter})
+   (y {if {game is_up} {player0 win 5}}))
 (left
-   (kPad_DLeft {cycle_free_camera})
-   (kPad_DUp {rnd toggle_overlay light_preset})
-   (kPad_DRight {rnd toggle_overlay camera})
-   (kPad_DDown {rnd toggle_timers})
-   (kPad_Square {if {game is_up}
-                   {if_else $debug.beep
-                      {do
-                         {set $debug.beep FALSE}
-                         {set $barf_cheat FALSE}
-                         {cheat_display show "Tempomap debug: OFF"}}
-                      {do
-                         {set $debug.beep TRUE}
-                         {set $barf_cheat TRUE}
-                         {cheat_display show "Tempomap debug: ON"}}}})
-   (kPad_Tri {if_else {== {rnd screen_width} 640}
-                {do
-                   {rnd reset 512 448 16 0 0}
-                   {cheat_display show "Quick Progressive: OFF"}}
-                {do
-                   {rnd reset 640 448 16 0 1}
-                   {cheat_display show "Quick Progressive: ON"}}})
-   (kPad_Circle {rnd toggle_overlay stats})
-   (kPad_Start {a_cheat}))
+   (kPad_DLeft {track_panel toggle_gems})
+   (kPad_DUp {track_panel toggle_nowbar})
+   (kPad_DRight {track_panel toggle_surface})
+   (kPad_DDown {rnd toggle_overlay camera})
+   (kPad_Square {tempomap_debug})
+   (kPad_Tri {quick_progressive})
+   (kPad_Circle {authored_cuts_toggle})
+   (kPad_Start {rnd show_console}) ;make this a debug cheat reference
+   (kPad_Select {show_version})
+   (kPad_R1 {waypoint_walk})
+   (kPad_R2 {waypoint_teleport})
+   (kPad_L3 {static_camera})
+   (kPad_R3 {if {game is_up} {world cycle_shot}}))
 (right
    (kPad_DLeft {adjust_crowd_rating -0.1})
    (kPad_DUp {fill_star_meter})
    (kPad_DRight {adjust_crowd_rating 0.1})
-   (kPad_DDown {cheat_empty_star_power})
-   (kPad_Square {toggle_auto_play})
-   (kPad_Tri {if {game is_up} {player0 win 5}})
-   (kPad_Circle {toggle_crowd_meter}))
+   (kPad_DDown {empty_star_meter})
+   (kPad_Square {cycle_multiplayer_auto_play})
+   (kPad_Tri {waypoint_toggle})
+   (kPad_Circle {toggle_crowd_meter})
+   (kPad_Start {toggle_world})
+   (kPad_Select {cycle_free_camera})
+   (kPad_L1 {quick_intro})
+   (kPad_L2 {cycle_music_speed})
+   (kPad_L3 {handle (player0 lose)})
+   (kPad_R3 {if {game is_up} {player0 win 5}}))

@@ -53,3 +53,6 @@
 (extras_neckless "NECKLESS MODE")
 
 (toogle_label "AUTOPLAY")
+
+(authored_cuts_enabled "Timed camera cuts: On")
+(authored_cuts_disabled "Timed camera cuts: Off")

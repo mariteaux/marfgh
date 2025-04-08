@@ -354,6 +354,10 @@
       {lefty2.chk set_check {options get_lefty 1}}
       {widescreen.chk set_check {options get_widescreen}}
       {p_scan.chk set_check {options get_pscan}}
+      {if {== {ui current_screen} video_settings_screen}
+         {if_else $camera_control_master
+            {game80s.btn set_localized_text {localize authored_cuts_enabled}}
+            {game80s.btn set_localized_text {localize authored_cuts_disabled}}}}
       {$this update_help_display}
       {if {== {$this name} pause_video_settings_panel}
          {hud set_showing TRUE}
@@ -405,6 +409,11 @@
             {if_else {== $this video_settings_panel}
                {ui goto_screen lag_screen}
                {ui goto_screen pause_lag_screen}})
+         (game80s.btn
+            {authored_cuts_toggle}
+            {if_else $camera_control_master
+               {game80s.btn set_localized_text {localize authored_cuts_enabled}}
+               {game80s.btn set_localized_text {localize authored_cuts_disabled}}})
          kDataUnhandled}
       {$this update_help_display}))
 {new SliderPanel video_settings_panel

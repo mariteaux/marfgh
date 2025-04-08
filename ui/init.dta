@@ -29,14 +29,9 @@
 {set $interval_p1 50}
 {set $interval_p2 50}
 
-; Rudimentary marfGH debug settings live here. This allows me to enable
-; and disable various custom disc functions if I need to for some reason.
-{set $bootup_unlock_all TRUE}
-{set $alterna_default_char TRUE}
 {set $trivia_display TRUE}
 {set $author_display TRUE}
 {set $camera_control_master TRUE}
-{set $bootup_progressive FALSE}
 
 {set $playlist ()}
 

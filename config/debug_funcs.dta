@@ -12,7 +12,7 @@
          (delay CHEAT_DISPLAY_S)
          (units kTaskUISeconds)
          (script
-		    {set [refs] {- [refs] 1}}
+            {set [refs] {- [refs] 1}}
             {if {== [refs] 0}
                {rnd show_overlay cheats FALSE}})})
    (show_bool
@@ -35,27 +35,17 @@
    ($val)
    {set {elem_var {elem {audio_array} 1} 0} $val}
    {cheat_display show {sprint "New audio mode: " $val}}}
-{func a_cheat
+{func toggle_world
    {if {find_obj world}
       {do
-	     ($quickfocus {! {world_panel showing}})
-		 {world_panel set_showing $quickfocus}
+         ($quickfocus {! {world_panel showing}})
+         {world_panel set_showing $quickfocus}
          {cheat_display show_bool "World rendering" $quickfocus}}}}
-{func A_cheat
-   {if_else {meta is_up}
-      {if {! {sel_song_panel is_up}}
-         {do
-            ($new {! {campaign all_access}})
-            {campaign set_all_access $new}
-            {campaign set_tutorial_access $new}
-            {cheat_display show_bool "All Access" $new}
-            {if {== {ui current_screen} main_screen}
-               {main_screen access_all}}}}
-      {toggle_crowd_audio}}}
-{func b_cheat
-   {if_else {meta is_up}
-      {sel_song_panel beat_song 1}
-      {set $debug.beep {! $debug.beep}}}}
+{func tempomap_debug
+   {if {game is_up}
+      {set $debug.beep {! $debug.beep}}
+      {set $barf_cheat {! $barf_cheat}}
+      {cheat_display show_bool "Tempomap debug" $debug.beep}}}
 {func cycle_free_camera
    {if_else {track0 free_camera_active}
       {do
@@ -76,26 +66,6 @@
             {! {player0 crowd_rating_active}})
          {player0 set_crowd_rating_active $new}
          {cheat_display show_bool "Crowd meter" $new}}}}
-{func start_shuttle
-   {if_else {rnd overlay_showing time}
-      {set $cheat.show_time FALSE}
-      {do
-         {rnd show_overlay time TRUE}
-         {set $cheat.show_time TRUE}}}
-   {game set_time_paused TRUE}
-   {player0 set_crowd_rating_active FALSE}
-   {beatmatch set_shuttle TRUE $cheat.controller}}
-{func stop_shuttle
-   {beatmatch set_shuttle FALSE}
-   {game set_time_paused FALSE}
-   {if $cheat.show_time
-      {rnd show_overlay time FALSE}}}
-{func toggle_shuttle
-   {if {find_obj beatmatch}
-      {print " shuttle_active " {beatmatch shuttle_active} "\n"}
-      {if_else {beatmatch shuttle_active}
-         {stop_shuttle}
-         {start_shuttle}}}}
 {set $mute_cheat FALSE}
 {func toggle_mute_global
    {set $mute_cheat {! $mute_cheat}}
@@ -106,20 +76,6 @@
       {do
          {synth set_master_vol 0}
          {cheat_display show "Mute all: FALSE"}}}}
-{func next_tutorial_lesson
-   {if_else {&& {exists tutorial} {tutorial is_up}}
-      {tutorial tutorial_inc 1}
-      {do
-         {if_else $win_campaign}
-         {do
-            {set $win_campaign FALSE}
-            {cheat_display show "Final Win Sequence (UFO in stone): FALSE"}}
-         {do
-            {set $win_campaign TRUE}
-            {cheat_display show "Final Win Sequence (UFO in stone): TRUE"}}}}}
-{func prev_tutorial_lesson
-   {if {tutorial is_up}
-      {tutorial tutorial_inc -1}}}
 {func toggle_crowd_audio
    {if {exists crowd_audio}
       {do
@@ -132,15 +88,6 @@
          {find_obj world guitarist0})
       {if $g
          {cheat_display show_bool "Walks" {$g toggle_walks}}}}}
-{func toggle_auto_solo
-   {do
-      ($new {! {player_matcher0 auto_solo}})
-      {player_matcher0 set_auto_solo $new}
-      {cheat_display show_bool "Auto freestyle" $new}}}
-{func toggle_solo_quantize
-   {player_matcher0 toggle_solo_quantize}}
-{func toggle_auto_play
-   {cycle_multiplayer_auto_play}}
 #define MULTI_AUTO_STATES
 (((FALSE
          FALSE
@@ -157,10 +104,7 @@
 {set $multi_auto_index 0}
 {func cycle_multiplayer_auto_play
    {do
-      ($new_index
-         {mod
-            {'+' $multi_auto_index 1}
-            {size MULTI_AUTO_STATES}})
+      ($new_index {mod {'+' $multi_auto_index 1} {size MULTI_AUTO_STATES}})
       ($state)
       ($pc0 {game get_player_config 0})
       ($pc1 {game get_player_config 1})
@@ -171,45 +115,18 @@
       {handle (player_matcher1 set_auto_play {elem $state 1})}
       {cheat_display show {sprint "Autoplay: " {elem $state 2}}}
       {set $multi_auto_index $new_index}}}
-{func adjust_crowd_rating
-   ($delta)
+{func adjust_crowd_rating ($delta)
    {handle (player0 set_crowd_rating {'+' {player0 crowd_rating} $delta})}}
 {func fake_player1_cheat
    ($player)
    {set_fake_player1 $player}
    {gamecfg set controller_checks FALSE}
    {cheat_display show {sprint "Faking Player " {'+' $player 1}}}}
-{func toggle_dual_perspective
-   {do
-      ($new {! {track_panel dual_perspective}})
-      {track_panel set_dual_perspective $new}
-      {cheat_display show_bool "Dual-perspective" $new}}}
-{func reload_song
-   {game thread_task
-      {game set_time_paused TRUE}
-      {set $ms {game ms}}
-      {game load_song {game get_song}}
-      {$task wait {! {game loaded}}}
-      {cheat_display show {sprint "Reloaded song: " {game get_song}}}
-      {gamecfg set skip_intro TRUE}
-      {game set_start_paused TRUE}
-      {game start_song_now}
-      {track_panel set_track_out}
-      {beatmatch jump $ms}
-      {gamecfg set skip_intro FALSE}
-      {game set_start_paused TRUE}}}
-{func toggle_time_paused
-   {do
-      ($new {! {game time_paused}})
-      {game set_time_paused $new}
-      {crowd_audio set_paused $new}}}
 {func toggle_fretboard
    {if {&& {exists meta} {! {meta is_up}}}
       {track_panel set_showing {! {track_panel showing}}}}}
-{func reload_track
-   {ui goto_screen reload_track_screen}}
 #define MUSIC_SPEEDS
-((1.0 0.5 0.25 0.1))
+((1.0 0.9 0.8 0.7 0.6 0.5 0.4 0.3 0.2 0.1))
 {set $speed_index 0}
 {func cycle_music_speed
    {if {! {meta is_up}}
@@ -219,24 +136,23 @@
          {beatmatch set_music_speed $speed}
          {cheat_display show {sprint "Track speed: " $speed}}
          {set $speed_index $new_index}}}}
-#define DEBUG_TASK
-((init
-   {$this set [active] FALSE})
-   (start
-      {$this set [active] TRUE}
-      {$this on_start}
-      {$this poll})
-   (is_active
-      {$this get [active]})
-   (stop
-      {$this on_stop}
-      {$this set [active] FALSE})
-   (poll
-      {$this on_poll}
-      {if {$this get [active]}
-         {game delay_task 15 (preserve $this) {$this poll}}}))
 {new Object scoring_debug
-   DEBUG_TASK
+   ((active FALSE)
+   (init
+         {$this set [active] FALSE})
+      (start
+         {$this set [active] TRUE}
+         {$this on_start}
+         {$this poll})
+      (is_active
+         {$this get [active]})
+      (stop
+         {$this on_stop}
+         {$this set [active] FALSE})
+      (poll
+         {$this on_poll}
+         {if {$this get [active]}
+            {game delay_task 15 (preserve $this) {$this poll}}}))
    (on_start {rnd show_overlay score_debug TRUE})
    (on_stop {rnd show_overlay score_debug FALSE})
    (on_poll
@@ -257,21 +173,11 @@
       {scoring_debug start}}}
 {func toggle_lights_debug
    {do
-      ($new_state
-         {! {rnd overlay_showing lights}})
+      ($new_state {! {rnd overlay_showing lights}})
       {rnd show_overlay lights $new_state}}}
-{func lights_debug
-   ($msg)
+{func lights_debug ($msg)
    {rnd reflect lights
       {print "Lights: " $msg "\n"}}}
-{func toggle_cam
-   {if {find_obj cam}
-      {cam toggle_enabled}
-      {cheat_display show_bool "camera logic" {cam get_enabled}}}}
-{func cheat_add_cash
-   {if {store_panel is_up}
-      {campaign add_cash 200}
-      {store_panel update_total_cash_display}}}
 {func fill_star_meter
    {if {! {meta is_up}}
       {if_else {game multiplayer}
@@ -279,78 +185,38 @@
             {fake_player1}
             (2
                {do
-			      {player2 fill_star_power}
+                  {player2 fill_star_power}
                   {cheat_display show "Filling Star Power for Player 2..."}})
             (1
                {do
-			      {player1 fill_star_power}
+                  {player1 fill_star_power}
                   {cheat_display show "Filling Star Power for Player 1..."}})
             (0
                {do
-			      {player0 fill_star_power}
+                  {player0 fill_star_power}
                   {cheat_display show "Filling Star Power for Player 0..."}})}
          {do
-		    {player0 fill_star_power}
-            {cheat_display
-               show
-               "Filling Star Power..."}}}}}
-{func cheat_empty_star_power
+            {player0 fill_star_power}
+            {cheat_display show "Filling Star Power..."}}}}}
+{func empty_star_meter
    {if {! {meta is_up}}
       {if_else {game multiplayer}
          {switch {fake_player1}
             (2
                {do
-			      {player2 empty_star_power}
+                  {player2 empty_star_power}
                   {cheat_display show "Emptying Star Power for Player 2..."}})
             (1
                {do
-			      {player1 empty_star_power}
+                  {player1 empty_star_power}
                   {cheat_display show "Emptying Star Power for Player 1..."}})
             (0
                {do
-			      {player0 empty_star_power}
+                  {player0 empty_star_power}
                   {cheat_display show "Emptying Star Power for Player 0..."}})}
          {do
-		    {player0 empty_star_power}
+            {player0 empty_star_power}
             {cheat_display show "Emptying Star Power..."}}}}}
-{func print_transition_test_status
-   {if {&& $transition_screen_0 $transition_screen_1}
-      {rnd reflect transition_test
-         {printf "%s - %s - %d\n" {$transition_screen_0 name} {$transition_screen_1 name} $transition_count}}}}
-{func test_screen_transitions
-   {if {meta is_up}
-      {if_else {! $transition_screen_0}
-         {do
-            {set $transition_screen_0 {ui current_screen}}
-            {rnd show_overlay transition_test TRUE}
-            {rnd reflect transition_test
-			   {print {$transition_screen_0 name} " -\n"}}}
-         {if_else {! $transition_screen_1}
-            {do
-               {set $transition_screen_1
-                  {ui current_screen}}
-               {set $transition_test_active TRUE}
-               {set $transition_count 0}
-               {print_transition_test_status}
-               {run_transition_test}}
-            {do
-               {set $transition_screen_0 FALSE}
-               {set $transition_screen_1 FALSE}
-               {set $transition_test_active FALSE}
-               {set $transition_count 0}
-               {rnd show_overlay transition_test FALSE}}}}}}
-{func run_transition_test
-   {ui thread_task
-      {ui goto_screen $transition_screen_0}
-      {$task wait {ui in_transition}}
-      {'++' $transition_count 1}
-      {print_transition_test_status}
-      {ui goto_screen $transition_screen_1}
-      {$task wait {ui in_transition}}
-      {'++' $transition_count 1}
-      {print_transition_test_status}
-      {if $transition_test_active
-         {run_transition_test}}}}
 {func next_character_driver
    {if {find_obj world}
       {if {== $char_debug_driver 0}
@@ -398,8 +264,7 @@
       {if {== $char_debug_driver 14}
          {char_debug}}
       {set $char_debug_driver {mod {'+' 1 $char_debug_driver} 15}}}}
-{func show_lod_char
-   ($char_name $show)
+{func show_lod_char ($char_name $show)
    {do
       ($char {find_obj world $char_name})
       {if $char
@@ -412,14 +277,8 @@
    {show_lod_char singer $show_lod}
    {show_lod_char keyboardist $show_lod}
    {show_lod_char drummer $show_lod}}
-{func
-   show_version
-   {cheat_display
-      show
-      {sprint
-         {elem
-            {find $syscfg version}
-            1}}}}
+{func show_version
+   {cheat_display show {sprint {elem {find $syscfg version} 1}}}}
 {func toggle_normalization
    {do
       ($new {! {gamecfg get use_normalization}})
@@ -428,3 +287,41 @@
       {if {! $new}
          {set $s "not using normalization"}}
       {cheat_display show $s}}}
+{func quick_progressive
+   {if_else {== {rnd screen_width} 640}
+      {do
+         {rnd reset 512 448 16 0 0}
+         {cheat_display show "Quick Progressive: OFF"}}
+      {do
+         {rnd reset 640 448 16 0 1}
+         {cheat_display show "Quick Progressive: ON"}}}}
+{func authored_cuts_toggle
+   {set $camera_control_master {! $camera_control_master}}
+   {if {!= {ui current_screen} video_settings_screen}
+      {cheat_display show_bool "Authored camera cuts" $camera_control_master}}}
+{func trivia_toggle
+   {set $camera_control_master {! $trivia_display}}
+   {cheat_display show_bool "Loading screen trivia" $trivia_display}}
+{func author_toggle
+   {set $camera_control_master {! $author_display}}
+   {cheat_display show_bool "Chart authors listed" $author_display}}
+{func debug_print_playlist
+   {print "playlist songs: " $playlist "\n"}
+   {print "playlist index: " $playlist_index "\n"}}
+{func quick_intro
+   {gamecfg set skip_intro {! $quick_intro}}
+   {cheat_display show_bool "Skip intro" {gamecfg get skip_intro}}}
+{func static_camera
+   {set $static_camera {! $static_camera}}
+   {world toggle_pick_shot}
+   {cheat_display show_bool "Static camera" $static_camera}}
+{func waypoint_toggle
+   {set $waypoint_visible {! $waypoint_visible}}
+   {waypoint_toggle_show}
+   {cheat_display show_bool "Waypoint visibility" $waypoint_visible}}
+{func waypoint_walk
+   {handle ({find_obj world guitarist0} start_walk)}
+   {cheat_display show "Walking to next waypoint (if supported by venue)"}}
+{func waypoint_teleport
+   {handle ({find_obj world guitarist0} teleport_next)}
+   {cheat_display show "Teleporting to next waypoint (if supported by venue)"}}

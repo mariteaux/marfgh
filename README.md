@@ -16,7 +16,7 @@ Here are some of the new features I've added to the game so far:
 - **Credits gameplay** - an exclusive song to play over the credits scroll in a custom game mode, a la GH3
 - **Manual camera cuts** - by calling `[camera_control_on]` in the EVENTS track of a song, the author can force camera cuts with text events as desired
 - **Extra crowd control** - The crowd can be set to clap any time the Rock Meter is in the green a la *Rock Band* with `[crowd_clap]` and `[crowd_noclap]` in a MIDI, or cued to cheer at arbitrary times with `[music_end]`
+- **Repurposed cheats** - Rebound, bugfixed, and additional debug cheats of more use to authors, players, and tinkerers
 
 ### Features to be added
 - **Create a setlist** - A special setlist screen for queuing up songs and playing them all with the same Free Play settings in a row
-- **Repurposed cheats** - Many of the debug cheats are useless even to modders and authors, and I'd like to go through and remap them at some point
