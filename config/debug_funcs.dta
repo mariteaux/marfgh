@@ -136,23 +136,24 @@
          {beatmatch set_music_speed $speed}
          {cheat_display show {sprint "Track speed: " $speed}}
          {set $speed_index $new_index}}}}
+#define DEBUG_TASK
+((init
+   {$this set [active] FALSE})
+   (start
+      {$this set [active] TRUE}
+      {$this on_start}
+      {$this poll})
+   (is_active
+      {$this get [active]})
+   (stop
+      {$this on_stop}
+      {$this set [active] FALSE})
+   (poll
+      {$this on_poll}
+      {if {$this get [active]}
+         {game delay_task 15 (preserve $this) {$this poll}}}))
 {new Object scoring_debug
-   ((active FALSE)
-   (init
-         {$this set [active] FALSE})
-      (start
-         {$this set [active] TRUE}
-         {$this on_start}
-         {$this poll})
-      (is_active
-         {$this get [active]})
-      (stop
-         {$this on_stop}
-         {$this set [active] FALSE})
-      (poll
-         {$this on_poll}
-         {if {$this get [active]}
-            {game delay_task 15 (preserve $this) {$this poll}}}))
+   DEBUG_TASK
    (on_start {rnd show_overlay score_debug TRUE})
    (on_stop {rnd show_overlay score_debug FALSE})
    (on_poll
@@ -299,17 +300,15 @@
    {set $camera_control_master {! $camera_control_master}}
    {if {!= {ui current_screen} video_settings_screen}
       {cheat_display show_bool "Authored camera cuts" $camera_control_master}}}
-{func trivia_toggle
-   {set $camera_control_master {! $trivia_display}}
-   {cheat_display show_bool "Loading screen trivia" $trivia_display}}
-{func author_toggle
-   {set $camera_control_master {! $author_display}}
-   {cheat_display show_bool "Chart authors listed" $author_display}}
+{func force_trivia
+   {set $trivia_display_forced {! $trivia_display_forced}}
+   {cheat_display show_bool "Loading screen trivia" $trivia_display_forced}}
 {func debug_print_playlist
    {print "playlist songs: " $playlist "\n"}
    {print "playlist index: " $playlist_index "\n"}}
 {func quick_intro
-   {gamecfg set skip_intro {! $quick_intro}}
+   {set $quick_intro {! $quick_intro}}
+   {gamecfg set skip_intro $quick_intro}
    {cheat_display show_bool "Skip intro" {gamecfg get skip_intro}}}
 {func static_camera
    {set $static_camera {! $static_camera}}

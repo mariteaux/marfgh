@@ -32,8 +32,8 @@
       camera_floor_nearleft
       camera_floor_nearright
       camera_lighter
-      clap_on
-      clap_off
+      crowd_clap
+      crowd_noclap
       music_end}
    {set [excitement_level] kExcitementOkay}
    {set [lighter] off})
@@ -128,55 +128,55 @@
    {if {&& $camera_control_master {gamecfg get manual_camera_cuts}}
       {set $extracam FALSE}})
 (camera_cycle_shot
-   {if {&& {world_panel showing} $extracam}
+   {if {&& {world_panel showing} $extracam $camera_control_master}
       {handle (world cycle_shot)}})
 (camera_intro_fast
-   {if {&& {world_panel showing} $extracam}
+   {if {&& {world_panel showing} $extracam $camera_control_master}
       {handle (world pick_shot INTRO_FAST)}})
 (camera_intro_encore
-   {if {&& {world_panel showing} $extracam}
+   {if {&& {world_panel showing} $extracam $camera_control_master}
       {handle (world pick_shot INTRO_ENCORE)}})
 (camera_intro
-   {if {&& {world_panel showing} $extracam}
+   {if {&& {world_panel showing} $extracam $camera_control_master}
       {handle (world pick_shot INTRO)}})
 (camera_win_encore
-   {if {&& {world_panel showing} $extracam}
+   {if {&& {world_panel showing} $extracam $camera_control_master}
       {handle (world pick_shot WIN_ENCORE)}})
 (camera_win
-   {if {&& {world_panel showing} $extracam}
+   {if {&& {world_panel showing} $extracam $camera_control_master}
       {handle (world pick_shot WIN)}})
 (camera_lose
-   {if {&& {world_panel showing} $extracam}
+   {if {&& {world_panel showing} $extracam $camera_control_master}
       {handle (world pick_shot LOSE)}})
 (camera_solo_far
-   {if {&& {world_panel showing} $extracam}
+   {if {&& {world_panel showing} $extracam $camera_control_master}
       {handle (world pick_shot SOLO_FAR)}})
 (camera_solo_near
-   {if {&& {world_panel showing} $extracam}
+   {if {&& {world_panel showing} $extracam $camera_control_master}
       {handle (world pick_shot SOLO_NEAR)}})
 (camera_balcony_right
-   {if {&& {world_panel showing} $extracam}
+   {if {&& {world_panel showing} $extracam $camera_control_master}
       {handle (world pick_shot balcony_rt)}})
 (camera_balcony_left
-   {if {&& {world_panel showing} $extracam}
+   {if {&& {world_panel showing} $extracam $camera_control_master}
       {handle (world pick_shot balcony_lft)}})
 (camera_band_pov
-   {if {&& {world_panel showing} $extracam}
+   {if {&& {world_panel showing} $extracam $camera_control_master}
       {handle (world pick_shot band_POV)}})
 (camera_floor_farleft
-   {if {&& {world_panel showing} $extracam}
+   {if {&& {world_panel showing} $extracam $camera_control_master}
       {handle (world pick_shot flr_far_lft)}})
 (camera_floor_farright
-   {if {&& {world_panel showing} $extracam}
+   {if {&& {world_panel showing} $extracam $camera_control_master}
       {handle (world pick_shot flr_near_rt)}})
 (camera_floor_nearleft
-   {if {&& {world_panel showing} $extracam}
+   {if {&& {world_panel showing} $extracam $camera_control_master}
       {handle (world pick_shot flr_near_lft)}})
 (camera_floor_nearright
-   {if {&& {world_panel showing} $extracam}
+   {if {&& {world_panel showing} $extracam $camera_control_master}
       {handle (world pick_shot flr_near_rt)}})
 (camera_lighter
-   {if {&& {world_panel showing} $extracam}
+   {if {&& {world_panel showing} $extracam $camera_control_master}
       {handle (world pick_shot LIGHTER)}})
 (crowd_clap
    {set $oktoclap TRUE})

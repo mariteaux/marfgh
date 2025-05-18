@@ -289,3 +289,8 @@
 ; "My Own Summer"
 (postchorus_1 "Postchorus 1")
 (postchorus_2 "Postchorus 2")
+
+; "Dreams"
+(prechorus_3 "Prechorus 3")
+(not_quite_the_riff "Not quite the riff")
+(postchorus_3 "Postchorus 3")

@@ -31,10 +31,9 @@
                {$this set_line $prefix 1 $song_text}}
             {$this set_line $prefix 2 $song_caption}
             {if_else $author_display
-               {do
-                  {if_else {!= "" {localize {sprint {gamecfg get_song} "_author"}}}
-                     {$this set_line $prefix 3 {sprint $artist_text "\nAuthor: " {localize {sprint $song "_author"}}}}
-                     {$this set_line $prefix 3 {sprint $artist_text "\nAuthor: Unknown"}}}}
+               {if_else {!= "" {localize {sprint {gamecfg get_song} "_author"}}}
+                  {$this set_line $prefix 3 {sprint $artist_text "\nAuthor: " {localize {sprint $song "_author"}}}}
+                  {$this set_line $prefix 3 {sprint $artist_text "\nAuthor: Unknown"}}}
                {$this set_line $prefix 3 $artist_text}}}})
    (set_line ($prefix $i $text)
       {{sprint $prefix $i ".lbl"} set_localized_text $text}
