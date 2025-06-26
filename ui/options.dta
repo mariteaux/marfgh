@@ -21,7 +21,7 @@
 			{game_screen set attract_mode FALSE}
 			{{game get_player_config 0} set_difficulty kDifficultyExpert}
 			{game set_quickplay}
-			{game set_song starch}
+			{game set_song countdowntoinsanity}
             {meta_loading_nosave_goto credits_game_screen})}
       kDataUnhandled)}
 {new GHScreen options_screen

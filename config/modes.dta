@@ -29,7 +29,6 @@
    (practice_speed 0)
    (practice_sections (0 0)))
 (jukebox
-   (crowd_rating_active FALSE)
    (skip_intro TRUE)
    (star_power_disable TRUE)
    (show_hud FALSE)
@@ -38,7 +37,6 @@
    (crowd_audio FALSE))
 (credits
    (game_over_sequence FALSE)
-   (skip_intro TRUE)
    (star_power_disable TRUE)
    (manual_camera_cuts FALSE)
    (crowd_rating_active FALSE)
