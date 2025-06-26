@@ -277,67 +277,14 @@
    (type guitar)
    (skins
       (empty_void
-	     (outfit air_guitar)
-		 (mat guitar_lespaul_burst.mat))))
-(fish_reward
-   (type guitar)
-   (skins
-      (fish
-         (outfit fish)
-         (mat fish.mat))))
-(usa_reward
-   (type guitar)
-   (skins
-      (usa
-         (outfit usa)
-         (mat usa.mat))))
-(coffin_reward
-   (type guitar)
-   (skins
-      (coffin
-         (outfit coffin)
-         (mat coffin.mat))))
-(viking_reward
-   (type guitar)
-   (skins
-      (viking
-         (outfit viking)
-         (mat viking.mat))))
-(snaketapus_reward
-   (type guitar)
-   (skins
-      (snaketapus
-         (outfit snaketapus)
-         (mat snaketapus.mat))))
-(eyeball_reward
-   (type guitar)
-   (skins
-      (eyeball
-         (outfit eyeball)
-         (mat eyeball.mat))))
-(battleaxe_reward
-   (type guitar)
-   (require tour_passed)
-   (difficulty kDifficultyExpert)
-   (skins
-      (battleaxe
-         (outfit battleaxe)
-         (mat guitar_battleaxe.mat))))
-(log_reward
-   (type guitar)
-   (require tour_5_star)
-   (difficulty kDifficultyExpert)
-   (skins
-      (log
-         (outfit log)
-         (mat log.mat))))
+         (outfit air_guitar)
+         (mat guitar_lespaul_burst.mat))))
 (scythe
    (type grim)
    (skins
       (scythe
          (outfit scythe)
          (mat scythe.mat))))
-
 (bass_musicman
    (type bass)
    (skins
