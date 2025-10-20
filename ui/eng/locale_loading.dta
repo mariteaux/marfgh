@@ -29,7 +29,7 @@
 
 ; Advanced tips
 (advanced_tip1 "You can \qanchor\q, or keep holding, a lower fret when you play a higher fret. This can save you a lot of movement during trills and fast solos.")
-(advanced_tip2 "You'll get twice the points than a single note for a two note chord and three times the points than a single note for a three note chord.")
+(advanced_tip2 "You'll get twice the points than a single note for a two note chord and three times the points for a three note chord.")
 (advanced_tip3 "Learn to \qalt-strum\q - strumming up and down alternatively can ease the wear and tear on your arm when the riffs get fast.")
 (advanced_tip4 "Try the debug executable if you're so inclined - it adds a ton of fun and useful diagnostic tools and cheats for testing your mods and getting around the game quickly.")
 (advanced_tip5 "If you hit a note at the last possible moment after activating Star Power, you'll \qsqueeze\q it into your Star Power combo and gain extra points for it.")
@@ -66,7 +66,7 @@
 (loading_trivia_codemonkey "In the span of ten years, Jonathan Coulton went from a day job writing code to writing the main theme for the Broadway musical of SpongeBob SquarePants. Someday, somehow indeed.")
 (loading_trivia_countdowntoinsanity "H-Blockx are perhaps best known for writing an intro song for none other than Stone Cold Steve Austin.")
 (loading_trivia_crash "\qCrash\q would be remixed and partially rerecorded for the Dumb and Dumber soundtrack in 1995 without The Primitives' involvement. Most covers, including the one by Harmonix's own Acro-Brats, take after the \q'95 Mix\q, not the original you're about to play.")
-(loading_trivia_crazybitch "According to Buckcherry, \qCrazy Bitch\q is actually quite popular with the ladies - many of whom had it as their MySpace theme at the time.")
+(loading_trivia_crazybitch "According to Buckcherry, \qCrazy Bitch\q is actually quite popular with the ladies - many of whom had it as their MySpace theme at the time of the song's release.")
 (loading_trivia_creamandbastardsrise "\qThe bottom is loaded with nice people, Albert. Only cream and bastards rise.\q - Paul Newman, the lead in the 1966 film Harper")
 (loading_trivia_dearkate "The Kate in the song actually refers to Kate Bush, the singer, though it's not about her. Ben just needed a one-syllable name and a vinyl copy of the former's \qThe Kick Inside\q had ended up in the heap of LPs on his floor.")
 (loading_trivia_december "Ironically, \qDecember\q entered the Billboard Hot 100 in May 1995 and peaked at 20 in September 1995. By the end of December, it had fallen to the lower half of the top 50.")
@@ -83,8 +83,10 @@
 (loading_trivia_ikea "Jonathan Coulton performed this song in the parking lot of a real Ikea - at 6:30 in the morning, in June 2008, for the opening of Ikea Brooklyn in New York.")
 (loading_trivia_incircles "Sunny Day Real Estate's Nate Mendel and William Goldsmith would later go on to back Dave Grohl in the earliest incarnation of the Foo Fighters on bass and drums, respectively.")
 (loading_trivia_iwannabeyourdog "The one-note piano riff throughout the song was played by the Velvet Underground's John Cale, who also manned the sleigh bells.")
+(loading_trivia_layla "Much has been made of Eric Clapton's eventually-not-so-secret love for George Harrison's wife Pattie Boyd, the partial inspiration for \qLayla\q. They married in 1979 and divorced in 1989.")
 (loading_trivia_movinginstereo "Play this song in particular in Jukebox Mode. It's not a coincidence I chose the high school for the venue. :marf:")
 (loading_trivia_montyontherun "This was written for a free game, I should remind you.")
+(loading_trivia_musclemuseum "Reportedly, \qMuscle Museum\q is named after the words that come before and after \qmuse\q in the dictionary.")
 (loading_trivia_myownsummer "\qMy own summer\q was vocalist Chino Moreno's name for an imagined, desired apocalypse with no crowds in the street and no sun, as the extreme heat and audiences from touring wore on him.")
 (loading_trivia_passport "No one quite knows who wrote \qPassport Please\q. Its name is a reference to the company Passport Designs, where it originated and whom used it as a test tune for their MIDI hardware.")
 (loading_trivia_push "Ged Grimes (the man behind Game Boyz) currently plays bass for Scotland's favorite Saturday morning detention soundtrackers, Simple Minds.")

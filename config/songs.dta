@@ -1,3 +1,60 @@
+(crazybitch
+   (name "Crazy Bitch")
+   (artist "Buckcherry")
+   (caption performed_by)
+   (song
+      (name {if_else $cheat_enabled_uncensored songs/crazybitch/crazybitch_uncensored songs/crazybitch/crazybitch})
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/crazybitch/crazybitch.mid))
+   (anim_tempo kTempoMedium)
+   (preview 17160 57160)
+   (quickplay
+      (character_outfit rock2)
+      (guitar lespaul_marauder)
+      (venue big)))
+(layla
+   (name "Layla")
+   (artist "Derek and the Dominos")
+   (caption performed_by)
+   (song
+      (name songs/layla/layla)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/layla/layla.mid))
+   (anim_tempo kTempoMedium)
+   (preview 40815 64500)
+   (quickplay
+      (character_outfit classic)
+      (guitar epiphone_coronet)
+      (venue arena)))
+(musclemuseum
+   (name "Muscle Museum")
+   (artist "Muse")
+   (caption performed_by)
+   (song
+      (name songs/musclemuseum/musclemuseum)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (-2.5 -2.5 -1.5 -1.5 -1.5))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/musclemuseum/musclemuseum.mid))
+   (anim_tempo kTempoMedium)
+   (preview 86881 116769)
+   (quickplay
+      (character_outfit alterna2)
+      (guitar epiphone_casino)
+      (venue small1)))
 (countdowntoinsanity
    (name "Countdown to Insanity")
    (artist "H-Blockx")
@@ -824,7 +881,7 @@
          ((guitar (2 3))
           (bass 4)))
       (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 -1.0 -1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
       (cores (-1 -1 1 1 -1))
       (midi_file songs/crash/crash.mid))
    (anim_tempo kTempoFast)

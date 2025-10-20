@@ -14,14 +14,14 @@
          (op_data.btn)
          (memory_card.btn)
          (op_bonus.btn
-			{play_bonus_video_screen set video {{game video_provider} get_video_file video2}}
-			{ui goto_screen play_bonus_video_screen})
+            {play_bonus_video_screen set video {{game video_provider} get_video_file video2}}
+            {ui goto_screen play_bonus_video_screen})
          (op_credit.btn
-			{gamecfg set mode credits}
-			{game_screen set attract_mode FALSE}
-			{{game get_player_config 0} set_difficulty kDifficultyExpert}
-			{game set_quickplay}
-			{game set_song countdowntoinsanity}
+            {gamecfg set mode credits}
+            {game_screen set attract_mode FALSE}
+            {{game get_player_config 0} set_difficulty kDifficultyExpert}
+            {game set_quickplay}
+            {game set_song countdowntoinsanity}
             {meta_loading_nosave_goto credits_game_screen})}
       kDataUnhandled)}
 {new GHScreen options_screen
@@ -52,12 +52,12 @@
             {gs_sfx.sld current}}})
    (enter
       {gs_band.sld set_current
-	     {options get band_volume_idx}}
+         {options get band_volume_idx}}
       {gs_guitar.sld set_current
-	     {options get guitar_volume_idx}}
+         {options get guitar_volume_idx}}
       {gs_sfx.sld set_current
-	     {options get fx_volume_idx}}
-      {stereo.chkset_check
+         {options get fx_volume_idx}}
+      {stereo.chk set_check
          {options get_stereo}})
    (set_volumes
       {if {$this slider_changed}

@@ -30,7 +30,7 @@
 (GAME_MODIFIER "GAME MODIFIERS")
 (help_adjspd "ADJUST SPEED")
 (cheat_mtv_overlay "Song Title Always")
-(cheat_awesomeness "Cheats moved to Extras menu")
+(cheat_uncensored "Uncensored Songs")
 (cheat_barf "Roxbury Mode")
 
 ; Manage Gig/Extras menu
