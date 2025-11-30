@@ -1,3 +1,41 @@
+(thewagon
+   (name "The Wagon")
+   (artist "Dinosaur Jr.")
+   (caption performed_by)
+   (song
+      (name songs/thewagon/thewagon)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/thewagon/thewagon.mid))
+   (anim_tempo kTempoFast)
+   (preview 2460 32460)
+   (quickplay
+      (character_outfit punk1)
+      (guitar epiphone_coronet)
+      (venue arena)))
+(neworleansissinking
+   (name "New Orleans is Sinking")
+   (artist "The Tragically Hip")
+   (caption performed_by)
+   (song
+      (name songs/neworleansissinking/neworleansissinking)
+      (tracks
+         ((guitar 2)
+          (bass 3)))
+      (pans (-1.0 1.0 0.0 0.0))
+      (vols (0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 -1))
+      (midi_file songs/neworleansissinking/neworleansissinking.mid))
+   (anim_tempo kTempoMedium)
+   (preview 38600 64000)
+   (quickplay
+      (character_outfit rockabill1)
+      (guitar epiphone_coronet)
+      (venue big)))
 (crazybitch
    (name "Crazy Bitch")
    (artist "Buckcherry")
@@ -16,7 +54,7 @@
    (quickplay
       (character_outfit rock2)
       (guitar lespaul_marauder)
-      (venue big)))
+      (venue fest)))
 (layla
    (name "Layla")
    (artist "Derek and the Dominos")
@@ -54,7 +92,7 @@
    (quickplay
       (character_outfit alterna2)
       (guitar epiphone_casino)
-      (venue small1)))
+      (venue stone)))
 (countdowntoinsanity
    (name "Countdown to Insanity")
    (artist "H-Blockx")
@@ -73,7 +111,7 @@
    (quickplay
       (character_outfit rock2)
       (guitar redoctane)
-      (venue arena)))
+      (venue stone)))
 (superunknown
    (name "Superunknown")
    (artist "Soundgarden")
@@ -90,7 +128,7 @@
    (anim_tempo kTempoMedium)
    (preview 97293 127293)
    (quickplay
-      (character_outfit rock2)
+      (character_outfit metal1)
       (guitar lespaul)
       (venue big)))
 (dreams
@@ -98,7 +136,7 @@
    (artist "Beck")
    (caption performed_by)
    (song
-      (name songs/dreams/dreams)
+      (name {if_else $cheat_enabled_uncensored songs/dreams/dreams_uncensored songs/dreams/dreams})
       (tracks
          ((guitar (2 3))
           (bass 4)))
@@ -128,7 +166,7 @@
    (anim_tempo kTempoMedium)
    (preview 54840 78630)
    (quickplay
-      (character_outfit rock2)
+      (character_outfit alterna1)
       (guitar lespaul_doublecut_sticker)
       (venue big))
    (band metal_bass metal_drummer female_singer))
@@ -189,7 +227,7 @@
    (quickplay
       (character_outfit metal1)
       (guitar kramer_650)
-      (venue arena)))
+      (venue theatre)))
 (strangetimes
    (name "Strange Times")
    (artist "The Black Keys")
@@ -207,7 +245,7 @@
    (anim_tempo kTempoFast)
    (preview 32400 62100)
    (quickplay
-      (character_outfit rock2)
+      (character_outfit funk1)
       (guitar epiphone_sheraton)
       (venue theatre)))
 (childrenofdecember
@@ -228,7 +266,7 @@
    (quickplay
       (character_outfit classic)
       (guitar epiphone_coronet)
-      (venue arena)))
+      (venue battle)))
 (youreawolf
    (name "You're a Wolf")
    (artist "Sea Wolf")
@@ -271,7 +309,7 @@
    (artist "Slipknot")
    (caption performed_by)
    (song
-      (name songs/iamhated/iamhated)
+      (name {if_else $cheat_enabled_uncensored songs/iamhated/iamhated_uncensored songs/iamhated/iamhated})
       (tracks
          ((guitar (2 3))
           (bass 4)))
@@ -452,7 +490,7 @@
    (anim_tempo kTempoMedium)
    (preview 49140 74740)
    (quickplay
-      (character_outfit rock2)
+      (character_outfit goth2)
       (guitar lespaul)
       (venue big)))
 (retribution
@@ -529,13 +567,13 @@
    (quickplay
       (character_outfit rock2)
       (guitar sg)
-      (venue fest)))
+      (venue small1)))
 (baseline
    (name "Baseline")
    (artist "Quarashi")
    (caption performed_by)
    (song
-      (name songs/baseline/baseline)
+      (name {if_else $cheat_enabled_uncensored songs/baseline/baseline_uncensored songs/baseline/baseline})
       (tracks
          ((guitar (2 3))
           (bass 4)))
@@ -548,7 +586,7 @@
    (quickplay
       (character_outfit funk1)
       (guitar sg)
-      (venue arena)))
+      (venue battle)))
 (understood
    (name "Understood By Your Dad")
    (artist "Brad Sucks")
@@ -889,7 +927,7 @@
    (quickplay
       (character_outfit alterna1)
       (guitar lespaul_doublecut)
-      (venue big))
+      (venue small2))
    (band metal_bass metal_drummer female_singer))
 (breakonthrough
    (name "Break on Through (to the Other Side)")

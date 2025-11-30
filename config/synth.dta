@@ -7,7 +7,7 @@
 (metamusic
    (volume -6.0)
    (fade_rate 1.0)
-   (music metaloop_exile metaloop_iwannabesedated metaloop_salvation metaloop_teenagers metaloop_trooper)
+   (music metaloop_crash metaloop_dreams metaloop_layla1 metaloop_layla2 metaloop_retribution metaloop_strangetimes)
    (background_sfx
       (sequence meta_people)
       (min_delay_sec 10)

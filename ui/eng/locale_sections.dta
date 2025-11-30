@@ -297,3 +297,8 @@
 
 ; "Superunknown"
 (gtr_lick "Gtr lick")
+
+; "New Orleans is Sinking"
+(gtr_solo_1f "Gtr solo 1f")
+(gtr_fill_1 "Gtr fill 1")
+(gtr_fill_2 "Gtr fill 2")

@@ -54,5 +54,7 @@
 
 (toogle_label "AUTOPLAY")
 
-(authored_cuts_enabled "Timed camera cuts: On")
-(authored_cuts_disabled "Timed camera cuts: Off")
+(authored_cuts_enabled "TIMED CAMERA CUTS: ON")
+(authored_cuts_disabled "TIMED CAMERA CUTS: OFF")
+
+(current_song "SELECTED SONGS:")

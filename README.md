@@ -19,4 +19,4 @@ Here are some of the new features I've added to the game so far:
 - **Repurposed cheats** - Rebound, bugfixed, and additional debug cheats of more use to authors, players, and tinkerers
 
 ### Features to be added
-- **Create a setlist** - A special setlist screen for queuing up songs and playing them all with the same Free Play settings in a row
+- ~~**Create a setlist - A special setlist screen for queuing up songs and playing them all with the same Free Play settings in a row~~ Got this partially working but not to the level of polish to where I want it in the disc base. Maybe someday.
