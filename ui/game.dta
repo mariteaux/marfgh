@@ -12,6 +12,8 @@
 {new GHPanel mtv_overlay_panel
    (file mtv_overlay.milo)
    (enter
+      {if {== {gamecfg get mode} jukebox}
+          {mtv_campaign_song_id.view set_local_pos -380 200 -175}}
       {if_else {== {{ui current_screen} name} credits_game_screen}
          {$this show_overlay FALSE}
          {$this setup_text}})
@@ -65,29 +67,28 @@
       {track_panel intro_start_msg}
       {mtv_overlay_panel show_overlay FALSE}
       {streak_overlay_panel show_overlay FALSE}
-      {if {== {gamecfg get mode} {|| multi_vs multi_fo}}
-          {set $songtitle FALSE}}
       {if $do_streak
          {streak_overlay_panel setup_streak}}
-      {if_else {! $fast}
-         {do
-            {script_task
-               (delay 1)
-               (units kTaskSeconds)
-               (script {mtv_overlay_panel show_overlay TRUE})}
-            {script_task
-               (delay 6)
-               (units kTaskSeconds)
-               (script {mtv_overlay_panel show_overlay $songtitle})}}
-         {do
-            {script_task
-               (delay 1)
-               (units kTaskSeconds)
-               (script {mtv_overlay_panel show_overlay TRUE})}
-            {script_task
-               (delay 3)
-               (units kTaskSeconds)
-               (script {mtv_overlay_panel show_overlay $songtitle})}}}
+      {script_task
+         (delay 1)
+         (units kTaskSeconds)
+         (script {mtv_overlay_panel show_overlay TRUE})}
+      {if {! {== {gamecfg get mode} jukebox}}
+         {if_else {! $fast}
+               {script_task
+                  (delay 6)
+                  (units kTaskSeconds)
+                  (script
+                     {if_else {== {gamecfg get mode} {|| multi_fo multi_vs}}
+                        {mtv_overlay_panel show_overlay FALSE}
+                        {mtv_overlay_panel show_overlay $songtitle}})}
+               {script_task
+                  (delay 3)
+                  (units kTaskSeconds)
+                  (script
+                     {if_else {== {gamecfg get mode} {|| multi_fo multi_vs}}
+                        {mtv_overlay_panel show_overlay FALSE}
+                        {mtv_overlay_panel show_overlay $songtitle}})}}}
       {set [intro_complete] FALSE}
       kDataUnhandled)
    (intro_skip

@@ -359,7 +359,7 @@
             {game80s.btn set_localized_text {localize authored_cuts_enabled}}
             {game80s.btn set_localized_text {localize authored_cuts_disabled}}}}
       {$this update_help_display}
-      {if {== {$this name} pause_video_settings_panel}
+      {if {&& {== {$this name} pause_video_settings_panel} {! {gamecfg get mode jukebox}}}
          {hud set_showing TRUE}
          {track_panel set_showing TRUE}
          {world_panel set_showing TRUE}})

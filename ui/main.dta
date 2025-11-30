@@ -25,10 +25,10 @@
       {switch
          $component
          (main_career.btn
-		    {gamecfg set mode quickplay}
+            {gamecfg set mode quickplay}
             {ui goto_screen qp_selsong_screen})
          (main_quickspin.btn
-		    {gamecfg set mode jukebox}
+            {gamecfg set mode jukebox}
             {ui goto_screen qp_selsong_screen})
          (main_multiplayer.btn
             {ui goto_screen multi_screen})

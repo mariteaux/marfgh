@@ -353,8 +353,8 @@
       (repeat_ms 80))
    (enter
       {{ui current_screen} turn_off_ambient}
-      {song_provider set_quickplay TRUE}
       {ss_song.lst set_provider song_provider}
+      {song_provider set_quickplay TRUE}
       {if {== {game get_song_index} -1}
          {game set_song_index 0}}
       {$this update_song_info})
@@ -386,10 +386,10 @@
       (repeat_ms 80))
    (enter
       {{ui current_screen} turn_off_ambient}
-      {song_provider set_quickplay TRUE}
       {clear_playlist}
       {debug_print_playlist}
       {ss_song.lst set_provider song_provider}
+      {song_provider set_quickplay TRUE}
       {if {== {game get_song_index} -1}
          {game set_song_index 0}}
       {$this update_song_info})
@@ -398,6 +398,7 @@
       {meta_music stop}
       {$this update_pos})
    (exit
+      {clear_playlist}
       {song_preview ''}
       {if [metamusic_on_exit]
          {meta_music start}}
@@ -413,6 +414,7 @@
          {sel_song.view set_frame $frame}})
    (playlist_add_song ($added_song)
       {push_back $playlist $added_song}
+      {set $playlist_localized {sprint $playlist_localized {game get_song_text} "\n"}}
       {set $playlist_index {+ $playlist_index 1}}
       {debug_print_playlist})
    (start_playlist
@@ -427,6 +429,7 @@
          {do
             {{game get_player_config 0} set_difficulty kDifficultyExpert}
             {game set_quickplay}
+            {game set_venue {random_elem (battle small1 small2 big theatre fest arena stone)}}
             {game_screen set attract_mode TRUE}
             {ui goto_screen loading_screen}}
          {do
@@ -448,4 +451,5 @@
 {func clear_playlist
    {set $in_playlist FALSE}
    {resize $playlist 0}
+   {set $playlist_localized ""}
    {set $playlist_index 0}}
