@@ -1,5 +1,5 @@
 ; MiloHax tips
-(milo_tip1 "Use the new Modifiers menu to pick exactly how fast you prefer the notes to scroll - or how fast you want the song to play!")
+(milo_tip1 "Use the new Modifiers menu (SELECT, SELECT at any setlist) to pick exactly how fast you prefer the notes to scroll - or how fast you want the song to play!")
 (milo_tip2 "More a bassist? Wanna groove as the rhythm guitarist instead? You're now able to play either instrument in singleplayer, whenever you want!")
 (milo_tip3 "Note streak popups appear at 50, 100, 200, and every 100 notes after that.")
 (milo_tip4 "The Extras menu can be used to set certain cheats or game behavior without memorizing lengthy button codes.")
@@ -9,23 +9,22 @@
 (milo_tip8 "Some songs have a way better bass part than guitar part. You can take either one to the stage - just select the part you want after the setlist.")
 (milo_tip9 "As someone somewhere once requested, you can now quit directly to Practice Mode in the middle of a song, right from the Pause menu. Don't try that during a real show.")
 (milo_tip10 "When playing on a DualShock instead of a guitar, you don't need to strum, and you use the shoulder buttons and X for the frets.")
-(milo_tip11 "To that guy in the back complaining about the \qrandom\q fret colors: check the Extras menu in Free Play. You can change it back now.")
+(milo_tip11 "Focus Mode, available in the Modifiers menu, replaces the stage with a black void, which can speed up the game and improve performance if you need a boost.")
 
 ; GH2 main tips
 (loading_tip1 "The white tips of notes indicate a hammer-on or a pull-off. We've made these easier to spot - save yourself some trouble and don't strum unless you have to!")
 (loading_tip2 "You'll get a multiplier when you play 10, 20, 30, and 40 notes in a row perfectly. Keep the streak going!")
 (loading_tip3 "If you're great, Star Power can get you some nice scores. If you suck, Star Power can keep the crowd on your side. Either way, save it for when the time's right.")
 (loading_tip4 "You can keep holding down the fret button if there's a stream of notes on that fret coming up.")
-(loading_tip5 "Flatscreens and emulators tend to have lag that make it hard to hit the notes. Try \qCalibrate Lag\q under Video Settings on the Options menu if this is happening to you.")
-(loading_tip6 "Practice Mode lets you slow the song, or individual sections, to a crawl so you can get your technique perfect. Practice makes perfect.")
-(loading_tip7 "If you manage to hit all the notes in a song without any extra strums, you'll have \qFC'd\q, or gotten a \qfull combo\q on the song. You'll get a nice special message on the results screen for doing so.")
+(loading_tip5 "Practice Mode lets you slow the song, or individual sections, to a crawl so you can get your technique perfect. Practice makes perfect.")
+(loading_tip6 "If you manage to hit all the notes in a song without any extra strums, you'll have \qFC'd\q, or gotten a \qfull combo\q on the song. You'll get a nice special message on the results screen for doing so.")
+(loading_tip7 "Hand stretches are essential! Guitar playing is fiddly stuff. Avoid the cramps and take breaks.")
 
 ; Difficulty tips
-(difficulty_tip1 "Aim for the highest difficulty you can play on. If that's only Easy, don't worry about it! We're just happy you're humoring us.")
-(difficulty_tip2 "Higher difficulties mean more frets to worry about. Easy only has three, Medium has four, and Hard and Expert use all five.")
-(difficulty_tip3 "It's all about the details. The higher the difficulty, the more the notes will look like what you hear.")
-(difficulty_tip4 "Only Expert players have to worry about three note chords. Easy players don't have to worry about chords at all!")
-(difficulty_tip5 "The fretboard will scroll much slower on Easy and Medium, so you have more time to see each note.")
+(difficulty_tip1 "Higher difficulties mean more frets to worry about. Easy only has three, Medium has four, and Hard and Expert use all five.")
+(difficulty_tip2 "It's all about the details. The higher the difficulty, the more the notes will look like what you hear.")
+(difficulty_tip3 "Only Expert players have to worry about three note chords. Easy players don't have to worry about chords at all!")
+(difficulty_tip4 "The fretboard will scroll much slower on Easy and Medium, so you have more time to see each note.")
 
 ; Advanced tips
 (advanced_tip1 "You can \qanchor\q, or keep holding, a lower fret when you play a higher fret. This can save you a lot of movement during trills and fast solos.")
@@ -33,10 +32,8 @@
 (advanced_tip3 "Learn to \qalt-strum\q - strumming up and down alternatively can ease the wear and tear on your arm when the riffs get fast.")
 (advanced_tip4 "Try the debug executable if you're so inclined - it adds a ton of fun and useful diagnostic tools and cheats for testing your mods and getting around the game quickly.")
 (advanced_tip5 "If you hit a note at the last possible moment after activating Star Power, you'll \qsqueeze\q it into your Star Power combo and gain extra points for it.")
-(advanced_tip6 "Focus Mode, available in the Modifiers menu, replaces the stage with a black void, which can speed up the game and improve performance if you need a boost.")
-(advanced_tip7 "Each song has a \qpath\q of Star Power activations - when's most ideal to activate and when you should save up. Learning and using one is the key to top-tier scores.")
-(advanced_tip8 "If you're clutch enough, during fast solos, strum with your elbow and use both hands for the frets.")
-(advanced_tip9 "Hand stretches are essential! Guitar playing is fiddly stuff. Avoid the cramps and take breaks.")
+(advanced_tip6 "Each song has a \qpath\q of Star Power activations - when's most ideal to activate and when you should save up. Learning and using one is the key to top-tier scores.")
+(advanced_tip7 "If you're clutch enough, during fast solos, strum with your elbow and use both hands for the frets.")
 
 ; Multiplayer tips
 (multi_coop_tip1 "You'll need to tilt TOGETHER to engage Star Power. We'll let the slower of you know when it's time to lift that guitar up.")
