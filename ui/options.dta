@@ -2,6 +2,10 @@
    (file options.milo)
    (focus op_audio.btn)
    (enter
+      {op_title.lbl set_text ""}
+      {op_buttons.view set_local_pos -40 0 30}
+      {op_data.btn set_showing FALSE}
+      {memory_card.btn set_showing FALSE}
       {op_data.btn set_state kDisabled}
       {memory_card.btn set_state kDisabled})
    (SELECT_START_MSG
@@ -350,6 +354,11 @@
    (focus_component "")
    (orig_sync 0)
    (enter
+      {if {== {ui current_screen} video_settings_screen}
+         {vs_title.lbl set_text ""}
+         {vs_buttons.view set_local_pos 35 60 -105}
+         {game80s.btn set_local_pos -35 0 60}
+         {calibrate_lag.btn set_local_pos -35 0 20}}
       {lefty1.chk set_check {options get_lefty 0}}
       {lefty2.chk set_check {options get_lefty 1}}
       {widescreen.chk set_check {options get_widescreen}}
@@ -546,10 +555,3 @@
                {ui goto_screen lefty_restart_screen}}
             {ui goto_screen pause_screen}}}
       kDataUnhandled)}
-{new GHScreen boot_pscan_warning_screen
-   (panels meta pscan_warning_panel helpbar)
-   (focus pscan_warning_panel)
-   PSCAN_WARNING_SCREEN_HANDLERS
-   (animate_transition FALSE)
-   (done_screen bootup_load)
-   (switch_screen pscan_switch_screen)}

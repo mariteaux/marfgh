@@ -1,6 +1,4 @@
-{new
-   GHPanel
-   main_panel
+{new GHPanel main_panel
    (file main.milo)
    (focus main_career.btn)
    (msg_last_frame 0)
@@ -57,9 +55,7 @@
       ($cheat $enable)
       {mm_msg.lbl set_localized_text {sprintf {localize {if_else $enable cheat_enabled_fmt cheat_disabled_fmt}} {localize $cheat}}}
       {$this set msg_last_frame {'+' {taskmgr ui_seconds} 5}})}
-{new
-   GHScreen
-   main_screen
+{new GHScreen main_screen
    (panels meta main_panel helpbar)
    (focus main_panel)
    (helpbar
