@@ -1,41 +1,80 @@
-(thewagon
-   (name "The Wagon")
-   (artist "Dinosaur Jr.")
+(baseline
+   (name "Baseline")
+   (artist "Quarashi")
    (caption performed_by)
    (song
-      (name songs/thewagon/thewagon)
+      (name {if_else $cheat_enabled_uncensored songs/baseline/baseline_uncensored songs/baseline/baseline})
       (tracks
          ((guitar (2 3))
           (bass 4)))
       (pans (-1.0 1.0 -1.0 1.0 0.0))
       (vols (0.0 0.0 0.0 0.0 0.0))
       (cores (-1 -1 1 1 -1))
-      (midi_file songs/thewagon/thewagon.mid))
-   (anim_tempo kTempoFast)
-   (preview 2460 32460)
+      (midi_file songs/baseline/baseline.mid))
+   (anim_tempo kTempoMedium)
+   (preview 53860 78350)
    (quickplay
-      (character_outfit punk1)
-      (guitar epiphone_coronet)
-      (venue arena)))
-(neworleansissinking
-   (name "New Orleans is Sinking")
-   (artist "The Tragically Hip")
+      (character_outfit funk1)
+      (guitar sg)
+      (venue battle)))
+(childrenofdecember
+   (name "Children of December")
+   (artist "The Slip")
    (caption performed_by)
    (song
-      (name songs/neworleansissinking/neworleansissinking)
+      (name songs/childrenofdecember/childrenofdecember)
       (tracks
-         ((guitar 2)
-          (bass 3)))
-      (pans (-1.0 1.0 0.0 0.0))
-      (vols (0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 -1))
-      (midi_file songs/neworleansissinking/neworleansissinking.mid))
+         ((guitar (2 3))
+          (bass (4 5))))
+      (pans (-1.0 1.0 -1.0 1.0 -1.0 1.0))
+      (vols (0.0 0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1 -1))
+      (midi_file songs/childrenofdecember/childrenofdecember.mid))
    (anim_tempo kTempoMedium)
-   (preview 38600 64000)
+   (preview 167000 197000)
    (quickplay
-      (character_outfit rockabill1)
+      (character_outfit classic)
       (guitar epiphone_coronet)
-      (venue big)))
+      (venue battle)))
+(countdowntoinsanity
+   (name "Countdown to Insanity")
+   (artist "H-Blockx")
+   (caption performed_by)
+   (song
+      (name songs/countdowntoinsanity/countdowntoinsanity)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/countdowntoinsanity/countdowntoinsanity.mid))
+   (anim_tempo kTempoMedium)
+   (preview 69700 88400)
+   (quickplay
+      (character_outfit rock2)
+      (guitar redoctane)
+      (venue stone)))
+(crash
+   (name "Crash")
+   (artist "The Primitives")
+   (caption performed_by)
+   (song
+      (name songs/crash/crash)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/crash/crash.mid))
+   (anim_tempo kTempoFast)
+   (preview 105790 135790)
+   (quickplay
+      (character_outfit alterna1)
+      (guitar lespaul_doublecut)
+      (venue small2))
+   (band metal_bass metal_drummer female_singer))
 (crazybitch
    (name "Crazy Bitch")
    (artist "Buckcherry")
@@ -54,6 +93,82 @@
    (quickplay
       (character_outfit rock2)
       (guitar lespaul_marauder)
+      (venue fest)))
+(december
+   (name "December")
+   (artist "Collective Soul")
+   (caption performed_by)
+   (song
+      (name songs/december/december)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/december/december.mid))
+   (anim_tempo kTempoMedium)
+   (preview 49140 74740)
+   (quickplay
+      (character_outfit goth2)
+      (guitar lespaul)
+      (venue big)))
+(dimension
+   (name "Dimension")
+   (artist "Wolfmother")
+   (caption performed_by)
+   (song
+      (name songs/dimension/dimension)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/dimension/dimension.mid))
+   (anim_tempo kTempoMedium)
+   (preview 80820 105000)
+   (quickplay
+      (character_outfit rock2)
+      (guitar sg)
+      (venue small1)))
+(dreams
+   (name "Dreams")
+   (artist "Beck")
+   (caption performed_by)
+   (song
+      (name {if_else $cheat_enabled_uncensored songs/dreams/dreams_uncensored songs/dreams/dreams})
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/dreams/dreams.mid))
+   (anim_tempo kTempoMedium)
+   (preview 29450 71530)
+   (quickplay
+      (character_outfit goth2)
+      (guitar moderne)
+      (venue arena)))
+(iamhated
+   (name "I Am Hated")
+   (artist "Slipknot")
+   (caption performed_by)
+   (song
+      (name {if_else $cheat_enabled_uncensored songs/iamhated/iamhated_uncensored songs/iamhated/iamhated})
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/iamhated/iamhated.mid))
+   (anim_tempo kTempoFast)
+   (preview 30400 61000)
+   (quickplay
+      (character_outfit deathmetal1)
+      (guitar kramer_650)
       (venue fest)))
 (layla
    (name "Layla")
@@ -93,122 +208,6 @@
       (character_outfit alterna2)
       (guitar epiphone_casino)
       (venue stone)))
-(countdowntoinsanity
-   (name "Countdown to Insanity")
-   (artist "H-Blockx")
-   (caption performed_by)
-   (song
-      (name songs/countdowntoinsanity/countdowntoinsanity)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/countdowntoinsanity/countdowntoinsanity.mid))
-   (anim_tempo kTempoMedium)
-   (preview 69700 88400)
-   (quickplay
-      (character_outfit rock2)
-      (guitar redoctane)
-      (venue stone)))
-(superunknown
-   (name "Superunknown")
-   (artist "Soundgarden")
-   (caption performed_by)
-   (song
-      (name songs/superunknown/superunknown)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/superunknown/superunknown.mid))
-   (anim_tempo kTempoMedium)
-   (preview 97293 127293)
-   (quickplay
-      (character_outfit metal1)
-      (guitar lespaul)
-      (venue big)))
-(dreams
-   (name "Dreams")
-   (artist "Beck")
-   (caption performed_by)
-   (song
-      (name {if_else $cheat_enabled_uncensored songs/dreams/dreams_uncensored songs/dreams/dreams})
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/dreams/dreams.mid))
-   (anim_tempo kTempoMedium)
-   (preview 29450 71530)
-   (quickplay
-      (character_outfit goth2)
-      (guitar moderne)
-      (venue arena)))
-(volcanogirls
-   (name "Volcano Girls")
-   (artist "Veruca Salt")
-   (caption performed_by)
-   (song
-      (name songs/volcanogirls/volcanogirls)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/volcanogirls/volcanogirls.mid))
-   (anim_tempo kTempoMedium)
-   (preview 54840 78630)
-   (quickplay
-      (character_outfit alterna1)
-      (guitar lespaul_doublecut_sticker)
-      (venue big))
-   (band metal_bass metal_drummer female_singer))
-(starch
-   (name "Starch")
-   (artist "Zeaver")
-   (caption performed_by)
-   (song
-      (name songs/starch/starch)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/starch/starch.mid))
-   (anim_tempo kTempoMedium)
-   (preview 27900 63600)
-   (quickplay
-      (character_outfit glam1)
-      (guitar flying_v)
-      (venue arena)))
-(montyontherun
-   (name "Monty on the Run")
-   (artist "Rob Hubbard")
-   (caption arranged_by)
-   (song
-      (name songs/montyontherun/montyontherun)
-      (tracks
-         ((guitar 1)
-          (bass 2)))
-      (pans (0.0 0.0 0.0))
-      (vols (0.0 0.0 0.0))
-      (cores (-1 1 -1))
-      (midi_file songs/montyontherun/montyontherun.mid))
-   (anim_tempo kTempoFast)
-   (preview 30600 63800)
-   (quickplay
-      (character_outfit goth2)
-      (guitar corvus)
-      (venue arena))
-   (band metal_bass metal_drummer))
 (myownsummer
    (name "My Own Summer (Shove It)")
    (artist "Deftones")
@@ -227,6 +226,63 @@
    (quickplay
       (character_outfit metal1)
       (guitar kramer_650)
+      (venue theatre)))
+(neworleansissinking
+   (name "New Orleans is Sinking")
+   (artist "The Tragically Hip")
+   (caption performed_by)
+   (song
+      (name songs/neworleansissinking/neworleansissinking)
+      (tracks
+         ((guitar 2)
+          (bass 3)))
+      (pans (-1.0 1.0 0.0 0.0))
+      (vols (0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 -1))
+      (midi_file songs/neworleansissinking/neworleansissinking.mid))
+   (anim_tempo kTempoMedium)
+   (preview 38600 64000)
+   (quickplay
+      (character_outfit rockabill1)
+      (guitar epiphone_coronet)
+      (venue big)))
+(retribution
+   (name "Retribution")
+   (artist "Black Label Society")
+   (caption performed_by)
+   (song
+      (name songs/retribution/retribution)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/retribution/retribution.mid))
+   (anim_tempo kTempoMedium)
+   (preview 61900 89900)
+   (quickplay
+      (character_outfit metal1)
+      (guitar lespaul)
+      (venue stone)))
+(snowheyoh
+   (name "Snow ((Hey Oh))")
+   (artist "Red Hot Chili Peppers")
+   (caption performed_by)
+   (song
+      (name songs/snowheyoh/snowheyoh)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 -0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/snowheyoh/snowheyoh.mid))
+   (anim_tempo kTempoMedium)
+   (preview 40936 78000)
+   (quickplay
+      (character_outfit glam1)
+      (guitar lespaul)
       (venue theatre)))
 (strangetimes
    (name "Strange Times")
@@ -248,165 +304,44 @@
       (character_outfit funk1)
       (guitar epiphone_sheraton)
       (venue theatre)))
-(childrenofdecember
-   (name "Children of December")
-   (artist "The Slip")
+(superunknown
+   (name "Superunknown")
+   (artist "Soundgarden")
    (caption performed_by)
    (song
-      (name songs/childrenofdecember/childrenofdecember)
-      (tracks
-         ((guitar (2 3))
-          (bass (4 5))))
-      (pans (-1.0 1.0 -1.0 1.0 -1.0 1.0))
-      (vols (0.0 0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1 -1))
-      (midi_file songs/childrenofdecember/childrenofdecember.mid))
-   (anim_tempo kTempoMedium)
-   (preview 167000 197000)
-   (quickplay
-      (character_outfit classic)
-      (guitar epiphone_coronet)
-      (venue battle)))
-(youreawolf
-   (name "You're a Wolf")
-   (artist "Sea Wolf")
-   (caption performed_by)
-   (song
-      (name songs/youreawolf/youreawolf)
+      (name songs/superunknown/superunknown)
       (tracks
          ((guitar (2 3))
           (bass 4)))
       (pans (-1.0 1.0 -1.0 1.0 0.0))
       (vols (0.0 0.0 0.0 0.0 0.0))
       (cores (-1 -1 1 1 -1))
-      (midi_file songs/youreawolf/youreawolf.mid))
+      (midi_file songs/superunknown/superunknown.mid))
    (anim_tempo kTempoMedium)
-   (preview 33700 62000)
+   (preview 97293 127293)
    (quickplay
-      (character_outfit alterna1)
-      (guitar epiphone_sheraton)
-      (venue theatre)))
-(anang
-   (name "Ana Ng")
-   (artist "They Might Be Giants")
-   (song
-      (name songs/anang/anang)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/anang/anang.mid))
-   (anim_tempo kTempoMedium)
-   (preview 25220 54100)
-   (quickplay
-      (character_outfit alterna1)
-      (guitar epiphone_coronet)
-      (venue battle)))
-(iamhated
-   (name "I Am Hated")
-   (artist "Slipknot")
-   (caption performed_by)
-   (song
-      (name {if_else $cheat_enabled_uncensored songs/iamhated/iamhated_uncensored songs/iamhated/iamhated})
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/iamhated/iamhated.mid))
-   (anim_tempo kTempoFast)
-   (preview 30400 61000)
-   (quickplay
-      (character_outfit deathmetal1)
-      (guitar kramer_650)
-      (venue fest)))
-(upsidedown
-   (name "Upside Down")
-   (artist "Jack Johnson")
-   (song
-      (name songs/upsidedown/upsidedown)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/upsidedown/upsidedown.mid))
-   (song_coop
-      (name songs/upsidedown/upsidedown_coop)
-      (tracks
-         ((guitar (2 3))
-          (rhythm (4 5))))
-      (pans (-1.0 1.0 -1.0 1.0 -1.0 1.0))
-      (vols (0.0 0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 1 1))
-      (midi_file songs/upsidedown/upsidedown_coop.mid))
-   (anim_tempo kTempoMedium)
-   (preview 44400 85100)
-   (quickplay
-      (character_outfit classic)
-      (guitar es335)
+      (character_outfit metal1)
+      (guitar lespaul)
       (venue big)))
-(aspartame
-   (name "Aspartame")
-   (artist "Superdrag")
+(thewagon
+   (name "The Wagon")
+   (artist "Dinosaur Jr.")
    (caption performed_by)
    (song
-      (name songs/aspartame/aspartame)
+      (name songs/thewagon/thewagon)
       (tracks
          ((guitar (2 3))
           (bass 4)))
       (pans (-1.0 1.0 -1.0 1.0 0.0))
       (vols (0.0 0.0 0.0 0.0 0.0))
       (cores (-1 -1 1 1 -1))
-      (midi_file songs/aspartame/aspartame.mid))
+      (midi_file songs/thewagon/thewagon.mid))
    (anim_tempo kTempoFast)
-   (preview 37000 78800)
+   (preview 2460 32460)
    (quickplay
       (character_outfit punk1)
-      (guitar sg)
-      (venue small1)))
-(shootingstar
-   (name "Shooting Star")
-   (artist "MoriHime")
-   (caption performed_by)
-   (song
-      (name songs/shootingstar/shootingstar)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/shootingstar/shootingstar.mid))
-   (anim_tempo kTempoFast)
-   (preview 50680 82700)
-   (quickplay
-      (character_outfit goth2)
       (guitar epiphone_coronet)
-      (venue big)))
-(ikea
-   (name "Ikea")
-   (artist "Jonathan Coulton")
-   (caption performed_by)
-   (song
-      (name songs/ikea/ikea)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/ikea/ikea.mid))
-   (anim_tempo kTempoMedium)
-   (preview 29220 50980)
-   (quickplay
-      (character_outfit alterna1)
-      (guitar lespaul)
-      (venue small2)))
+      (venue arena)))
 (tutorial
    (name "Guitar Hero II Tutorial Music")
    (artist "Harmonix")
@@ -427,622 +362,6 @@
       (guitar sg)
       (venue fest))
    (band metal_bass metal_drummer))
-(veryape
-   (name "Very Ape")
-   (artist "Nirvana")
-   (caption performed_by)
-   (song
-      (name songs/veryape/veryape)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/veryape/veryape.mid))
-   (song_coop
-      (name songs/veryape/veryape_coop)
-      (tracks
-         ((guitar (2 3))
-          (rhythm (4 5))))
-      (pans (-1.0 1.0 -1.0 1.0 -1.0 1.0))
-      (vols (0.0 0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1 -1))
-      (midi_file songs/veryape/veryape_coop.mid))
-   (anim_tempo kTempoMedium)
-   (preview 34900 53840)
-   (quickplay
-      (character_outfit alterna1)
-      (guitar sg)
-      (venue fest)))
-(evenrats
-   (name "Even Rats")
-   (artist "The Slip")
-   (caption performed_by)
-   (song
-      (name songs/evenrats/evenrats)
-      (tracks
-         ((guitar (2 3))
-          (bass (4 5))))
-      (pans (-1.0 1.0 -1.0 1.0 -1.0 1.0))
-      (vols (0.0 0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1 -1))
-      (midi_file songs/evenrats/evenrats.mid))
-   (anim_tempo kTempoFast)
-   (preview 85000 114750)
-   (quickplay
-      (character_outfit classic)
-      (guitar epiphone_coronet)
-      (venue theatre)))
-(december
-   (name "December")
-   (artist "Collective Soul")
-   (caption performed_by)
-   (song
-      (name songs/december/december)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/december/december.mid))
-   (anim_tempo kTempoMedium)
-   (preview 49140 74740)
-   (quickplay
-      (character_outfit goth2)
-      (guitar lespaul)
-      (venue big)))
-(retribution
-   (name "Retribution")
-   (artist "Black Label Society")
-   (caption performed_by)
-   (song
-      (name songs/retribution/retribution)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/retribution/retribution.mid))
-   (anim_tempo kTempoMedium)
-   (preview 61900 89900)
-   (quickplay
-      (character_outfit metal1)
-      (guitar lespaul)
-      (venue stone)))
-(sunshineofyourlove
-   (name "Sunshine of Your Love")
-   (artist "Cream")
-   (song
-      (name songs/sunshineofyourlove/sunshineofyourlove)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/sunshineofyourlove/sunshineofyourlove.mid))
-   (anim_tempo kTempoMedium)
-   (preview 54800 79550)
-   (quickplay
-      (character_outfit classic)
-      (guitar lespaul)
-      (venue theatre)))
-(incircles
-   (name "In Circles")
-   (artist "Sunny Day Real Estate")
-   (caption performed_by)
-   (song
-      (name songs/incircles/incircles)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/incircles/incircles.mid))
-   (anim_tempo kTempoFast)
-   (preview 80000 110000)
-   (quickplay
-      (character_outfit goth2)
-      (guitar sg)
-      (venue battle)))
-(dimension
-   (name "Dimension")
-   (artist "Wolfmother")
-   (caption performed_by)
-   (song
-      (name songs/dimension/dimension)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/dimension/dimension.mid))
-   (anim_tempo kTempoMedium)
-   (preview 80820 105000)
-   (quickplay
-      (character_outfit rock2)
-      (guitar sg)
-      (venue small1)))
-(baseline
-   (name "Baseline")
-   (artist "Quarashi")
-   (caption performed_by)
-   (song
-      (name {if_else $cheat_enabled_uncensored songs/baseline/baseline_uncensored songs/baseline/baseline})
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/baseline/baseline.mid))
-   (anim_tempo kTempoMedium)
-   (preview 53860 78350)
-   (quickplay
-      (character_outfit funk1)
-      (guitar sg)
-      (venue battle)))
-(understood
-   (name "Understood By Your Dad")
-   (artist "Brad Sucks")
-   (caption performed_by)
-   (song
-      (name songs/understood/understood)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/understood/understood.mid))
-   (anim_tempo kTempoMedium)
-   (preview 50260 86830)
-   (quickplay
-      (character_outfit rock2)
-      (guitar lespaul)
-      (venue small1)))
-(symphonyofdestruction
-   (name "Symphony of Destruction")
-   (artist "Megadeth")
-   (caption performed_by)
-   (song
-      (name songs/symphonyofdestruction/symphonyofdestruction)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/symphonyofdestruction/symphonyofdestruction.mid))
-   (anim_tempo kTempoMedium)
-   (preview 14670 58420)
-   (quickplay
-      (character_outfit metal1)
-      (guitar sg)
-      (venue big)))
-(doctorworm
-   (name "Doctor Worm")
-   (artist "They Might Be Giants")
-   (song
-      (name songs/doctorworm/doctorworm)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/doctorworm/doctorworm.mid))
-   (anim_tempo kTempoFast)
-   (preview 14670 58420)
-   (quickplay
-      (character_outfit alterna1)
-      (guitar lespaul)
-      (venue small2)))
-(girlslikeyou
-   (name "Girls Like You")
-   (artist "The Spin Wires")
-   (caption performed_by)
-   (song
-      (name songs/girlslikeyou/girlslikeyou)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/girlslikeyou/girlslikeyou.mid))
-   (anim_tempo kTempoFast)
-   (preview 14670 58420)
-   (quickplay
-      (character_outfit punk1)
-      (guitar sg)
-      (venue fest)))
-(alloveryou
-   (name "All Over You")
-   (artist "Live")
-   (caption performed_by)
-   (song
-      (name songs/alloveryou/alloveryou)
-      (tracks
-         ((guitar 2)
-          (bass 3)))
-      (pans (-1.0 1.0 0.0 0.0))
-      (vols (0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 -1))
-      (midi_file songs/alloveryou/alloveryou.mid))
-   (anim_tempo kTempoMedium)
-   (preview 19800 68490)
-   (quickplay
-      (character_outfit alterna1)
-      (guitar sg)
-      (venue fest)))
-(worstmistake
-   (name "Worst Mistake")
-   (artist "Curve")
-   (caption performed_by)
-   (song
-      (name songs/worstmistake/worstmistake)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/worstmistake/worstmistake.mid))
-   (anim_tempo kTempoFast)
-   (preview 27860 54370)
-   (quickplay
-      (character_outfit goth2)
-      (guitar lespaul)
-      (venue arena))
-   (band metal_bass metal_drummer female_singer))
-(allday
-   (name "All Day and All of the Night")
-   (artist "The Kinks")
-   (song
-      (name songs/allday/allday)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/allday/allday.mid))
-   (anim_tempo kTempoMedium)
-   (preview 26880 46080)
-   (quickplay
-      (character_outfit classic)
-      (guitar flying_v)
-      (venue small1)))
-(whygo
-   (name "Why Go")
-   (artist "Pearl Jam")
-   (caption performed_by)
-   (song
-      (name songs/whygo/whygo)
-      (tracks
-        ((guitar (2 3))
-        (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/whygo/whygo.mid))
-   (anim_tempo kTempoMedium)
-   (preview 52200 85250)
-   (quickplay
-      (character_outfit rock2)
-      (guitar lespaul_doublecut)
-      (venue fest)))
-(wedieyoung
-   (name "We Die Young")
-   (artist "Alice in Chains")
-   (caption performed_by)
-   (song
-      (name songs/wedieyoung/wedieyoung)
-      (tracks
-       ((guitar (2 3))
-        (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/wedieyoung/wedieyoung.mid))
-   (anim_tempo kTempoMedium)
-   (preview 35805 65805)
-   (quickplay
-      (character_outfit glam1)
-      (guitar lespaul)
-      (venue small1)))
-(bombtrack
-   (name "Bombtrack")
-   (artist "Rage Against the Machine")
-   (caption performed_by)
-   (song
-      (name songs/bombtrack/bombtrack)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 -0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/bombtrack/bombtrack.mid))
-   (anim_tempo kTempoMedium)
-   (preview 42573 72573)
-   (quickplay
-      (character_outfit alterna1)
-      (guitar explorer)
-      (venue small2)))
-(ubersong2
-   (name "Shout at the Devil")
-   (artist "Mötley Crüe")
-   (song
-      (name songs/ubersong2/ubersong2)
-      (tracks
-         ((guitar 2)
-          (rhythm 2)))
-      (pans (-1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0))
-      (cores (-1 -1 1))
-      (midi_file songs/ubersong2/ubersong2.mid))
-   (anim_tempo kTempoFast)
-   (preview 65500 85500)
-   (quickplay
-      (character_outfit alterna1)
-      (guitar lespaul)
-      (venue small2)))
-(subterrain
-   (name "Subterrain Steps")
-   (artist "Freen in Green")
-   (caption performed_by)
-   (song
-      (name songs/subterrain/subterrain)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/subterrain/subterrain.mid))
-   (anim_tempo kTempoMedium)
-   (preview 57100 99550)
-   (quickplay
-      (character_outfit goth2)
-      (guitar moderne)
-      (venue stone))
-   (band metal_bass metal_drummer metal_keyboard))
-(dontlookbackinanger
-   (name "Don't Look Back in Anger")
-   (artist "Oasis")
-   (caption performed_by)
-   (song
-      (name songs/dontlookbackinanger/dontlookbackinanger)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/dontlookbackinanger/dontlookbackinanger.mid))
-   (anim_tempo kTempoMedium)
-   (preview 74954 103096)
-   (quickplay
-      (character_outfit alterna1)
-      (guitar epiphone_casino)
-      (venue big)))
-(steadyasshegoes
-   (name "Steady, As She Goes")
-   (artist "The Raconteurs")
-   (caption performed_by)
-   (song
-       (name songs/steadyasshegoes/steadyasshegoes)
-       (tracks
-          ((guitar (2 3))
-           (bass 4)))
-       (pans (-1.0 1.0 -1.0 1.0 0.0))
-       (vols (0.0 0.0 0.0 0.0 0.0))
-       (cores (-1 -1 1 1 -1))
-       (midi_file songs/steadyasshegoes/steadyasshegoes.mid))
-   (anim_tempo kTempoMedium)
-   (preview 62879 92879)
-   (quickplay
-      (character_outfit rock2)
-      (guitar lespaul)
-      (venue battle)))
-(movinginstereo
-   (name "Moving in Stereo")
-   (artist "The Cars")
-   (caption performed_by)
-   (song
-      (name songs/movinginstereo/movinginstereo)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (-3.5 -3.5 -3.5 -3.5 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/movinginstereo/movinginstereo.mid))
-   (anim_tempo kTempoMedium)
-   (preview 63820 93300)
-   (quickplay
-      (character_outfit alterna1)
-      (guitar lespaul)
-      (venue battle)))
-(iwannabeyourdog
-   (name "I Wanna Be Your Dog")
-   (artist "The Stooges")
-   (caption performed_by)
-   (song
-      (name songs/iwannabeyourdog/iwannabeyourdog)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/iwannabeyourdog/iwannabeyourdog.mid))
-   (anim_tempo kTempoMedium)
-   (preview 67000 97000)
-   (quickplay
-      (character_outfit punk1)
-      (guitar flying_v)
-      (venue small1)))
-(facetothefloor
-   (name "Face to the Floor")
-   (artist "Chevelle")
-   (caption performed_by)
-   (song
-      (name songs/facetothefloor/facetothefloor)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (-1.0 -1.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/facetothefloor/facetothefloor.mid))
-   (anim_tempo kTempoMedium)
-   (preview 45953 75953)
-   (quickplay
-      (character_outfit rock2)
-      (guitar lespaul_sonex)
-      (venue theatre)))
-(crash
-   (name "Crash")
-   (artist "The Primitives")
-   (caption performed_by)
-   (song
-      (name songs/crash/crash)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/crash/crash.mid))
-   (anim_tempo kTempoFast)
-   (preview 105790 135790)
-   (quickplay
-      (character_outfit alterna1)
-      (guitar lespaul_doublecut)
-      (venue small2))
-   (band metal_bass metal_drummer female_singer))
-(breakonthrough
-   (name "Break on Through (to the Other Side)")
-   (artist "The Doors")
-   (caption performed_by)
-   (song
-      (name songs/breakonthrough/breakonthrough)
-      (tracks
-         ((guitar (2 3))
-          (bass (4 5))))
-      (pans (-1.0 1.0 -1.0 1.0 -1.0 1.0))
-      (vols (-2.0 -2.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1 -1))
-      (midi_file songs/breakonthrough/breakonthrough.mid))
-   (anim_tempo kTempoFast)
-   (preview 14000 44000)
-   (quickplay
-      (character_outfit classic)
-      (guitar sg)
-      (venue big)))
-(station
-   (name "Stay Inside Your Station")
-   (artist "c.layne")
-   (caption performed_by)
-   (song
-      (name songs/station/station)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (2.0 2.0 2.0 2.0 2.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/station/station.mid))
-   (anim_tempo kTempoMedium)
-   (preview 41000 68147)
-   (quickplay
-      (character_outfit alterna1)
-      (guitar lespaul)
-      (venue fest)))
-(takeoutthetrash
-   (name "Time to Take Out the Trash")
-   (artist "Brad Sucks")
-   (caption performed_by)
-   (song
-      (name songs/takeoutthetrash/takeoutthetrash)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (3.0 3.0 3.0 3.0 5.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/takeoutthetrash/takeoutthetrash.mid))
-   (anim_tempo kTempoMedium)
-   (preview 50000 95000)
-   (quickplay
-      (character_outfit alterna1)
-      (guitar lespaul)
-      (venue battle)))
-(graveyardshift
-   (name "Graveyard Shift")
-   (artist "Bernie")
-   (caption performed_by)
-   (song
-      (name songs/graveyardshift/graveyardshift)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (1.0 1.0 0.0 0.0 -1.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/graveyardshift/graveyardshift.mid))
-   (anim_tempo kTempoFast)
-   (preview 27850 45350)
-   (quickplay
-    (character_outfit punk1)
-    (guitar flying_v)
-    (venue small1)))
-(trippolette
-   (name "Trippolette")
-   (artist "Andrew Buch")
-   (caption performed_by)
-   (song
-      (name songs/trippolette/trippolette)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/trippolette/trippolette.mid))
-   (anim_tempo kTempoFast)
-   (preview 44854 67277)
-   (quickplay
-      (character_outfit goth2)
-      (guitar flying_v)
-      (venue arena))
-   (band metal_bass metal_drummer metal_keyboard))
-(bangyourhead
-   (name "Bang Your Head (Metal Health)")
-   (artist "Quiet Riot")
-   (song
-      (name songs/bangyourhead/bangyourhead)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (-3.5 -3.5 -3.0 -3.0 -0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/bangyourhead/bangyourhead.mid))
-   (anim_tempo kTempoMedium)
-   (preview 76500 93400)
-   (quickplay
-      (character_outfit alterna1)
-      (guitar flying_v)
-      (venue arena)))
 (venturahighway
    (name "Ventura Highway")
    (artist "America")
@@ -1071,245 +390,91 @@
       (character_outfit classic)
       (guitar es335)
       (venue fest)))
-(passport
-   (name "Passport Please")
-   (artist "Microsoft")
-   (caption packed_by)
-   (song
-      (name songs/passport/passport)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 -0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/passport/passport.mid))
-   (anim_tempo kTempoMedium)
-   (preview 24680 57590)
-   (quickplay
-      (character_outfit goth2)
-      (guitar redoctane)
-      (venue arena))
-   (band metal_drummer metal_bass metal_keyboard))
-(snowheyoh
-   (name "Snow ((Hey Oh))")
-   (artist "Red Hot Chili Peppers")
+(veryape
+   (name "Very Ape")
+   (artist "Nirvana")
    (caption performed_by)
    (song
-      (name songs/snowheyoh/snowheyoh)
+      (name songs/veryape/veryape)
       (tracks
          ((guitar (2 3))
           (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 -0.0))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
       (vols (0.0 0.0 0.0 0.0 0.0))
       (cores (-1 -1 1 1 -1))
-      (midi_file songs/snowheyoh/snowheyoh.mid))
-   (anim_tempo kTempoMedium)
-   (preview 40936 78000)
-   (quickplay
-      (character_outfit glam1)
-      (guitar lespaul)
-      (venue theatre)))
-(boom
-   (name "Boom (The Crystal Method Mix)")
-   (artist "P.O.D.")
-   (caption performed_by)
-   (song
-      (name songs/boom/boom)
+      (midi_file songs/veryape/veryape.mid))
+   (song_coop
+      (name songs/veryape/veryape_coop)
       (tracks
          ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 -0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/boom/boom.mid))
+          (rhythm (4 5))))
+      (pans (-1.0 1.0 -1.0 1.0 -1.0 1.0))
+      (vols (0.0 0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1 -1))
+      (midi_file songs/veryape/veryape_coop.mid))
    (anim_tempo kTempoMedium)
-   (preview 50756 69287)
+   (preview 34900 53840)
    (quickplay
       (character_outfit alterna1)
       (guitar sg)
-      (venue arena)))
-(badattraction
-   (name "Bad Attraction")
+      (venue fest)))
+(volcanogirls
+   (name "Volcano Girls")
+   (artist "Veruca Salt")
+   (caption performed_by)
+   (song
+      (name songs/volcanogirls/volcanogirls)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/volcanogirls/volcanogirls.mid))
+   (anim_tempo kTempoMedium)
+   (preview 54840 78630)
+   (quickplay
+      (character_outfit alterna1)
+      (guitar lespaul_doublecut_sticker)
+      (venue big))
+   (band metal_bass metal_drummer female_singer))
+(ubersong2
+   (name "Shout at the Devil")
+   (artist "Mötley Crüe")
+   (song
+      (name songs/ubersong2/ubersong2)
+      (tracks
+         ((guitar 2)
+          (rhythm 2)))
+      (pans (-1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0))
+      (cores (-1 -1 1))
+      (midi_file songs/ubersong2/ubersong2.mid))
+   (anim_tempo kTempoFast)
+   (preview 65500 85500)
+   (quickplay
+      (character_outfit alterna1)
+      (guitar lespaul)
+      (venue small2)))
+(understood
+   (name "Understood By Your Dad")
    (artist "Brad Sucks")
    (caption performed_by)
    (song
-      (name songs/badattraction/badattraction)
+      (name songs/understood/understood)
       (tracks
          ((guitar (2 3))
-          (rhythm (4 5))))
-      (pans (-1.0 1.0 -1.0 1.0 -1.0 1.0))
-      (vols (0.0 0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1 -1))
-      (midi_file songs/badattraction/badattraction.mid))
-   (song_coop
-      (name songs/badattraction/badattraction_coop)
-      (tracks
-         ((guitar 2)
-          (rhythm 3)))
-      (pans (-1.0 1.0 0.0 0.0))
-      (vols (0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 -1))
-      (midi_file songs/badattraction/badattraction_coop.mid))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/understood/understood.mid))
    (anim_tempo kTempoMedium)
-   (preview 44150 87500)
+   (preview 50260 86830)
    (quickplay
       (character_outfit rock2)
-      (guitar lespaul_marauder)
-      (venue battle))
-   (band metal_drummer metal_singer))
-(xlr8r
-   (name "XLR8R")
-   (artist "Orbit")
-   (caption performed_by)
-   (song
-      (name songs/xlr8r/xlr8r)
-      (tracks
-         ((guitar (2 3))
-          (rhythm (4 5))))
-      (pans (-1.0 1.0 -1.0 1.0 -1.0 1.0))
-      (vols (0.0 0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 1 1))
-      (midi_file songs/xlr8r/xlr8r.mid))
-   (song_coop
-      (name songs/xlr8r/xlr8r_coop)
-      (tracks
-         ((guitar (2 3))
-          (rhythm (4 5))))
-      (pans (-1.0 1.0 -1.0 1.0 -1.0 1.0))
-      (vols (0.0 0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 1 1))
-      (midi_file songs/xlr8r/xlr8r_coop.mid))
-   (anim_tempo kTempoMedium)
-   (preview 26000 58000)
-   (quickplay
-      (character_outfit rock2)
-      (guitar kramer_650)
-      (venue arena)))
-(codemonkey
-   (name "Code Monkey")
-   (artist "Jonathan Coulton")
-   (caption performed_by)
-   (song
-      (name songs/codemonkey/codemonkey)
-      (tracks
-         ((guitar 2)
-          (bass 3)))
-      (pans (-1.0 1.0 0.0 0.0))
-      (vols (0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 -1))
-      (midi_file songs/codemonkey/codemonkey.mid)
-      (hopo_threshold 250))
-   (anim_tempo kTempoFast)
-   (preview 28735 56588)
-   (quickplay
-      (character_outfit alterna1)
-      (guitar epiphone_coronet)
-      (venue fest)))
-(dearkate
-   (name "Dear Kate")
-   (artist "Ben Minnotte")
-   (caption performed_by)
-   (song
-      (name songs/dearkate/dearkate)
-      (tracks
-         ((guitar (2 3))))
-      (pans (-1.0 1.0 -1.0 1.0))
-      (vols (0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1))
-      (midi_file songs/dearkate/dearkate.mid))
-   (song_coop
-      (name songs/dearkate/dearkate_coop)
-      (tracks
-         ((guitar 2 3)
-          (rhythm 4 5)))
-      (pans (-1.0 1.0 -1.0 1.0 -1.0 1.0))
-      (vols (0.0 0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1 -1))
-      (midi_file songs/dearkate/dearkate.mid))
-   (anim_tempo kTempoFast)
-   (preview 16200 45800)
-   (quickplay
-      (character_outfit classic)
-      (guitar epiphone_coronet)
+      (guitar lespaul)
       (venue small1)))
-(soulsforsale
-   (name "Souls for Sale (Circus Fire Scene)")
-   (artist "Ben Minnotte")
-   (caption performed_by)
-   (song
-      (name songs/soulsforsale/soulsforsale)
-      (tracks
-         ((guitar 1)
-         (rhythm 2)))
-      (pans (0.0 0.0 0.0))
-      (vols (0.0 0.0 0.0))
-      (cores (-1 1 1))
-      (midi_file songs/soulsforsale/soulsforsale.mid))
-   (anim_tempo kTempoMedium)
-   (preview 31478 46531)
-   (quickplay
-      (character_outfit classic)
-      (guitar es335)
-      (venue battle))
-   (band metal_drummer))
-(push
-   (name "Push")
-   (artist "Game Boyz")
-   (caption performed_by)
-   (song
-      (name songs/push/push)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/push/push.mid))
-   (anim_tempo kTempoMedium)
-   (preview 43275 66350)
-   (quickplay
-      (character_outfit goth2)
-      (guitar corvus)
-      (venue arena)))
-(dopenose
-   (name "Dope Nose")
-   (artist "Weezer")
-   (caption performed_by)
-   (song
-      (name songs/dopenose/dopenose_old)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/dopenose/dopenose_old.mid))
-   (anim_tempo kTempoMedium)
-   (preview 22400 52600)
-   (quickplay
-      (character_outfit glam1)
-      (guitar sg)
-      (venue fest)))
-(substitution
-   (name "Substitution")
-   (artist "Silversun Pickups")
-   (caption performed_by)
-   (song
-      (name songs/substitution/substitution)
-      (tracks
-         ((guitar (2 3))
-          (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/substitution/substitution.mid))
-   (anim_tempo kTempoFast)
-   (preview 39000 80000)
-   (quickplay
-      (character_outfit alterna1)
-      (guitar epiphone_sheraton)
-      (venue small2)))
 (playlist
    (name
       {if_else {== {gamecfg get mode} jukebox}

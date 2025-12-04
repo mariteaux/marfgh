@@ -66,14 +66,8 @@
    (redoctane_scott (price 550))
    (redoctane_jnack (price 550)))
 (song
-   (alloveryou (price 200))
-   (breakonthrough (price 200))
-   (evenrats (price 200))
-   (iwannabeyourdog (price 200))
-   (movinginstereo (price 200))
-   (ubersong2 (price 200))
-   (steadyasshegoes (price 200))
-   (symphonyofdestruction (price 200)))
+   (snowheyoh (price 200))
+   (crash (price 200)))
 (character
    (grim (price 7000)))
 (outfit)
