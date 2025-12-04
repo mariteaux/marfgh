@@ -21,9 +21,7 @@
          (free_ride 0.2)
          (warning_level 0.15)
          (lose_level
-            {if_else $nofail
-               0.0
-               1.0e-2}))
+            0.0)) ; no fail forced on for easy
       (kDifficultyMedium
          (note_weight 1.0e-2)
          (range 0.5 0.9)
@@ -70,9 +68,7 @@
          (free_ride 0.2)
          (warning_level 0.15)
          (lose_level
-            {if_else $nofail
-                0.0
-                1.0e-2}))
+            0.0)) ; no fail forced on for easy
       (kDifficultyMedium
          (note_weight 5.0e-3)
          (range 0.55 0.9)
