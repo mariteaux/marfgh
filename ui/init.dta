@@ -32,6 +32,7 @@
 {set $trivia_display TRUE}
 {set $author_display TRUE}
 {set $camera_control_master TRUE}
+{set $doodle_selection {random_elem (sel_song_quickplay.milo sel_song_quickplay_2.milo sel_song_quickplay_3.milo sel_song_quickplay_4.milo)}}
 
 {set $playlist ()}
 
