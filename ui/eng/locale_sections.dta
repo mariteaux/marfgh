@@ -298,7 +298,14 @@
 ; "Superunknown"
 (gtr_lick "Gtr lick")
 
+; "Layla"
+(piano_exit "Piano exit")
+
 ; "New Orleans is Sinking"
 (gtr_solo_1f "Gtr solo 1f")
 (gtr_fill_1 "Gtr fill 1")
 (gtr_fill_2 "Gtr fill 2")
+
+; "Flying High Again"
+(preverse_1 "Preverse 1")
+(preverse_2 "Preverse 2")

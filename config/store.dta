@@ -65,9 +65,7 @@
    (redoctane_green (price 450))
    (redoctane_scott (price 550))
    (redoctane_jnack (price 550)))
-(song
-   (snowheyoh (price 200))
-   (crash (price 200)))
+(song)
 (character
    (grim (price 7000)))
 (outfit)

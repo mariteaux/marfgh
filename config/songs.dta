@@ -151,6 +151,25 @@
       (character_outfit goth2)
       (guitar moderne)
       (venue arena)))
+(flyinghighagain
+   (name "Flying High Again")
+   (artist "Ozzy Osbourne")
+   (caption performed_by)
+   (song
+      (name songs/flyinghighagain/flyinghighagain)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/flyinghighagain/flyinghighagain.mid))
+   (anim_tempo kTempoMedium)
+   (preview 125647 155647)
+   (quickplay
+      (character_outfit glam2)
+      (guitar lespaul_sonex)
+      (venue battle)))
 (iamhated
    (name "I Am Hated")
    (artist "Slipknot")
@@ -438,24 +457,6 @@
       (guitar lespaul_doublecut_sticker)
       (venue big))
    (band metal_bass metal_drummer female_singer))
-(ubersong2
-   (name "Shout at the Devil")
-   (artist "Mötley Crüe")
-   (song
-      (name songs/ubersong2/ubersong2)
-      (tracks
-         ((guitar 2)
-          (rhythm 2)))
-      (pans (-1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0))
-      (cores (-1 -1 1))
-      (midi_file songs/ubersong2/ubersong2.mid))
-   (anim_tempo kTempoFast)
-   (preview 65500 85500)
-   (quickplay
-      (character_outfit alterna1)
-      (guitar lespaul)
-      (venue small2)))
 (understood
    (name "Understood By Your Dad")
    (artist "Brad Sucks")
