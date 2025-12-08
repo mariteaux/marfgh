@@ -5,7 +5,8 @@
       (default
          ((fret1 help_continue)
             (fret2 help_back)
-            (fret3 help_randomsong))))
+            (fret3 help_randomsong)
+            (start help_modifiers))))
    (sel_song_career FALSE)
    (BUTTON_DOWN_MSG
       {switch $button

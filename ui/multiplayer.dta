@@ -454,7 +454,8 @@
       (default
          ((fret1 help_continue)
             (fret2 help_back)
-            (strum help_updown))))
+            (fret3 help_randomsong)
+            (start help_modifiers))))
    (sel_song_career FALSE))
 {new GHScreen multi_coop_selsong_screen
    MULTI_SELSONG_SCREEN_HANDLERS

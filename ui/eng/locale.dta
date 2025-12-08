@@ -18,6 +18,7 @@
 (help_buyitem "BUY ITEM")
 (help_skins "TOGGLE SKINS")
 (help_randomsong "RANDOM SONG")
+(help_modifiers "(X2) MODIFIERS")
 (help_startplaylist "PLAY SETLIST")
 (lag_title "HDTV Lag")
 (lag_button_calibrate "Calibrate")
