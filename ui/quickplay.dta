@@ -114,9 +114,12 @@
             (fret2 help_back)
             (strum help_updown))))}
 {new GHPanel sel_diff_qp_panel
-   (file sel_diff_qp.milo)
+   (file sel_difficulty.milo)
    SEL_DIFFICULTY_COMMON
    (enter
+      {sd_select.lbl set_wrap_width 400}
+      {sd_select.lbl set_local_pos 60 -350 75}
+      {sd_buttons.view set_local_pos -135 -140 60}
       {$this update_focus})
    (last_difficulty
       {game get_difficulty 0})

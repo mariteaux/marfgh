@@ -2,6 +2,7 @@
    (file options.milo)
    (focus op_audio.btn)
    (enter
+      {game set_song_index 0} ; fixes the dumb random "song not found" crash when you go into credits twice because the song is already loaded
       {op_title.lbl set_text ""}
       {op_buttons.view set_local_pos -40 0 30}
       {op_data.btn set_showing FALSE}
@@ -161,204 +162,17 @@
       {meta play_movie [video]}
       {meta set_tool_movie FALSE}
       {ui goto_screen options_screen})}
-{new LagPanel lag_panel
-   (file lag.milo)
-   (focus autocalibrate.btn)
-   (from_panel "")
-   (state init)
-   (lag 0)
-   (hits ())
-   (seconds ())
-   (window 50)
-   (min_hits 7)
-   (min_avg -100)
-   (max_avg 250)
-   (update_groups
-      {cond
-         ({== [state] calibrating}
-            {buttons.grp set showing FALSE})
-         (TRUE
-            {buttons.grp set showing TRUE})})
-   (update_helpbar
-      {do
-         ($array)
-         {set $array ()}
-         {resize $array 0}
-         {cond
-            ({== [state] calibrating}
-               {push_back $array (strum help_hitonchange)})
-            (TRUE
-               {push_back $array (fret1 help_select)}
-               {push_back $array (fret2 help_back)}
-               {push_back $array (strum help_updown)})}
-         {helpbar set_display $array}})
-   (update_text
-      {switch
-         [state]
-         (init
-            {instructions.lbl set text_token lag_info_why}
-            {instructions2.lbl set text_token lag_info_howto}
-            {setting.lbl set_localized {sprintf {localize lag_setting} {int [lag]}}}
-            {autocalibrate.btn set text_token lag_button_calibrate})
-         (calibrating
-            {instructions.lbl set text_token lag_measuring}
-            {instructions2.lbl set text_token ""}
-            {setting.lbl set_localized_text ""})
-         (success
-            {instructions.lbl set text_token lag_success}
-            {instructions2.lbl set_localized ""}
-            {setting.lbl set_localized {sprintf {localize lag_measured} {int [lag]}}}
-            {autocalibrate.btn set text_token lag_button_recalibrate})
-         (failure
-            {instructions.lbl set text_token lag_info_failure}
-            {instructions2.lbl set text_token lag_info_howto}
-            {setting.lbl set_localized {sprintf {localize lag_setting} {int [lag]}}}
-            {autocalibrate.btn set text_token lag_button_recalibrate})})
-   (set_state
-      ($s)
-      {set [state] $s}
-      {$this update_groups}
-      {$this update_helpbar}
-      {$this update_text})
-   (enter
-      {countdown.lbl set_localized ""}
-      {set [lag] {- 0 {options get_sync_offset}}}
-      {$this set_state init}
-      {set [hits] {array 0}}
-      {set [seconds] {array 0}})
-   (exit
-      {options set_sync_offset {- 0 [lag]}})
-   (BUTTON_DOWN_MSG
-      {if_else {== [state] calibrating}
-         {if {'||' {== $button kPad_DDown} {== $button kPad_DUp}}
-            {push_back [hits] {taskmgr ui_seconds}}}
-         {switch
-            $button
-            (kPad_Tri
-               {if_else {== [from_panel] video_settings_panel}
-                  {ui goto_screen video_settings_screen}
-                  {ui goto_screen pause_video_settings_screen}})
-            kDataUnhandled}})
-   (SELECT_START_MSG
-      {switch
-         $component
-         (autocalibrate.btn
-            {$this set_state calibrating}
-            {$this start_countdown})
-         (reset_to_zero.btn
-            {set [lag] 0.0}
-            {$this set_state init})})
-   (play_sync_animation
-      {lag animate})
-   (start_countdown
-      {set $lag_aniamte_thread_wait TRUE}
-      {set $lag_animate_thread_loop TRUE}
-      {thread_task
-         (units kTaskUISeconds)
-         (script
-            {set $success TRUE}
-            {countdown.lbl set text_token lag_3}
-            {practice_hat play}
-            {$task sleep 0.133}
-            {$task sleep 0.6}
-            {practice_hat play}
-            {countdown.lbl set text_token lag_2}
-            {$task sleep 0.133}
-            {$task sleep 0.6}
-            {practice_hat play}
-            {countdown.lbl set text_token lag_1}
-            {$task sleep 0.133}
-            {$task sleep 0.6}
-            {practice_hat play}
-            {countdown.lbl set text_token lag_go}
-            {$task sleep 0.133}
-            {resize [hits] 0}
-            {resize [seconds] 0}
-            {$this play_sync_animation}
-            {$task sleep 0.6}
-            {sync_click.cue play}
-            {push_back [seconds] {taskmgr ui_seconds}}
-            {$task sleep 0.133}
-            {$this play_sync_animation}
-            {$task sleep 0.6}
-            {sync_click.cue play}
-            {push_back [seconds] {taskmgr ui_seconds}}
-            {$task sleep 0.133}
-            {$this play_sync_animation}
-            {$task sleep 0.6}
-            {sync_click.cue play}
-            {push_back [seconds] {taskmgr ui_seconds}}
-            {$task sleep 0.133}
-            {$this play_sync_animation}
-            {$task sleep 0.6}
-            {sync_click.cue play}
-            {push_back [seconds] {taskmgr ui_seconds}}
-            {$task sleep 0.133}
-            {$this play_sync_animation}
-            {$task sleep 0.6}
-            {sync_click.cue play}
-            {push_back [seconds] {taskmgr ui_seconds}}
-            {$task sleep 0.133}
-            {$this play_sync_animation}
-            {$task sleep 0.6}
-            {sync_click.cue play}
-            {push_back [seconds] {taskmgr ui_seconds}}
-            {$task sleep 0.133}
-            {$this play_sync_animation}
-            {$task sleep 0.6}
-            {sync_click.cue play}
-            {push_back [seconds] {taskmgr ui_seconds}}
-            {$task sleep 0.133}
-            {$this play_sync_animation}
-            {$task sleep 0.6}
-            {sync_click.cue play}
-            {push_back [seconds] {taskmgr ui_seconds}}
-            {$task sleep 0.133}
-            {$this play_sync_animation}
-            {$task sleep 0.6}
-            {sync_click.cue play}
-            {push_back [seconds] {taskmgr ui_seconds}}
-            {$task sleep 0.133}
-            {$this play_sync_animation}
-            {$task sleep 0.6}
-            {sync_click.cue play}
-            {push_back [seconds] {taskmgr ui_seconds}}
-            {$task sleep 0.133}
-            {$this play_sync_animation}
-            {$task sleep 0.6}
-            {sync_click.cue play}
-            {push_back [seconds] {taskmgr ui_seconds}}
-            {$task sleep 0.133}
-            {countdown.lbl set_localized ""}
-            {$task sleep 0.6}
-            {set [lag] {$this calculate_lag [window] [min_hits] [hits] [seconds]}}
-            {if_else {&& {> [lag] [min_avg]} {< [lag] [max_avg]}}
-               {set $success TRUE}
-               {set $success FALSE}}
-            {if {'||' {< [lag] 0} {>= [lag] [max_avg]}}
-               {set [lag] 0}}
-            {$this set_state {if_else $success success failure}})})}
-{new GHScreen lag_screen
-   (panels lag_panel helpbar)
-   (focus lag_panel)}
-{new GHScreen pause_lag_screen
-   (panels GAME_PANELS lag_panel helpbar)
-   (focus lag_panel)
-   (clear_vram TRUE)
-   (enter
-      {hud set_showing FALSE}
-      {track_panel set_showing FALSE}
-      {world_panel set_showing FALSE})}
 #define VIDEO_SETTINGS_PANEL_HANDLERS
 ((focus gs_left_p1.btn)
    (focus_component "")
    (orig_sync 0)
    (enter
       {if {== {ui current_screen} video_settings_screen}
-         {vs_title.lbl set_text ""}
+         {vs_title.lbl set_showing 0}
          {vs_buttons.view set_local_pos 35 60 -105}
          {game80s.btn set_local_pos -35 0 60}
          {calibrate_lag.btn set_local_pos -35 0 20}}
+      {calibrate_lag.btn set_state kDisabled}
       {lefty1.chk set_check {options get_lefty 0}}
       {lefty2.chk set_check {options get_lefty 1}}
       {widescreen.chk set_check {options get_widescreen}}
@@ -393,8 +207,7 @@
       {$this update_help_display}
       kDataUnhandled)
    (SELECT_START_MSG
-      {switch
-         $component
+      {switch $component
          (p_scan.btn
             {if_else {p_scan.chk get_check}
                {do
@@ -413,11 +226,6 @@
          (gs_left_p2.btn
             {lefty2.chk toggle}
             {options set_lefty 1 {lefty2.chk get_check}})
-         (calibrate_lag.btn
-            {lag_panel set from_panel $this}
-            {if_else {== $this video_settings_panel}
-               {ui goto_screen lag_screen}
-               {ui goto_screen pause_lag_screen}})
          (game80s.btn
             {authored_cuts_toggle}
             {if_else $camera_control_master
