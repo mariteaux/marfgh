@@ -128,7 +128,7 @@
 (fv_century_desc "With a mirrored carbon fiber pickguard across the entire body, the V-Factor brings the Flying V back to flamboyant prominence, and the ceramic humbucker pickups guarantee you'll cut through the mix like a knife.")
 (fv_red_desc "Some people take good care of their guitars. Some people sticker them up like they do their cases, or a brick wall. This finish is for those in the latter category.")
 (fv_cracked_desc "The HMX Custom Shop painted up this guitar for folks who thought the Flying V just wasn't sharp enough.")
-(fv_buckethead_desc "Big deal. You play a V. But do you play the V of one of the most badass guitarists of all time, the man who contributed this game's single most iconic song? Think not. (Thanks HellsAn631.).")
+(fv_buckethead_desc "Big deal. You play a V. But do you play the V of one of the most badass guitarists of all time, the man who contributed Guitar Hero II's single most iconic song? Think not. (Thanks HellsAn631.).")
 
 ;; Explorers
 (explorer_desc "The Explorer followed up the Flying V in the late '50s as part of Gibson's stab at forging the future of guitars. Surprisingly versatile, everyone from James Hetfield to The Edge has made this guitar their own.")
@@ -179,7 +179,7 @@
 (cor_yellow_desc "The name \qCorvus\q comes from the fact that, if you turn it sideways and squint, it's meant to look like a crow in flight. (I don't see it either.)")
 (cor_white_desc "Gibson did their best with the Corvus, attempting to market an upscale neck-through version (as opposed to the Corvus' bolt-on neck) under the revived name \qFutura\q. This did little to improve sales, however.")
 (cor_nat_desc "Even today, the Corvus has yet to find its audience among otherwise adventurous guitarists. Will you be the one to make the Corvus your own?")
-(cor_snake_desc "Crows? Snakes?? Okay, so perhaps it's not the most practical guitar, but this finish from the HMX Custom Shop will absolutely make people look at you. YMMV on how, though.")
+(cor_snake_desc "Crows? Snakes?? Okay, so perhaps it's not the most practical guitar, but this finish from the HMX Custom Shop will absolutely make people look at you. Your mileage may vary on how, though.")
 
 ;; ES-335s
 (es335_desc "The ES-335 was an attempt to find middle ground between the prone-to-feedback hollow body guitar and the quietness of the early solid body guitar. The result has been over 60 years of continuous production and use in every genre that'll have a guitar.")
