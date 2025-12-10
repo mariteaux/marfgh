@@ -2,6 +2,8 @@
    (file multi.milo)
    (focus coop.btn)
    (enter
+      {dl_buttons.view set_local_pos 110 0 -110}
+      {selectmode.lbl set_showing FALSE}
       {if_else {campaign is_unlocked multi_fo}
          {do
             {$this enable faceoff.btn}

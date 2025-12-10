@@ -86,9 +86,7 @@
          {character.lst set_selected {character_provider get_index $character}}
          {$this set old_scroll_pos {character.lst selected_pos}}
          {char_highlight.tnm set_frame [old_scroll_pos]}
-         {foreach
-            $c
-            CHARACTERS
+         {foreach $c CHARACTERS
             {do
                ($mesh {sprint "char_" $c ".mesh"})
                {if_else {campaign is_unlocked $c}

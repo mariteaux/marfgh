@@ -3,7 +3,7 @@
    (focus op_audio.btn)
    (enter
       {game set_song_index 0} ; fixes the dumb random "song not found" crash when you go into credits twice because the song is already loaded
-      {op_title.lbl set_text ""}
+      {op_title.lbl set_showing FALSE}
       {op_buttons.view set_local_pos -40 0 30}
       {op_data.btn set_showing FALSE}
       {memory_card.btn set_showing FALSE}
@@ -25,6 +25,7 @@
             {gamecfg set mode credits}
             {game_screen set attract_mode FALSE}
             {{game get_player_config 0} set_difficulty kDifficultyExpert}
+            {game set_character goth2 TRUE}
             {game set_quickplay}
             {game set_song countdowntoinsanity}
             {meta_loading_nosave_goto credits_game_screen})}
@@ -168,7 +169,7 @@
    (orig_sync 0)
    (enter
       {if {== {ui current_screen} video_settings_screen}
-         {vs_title.lbl set_showing 0}
+         {vs_title.lbl set_showing FALSE}
          {vs_buttons.view set_local_pos 35 60 -105}
          {game80s.btn set_local_pos -35 0 60}
          {calibrate_lag.btn set_local_pos -35 0 20}}

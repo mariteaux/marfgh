@@ -24,8 +24,8 @@
          {part1.btn set_text {sprint "sg_" {song_provider get_instrument $song 1}}}
          {if {== {song_provider get_instrument $song 1} "rhythm"}
             {part0.btn set_text "sg_lead"}}
-            {part2.btn set_state kDisabled}
-            {part2.btn set_showing FALSE}})
+         {part2.btn set_state kDisabled}
+         {part2.btn set_showing FALSE}})
    (enter
       {do
          ($song {gamecfg get_song})

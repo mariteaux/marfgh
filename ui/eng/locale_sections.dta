@@ -251,10 +251,8 @@
 (piano_intro "Piano intro")
 
 ; "Retribution"
-(spiral_riff_1a "Spiral riff 1a")
-(spiral_riff_1b "Spiral riff 1b")
-(spiral_riff_2a "Spiral riff 2a")
-(spiral_riff_2b "Spiral riff 2b")
+(spiral_riff_1 "Spiral riff 1")
+(spiral_riff_2 "Spiral riff 2")
 (spiral_riff_3 "Spiral riff 3")
 
 ; "Even Rats"
