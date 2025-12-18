@@ -240,9 +240,9 @@
 (horse_shudders "Horse shudders")
 
 ; "Dimension"
-(dimension_1 "Another dimension!")
-(dimension_2 "Another dimension!!")
-(dimension_3 "Another dimension!!!")
+(dimension_1 "Dimension!")
+(dimension_2 "Dimension!!")
+(dimension_3 "Dimension!!!")
 
 ; "XLR8R"
 (lead_enters "Lead gtr enters")
