@@ -154,6 +154,7 @@
             {world_panel set_showing TRUE}
             {if {&& $focusmode {exists world}}
                {world toggle_pick_shot}}
+            {mtv_overlay_panel show_overlay FALSE}
             {if {!= {gamecfg get mode} jukebox}
                {do
                   {track_panel explode}
