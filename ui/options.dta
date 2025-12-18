@@ -57,6 +57,8 @@
          {!= {options get fx_volume_idx}
             {gs_sfx.sld current}}})
    (enter
+      {if {== {ui current_screen} audio_settings_screen}
+         {gs_title.lbl set_local_pos 0 0 185}}
       {gs_band.sld set_current
          {options get band_volume_idx}}
       {gs_guitar.sld set_current
@@ -252,7 +254,9 @@
       kDataUnhandled)}
 {new GHPanel pscan_warning_panel
    (file pscan_warning.milo)
-   (focus pscan_ok.btn)}
+   (focus pscan_ok.btn)
+   (enter
+      {dl_text.grp set_local_pos 0 0 10})}
 #define PSCAN_WARNING_SCREEN_HANDLERS
 ((allow_back FALSE)
    (helpbar
@@ -285,7 +289,9 @@
    (switch_screen pause_pscan_switch_screen)}
 {new GHPanel pscan_switching_panel
    (file pscan_switching.milo)
-   (focus pscan_yes.btn)}
+   (focus pscan_yes.btn)
+   (enter
+      {dl_text.grp set_local_pos 0 0 10})}
 #define PSCAN_SWITCH_SCREEN_HANDLERS
 ((allow_back FALSE)
    (test_time 0)

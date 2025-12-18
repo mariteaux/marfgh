@@ -410,6 +410,7 @@
    (ready_label "ready.lbl")
    MULTISELECT_PART_HANDLERS
    (enter
+      {buttons0.view set_local_pos -50 -150 40}
       {$this set_button_text})}
 {new MultiSelectPanel selpart1
    (file selpart1.milo)
@@ -417,9 +418,12 @@
    (ready_label "ready.lbl")
    MULTISELECT_PART_HANDLERS
    (enter
+      {selpart_buttons1.view set_local_pos 60 -150 -90}
       {$this set_button_text})}
 {new UIPanel mp_selpart_bg_panel
-   (file selpart_bg.milo)}
+   (file selpart_bg.milo)
+   (enter
+      {selectpart.lbl set_local_pos -200 -100 120})}
 {new MultiSelectScreen selpart_screen
    (panels meta mp_selpart_bg_panel selpart0 selpart1 helpbar)
    (focus mp_selpart_bg_panel)

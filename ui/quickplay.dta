@@ -186,6 +186,7 @@
    (focus_component "")
    (orig_sync 0)
 (enter
+   {vs_title.lbl set_showing FALSE}
    {lefty1.chk set_check $songtitle}
    {fuck.chk set_check $cheat_enabled_horse_head_mode}
    {lefty3.chk set_check $barf_cheat}

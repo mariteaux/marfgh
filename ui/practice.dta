@@ -145,6 +145,9 @@
 {new GHPanel sel_speed_panel
    (file sel_speed.milo)
    (focus speed0.btn)
+   (enter
+      {title.lbl set_local_pos 0 0 -45}
+      {buttons.view set_local_pos 0 0 -30})
    (SELECT_START_MSG
       {switch $component
          (speed0.btn
