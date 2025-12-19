@@ -69,16 +69,7 @@
             (2 song_practice_2)
             (3 song_practice_3)}
          {gamecfg full_speed_block}})
-   (midi_suffix
-      ; Make sure to use the co-op MIDI if practicing rhythm
-      {if_else {== {gamecfg get_track_type 0} kTrackGuitar}
-         ''
-         COOP})
-   (full_speed_block
-      ; Make sure to use the co-op audio too
-      {if_else {== {gamecfg get_track_type 0} kTrackGuitar}
-         song
-         song_coop})
+   (full_speed_block song)
    (pre_processed_audio
       {!= {find_exists $syscfg songs {gamecfg get_song} practice_speeds}
          kDataUnhandled}))
