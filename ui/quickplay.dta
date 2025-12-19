@@ -93,6 +93,9 @@
          {part2.btn set_state kDisabled}
          {part2.btn set_showing FALSE}})
    (enter
+      {player0.lbl set_local_pos -120 0 135}
+      {part0.btn set_local_pos 80 0 70}
+      {part1.btn set_local_pos -70 0 -110}
       {do
          ($song {gamecfg get_song})
          {switch {song_provider get_instrument $song 1}
