@@ -183,5 +183,5 @@
 (crowd_noclap
    {set $oktoclap FALSE})
 (music_end
-   {if {crowd_audio enabled}
+   {if {&& {crowd_audio enabled} {>= {world get excitement_level} kExcitementGreat}}
       {handle (world play_sfx crowd_upto_good)}})
