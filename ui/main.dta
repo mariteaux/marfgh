@@ -6,12 +6,12 @@
    (memcard_flow_entered FALSE)
    (retain_last_focus FALSE)
    (enter
-      {main_buttons.view set_local_pos -5 0 -170}
+      {main_buttons.view set_local_pos -7 -40 -150}
       {set $main_entered TRUE}
-	  {set $cheat_enabled_unlock_all 1}
-	  {campaign set_all_access 1}
-	  {set $disable_save 1}
-	  {set $disable_career 1}
+      {set $cheat_enabled_unlock_all 1}
+      {campaign set_all_access 1}
+      {set $disable_save 1}
+      {set $disable_career 1}
       {$this reset_player_settings}
       {if {! [already_entered]}
          {synth play_sequence meta_lick}

@@ -3,12 +3,12 @@
    (focus op_audio.btn)
    (enter
       {game set_song_index 0} ; fixes the dumb random "song not found" crash when you go into credits twice because the song is already loaded
-      {op_title.lbl set_showing FALSE}
-      {op_buttons.view set_local_pos -40 0 30}
-      {op_data.btn set_showing FALSE}
-      {memory_card.btn set_showing FALSE}
-      {op_data.btn set_state kDisabled}
-      {memory_card.btn set_state kDisabled})
+	  {op_title.lbl set_local_pos 0 -100 20}
+      {op_buttons.view set_local_pos -50 0 -20}
+      {op_bonus.btn set_showing FALSE}
+      {op_credit.btn set_showing FALSE}
+      {op_bonus.btn set_state kDisabled}
+      {op_credit.btn set_state kDisabled})
    (SELECT_START_MSG
       {switch
          $component
@@ -16,19 +16,19 @@
             {ui goto_screen audio_settings_screen})
          (video_settings.btn
             {ui goto_screen video_settings_screen})
-         (op_data.btn)
-         (memory_card.btn)
-         (op_bonus.btn
+         (op_data.btn
             {play_bonus_video_screen set video {{game video_provider} get_video_file video2}}
             {ui goto_screen play_bonus_video_screen})
-         (op_credit.btn
+         (memory_card.btn
             {gamecfg set mode credits}
             {game_screen set attract_mode FALSE}
             {{game get_player_config 0} set_difficulty kDifficultyExpert}
             {game set_character goth2 TRUE}
             {game set_quickplay}
             {game set_song countdowntoinsanity}
-            {meta_loading_nosave_goto credits_game_screen})}
+            {meta_loading_nosave_goto credits_game_screen})
+         (op_bonus.btn)
+         (op_credit.btn)}
       kDataUnhandled)}
 {new GHScreen options_screen
    (panels meta options_panel helpbar)

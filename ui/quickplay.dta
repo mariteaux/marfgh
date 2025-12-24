@@ -149,6 +149,8 @@
 {new GHPanel manage_gig_panel
    (file manage_gig.milo)
    (focus speed0.btn)
+   (enter
+      {buttons.view set_local_pos -70 -275 80})
    (set_button_text
     {if_else $focusmode
         {speed2.btn set_state kDisabled}

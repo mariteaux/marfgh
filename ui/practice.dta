@@ -79,6 +79,8 @@
    (file practice_sel_section.milo)
    (focus sel_section.lst)
    (enter
+      {title.lbl set_local_pos 0 0 -193}
+      {sel_section.lst set_local_pos -63 0 95}
       {gamecfg set (practice_sections 0) -1}
       {gamecfg set (practice_sections 1) -1}
       {sel_section.lst set_provider {game practice_section_provider}}
