@@ -462,6 +462,12 @@
             (fret2 help_back)
             (fret3 help_randomsong)
             (start help_modifiers))))
+   (BUTTON_DOWN_MSG
+      {switch $button
+         (kPad_Circle
+            {synth play_sequence button_select}
+            {random_song})}
+      kDataUnhandled)
    (sel_song_career FALSE))
 {new GHScreen multi_coop_selsong_screen
    MULTI_SELSONG_SCREEN_HANDLERS
