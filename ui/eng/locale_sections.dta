@@ -255,6 +255,9 @@
 (spiral_riff_2 "Spiral riff 2")
 (spiral_riff_3 "Spiral riff 3")
 
+; "December"
+(buildup "Buildup")
+
 ; "Even Rats"
 (hazy_intro "Hazy intro")
 (drums_enter "Drums enter")
@@ -290,7 +293,7 @@
 
 ; "Dreams"
 (prechorus_3 "Prechorus 3")
-(not_quite_the_riff "Not quite the riff")
+(not_quite_the_riff "Not the riff")
 (postchorus_3 "Postchorus 3")
 
 ; "Superunknown"
@@ -298,6 +301,9 @@
 
 ; "Layla"
 (piano_exit "Piano exit")
+
+; "Crazy Bitch"
+(postchorus "Postchorus")
 
 ; "New Orleans is Sinking"
 (gtr_solo_1f "Gtr solo 1f")
