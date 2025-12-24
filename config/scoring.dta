@@ -46,7 +46,7 @@
          (free_ride 0.0)
          (warning_level 0.15)
          (lose_level
-            {if_else $nofail
+            {if_else {|| $nofail {== {gamecfg get mode} jukebox}}
                 0.0
                 1.0e-2})))
    (star_power
