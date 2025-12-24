@@ -25,6 +25,7 @@
 (difficulty_tip2 "It's all about the details. The higher the difficulty, the more the notes will look like what you hear.")
 (difficulty_tip3 "Only Expert players have to worry about three note chords. Easy players don't have to worry about chords at all!")
 (difficulty_tip4 "The fretboard will scroll much slower on Easy and Medium, so you have more time to see each note.")
+(difficulty_tip5 "Easy players! Tired of failing out? NO FAIL is forced on for Easy, so you can focus on staying in the pocket instead of staying alive. (Other difficulties can enable No Fail in the Extras menu as desired.)")
 
 ; Advanced tips
 (advanced_tip1 "You can \qanchor\q, or keep holding, a lower fret when you play a higher fret. This can save you a lot of movement during trills and fast solos.")
@@ -45,6 +46,8 @@
 (marf_tip2 "The crowd will clap along if you're doing really well. Listen up - they like you!")
 (marf_tip3 "marfGH is built on the rock-solid base of Guitar Hero II Deluxe 2.0. Strum limit? Patched. Quick Play? More like pick your guitarist in Free Play. 360 HUD? They said we couldn't.")
 (marf_tip4 "Go watch the credits. I'll wait.")
+(marf_tip5 "Rumor has it there's a version of MARFGH: VOLUME 1 with all the no-no words in the songs intact. My friend at school has an uncle that works at Harmonix and he told me.")
+(marf_tip6 "If all those fancy-ass music video camera angles prove distracting, you can disable them with the TIMED CAMERA CUTS toggle in the Video Settings.")
 
 ; Loading trivia
 (loading_trivia_baseline "\qBaseline\q and Garbage's \qCherry Lips\q were both prominently featured on demos for Amplitude. Even the P.O.D. \qSpace\q demo, normally only with that song playable, has \qBaseline\q and \qCherry Lips\q in its files.")
