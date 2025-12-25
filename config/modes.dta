@@ -59,9 +59,9 @@
    (track_surface_override {if_else $focusmode streamer rosewood})
    (song_block
       ; If the game detects that a song has custom practice audio, it'll use
-	  ; the song block of the speed set by the player, full, slow, slower, or
-	  ; slowest. Otherwise, it just uses the full speed block and does crappy
-	  ; "old-style" practice pitch correction for the slower speeds.
+      ; the song block of the speed set by the player, full, slow, slower, or
+      ; slowest. Otherwise, it just uses the full speed block and does crappy
+      ; "old-style" practice pitch correction for the slower speeds.
       {if_else {gamecfg pre_processed_audio}
          {switch {gamecfg get practice_speed}
             (0 {gamecfg full_speed_block})
