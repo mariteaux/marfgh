@@ -343,15 +343,16 @@
    (file sel_venue.milo)
    (focus sv_battle.btn)}
 {new GHPanel sel_song_panel
-   (file $doodle_selection)
+   (file {if_else {== {gamecfg get mode} multi_coop} sel_song.milo $doodle_selection})
    (metamusic_on_exit TRUE)
    (focus ss_song.lst)
    (joypad
       (hold_ms 500)
       (repeat_ms 80))
    (enter
-      {doodle7.mesh set_local_pos 200 0 -800}
-      {doodle9.mesh set_local_pos 170 0 170}
+      {if {!= {gamecfg get mode} multi_coop}
+         {doodle7.mesh set_local_pos 200 0 -800}
+         {doodle9.mesh set_local_pos 170 0 170}}
       {{ui current_screen} turn_off_ambient}
       {ss_song.lst set_provider song_provider}
       {song_provider set_quickplay TRUE}
