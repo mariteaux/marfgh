@@ -39,6 +39,7 @@
 (gs_sound_fx "SOUND FX")
 (gs_guitar "GUITAR")
 (gs_band "BAND")
+(gs_sync_help "(0-.250 sec, .10 step)")
 (gs_video "VIDEO SETTINGS")
 (STEREO_SOUND "STEREO SOUND")
 (SOUND_FX "SOUND FX")
