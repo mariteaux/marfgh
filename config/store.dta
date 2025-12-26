@@ -1,6 +1,13 @@
 (guitar)
 (skin)
-(song)
+(song
+   (breakonthrough (price 200))
+   (evenrats (price 200))
+   (iwannabeyourdog (price 200))
+   (movinginstereo (price 200))
+   (ubersong2 (price 200))
+   (steadyasshegoes (price 200))
+   (symphonyofdestruction (price 200)))
 (character)
 (outfit)
 (video
