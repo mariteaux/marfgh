@@ -1,4 +1,6 @@
-*.milo_ps2
 *.vgs
-gen
+(..)/**/gen
+world/*/gen
+world/*/og/gen
+world/shared/*
 image
