@@ -59,9 +59,9 @@
    (track_surface_override {if_else $focusmode streamer rosewood})
    (song_block
       ; If the game detects that a song has custom practice audio, it'll use
-	  ; the song block of the speed set by the player, full, slow, slower, or
-	  ; slowest. Otherwise, it just uses the full speed block and does crappy
-	  ; "old-style" practice pitch correction for the slower speeds.
+      ; the song block of the speed set by the player, full, slow, slower, or
+      ; slowest. Otherwise, it just uses the full speed block and does crappy
+      ; "old-style" practice pitch correction for the slower speeds.
       {if_else {gamecfg pre_processed_audio}
          {switch {gamecfg get practice_speed}
             (0 {gamecfg full_speed_block})
@@ -69,16 +69,7 @@
             (2 song_practice_2)
             (3 song_practice_3)}
          {gamecfg full_speed_block}})
-   (midi_suffix
-      ; Make sure to use the co-op MIDI if practicing rhythm
-      {if_else {== {gamecfg get_track_type 0} kTrackGuitar}
-         ''
-         COOP})
-   (full_speed_block
-      ; Make sure to use the co-op audio too
-      {if_else {== {gamecfg get_track_type 0} kTrackGuitar}
-         song
-         song_coop})
+   (full_speed_block song)
    (pre_processed_audio
       {!= {find_exists $syscfg songs {gamecfg get_song} practice_speeds}
          kDataUnhandled}))

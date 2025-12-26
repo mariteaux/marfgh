@@ -1,5 +1,5 @@
-(base_dir "BAMARF-99999") ; folder name on memory card
-(elf_name "MARF_999.99") ; not sure if this is strictly necessary but can't hurt
+(base_dir "BAMARF-00005") ; folder name on memory card
+(elf_name "MARF_000.05") ; not sure if this is strictly necessary but can't hurt
 (ps2_icon
    (file "marf_gold.icn") ; it always looks for this in mc
    (bg_transparency 110) ; this maxes at 128 I think, default 128

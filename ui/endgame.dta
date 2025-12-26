@@ -336,6 +336,9 @@
 {new GHPanel complete_panel
    (file complete.milo)
    (enter
+      {button1.grp set_local_pos 0 -100 0}
+      {button2.grp set_local_pos 0 -100 0}
+      {button3.grp set_local_pos 0 -100 0}
       {if {|| {<= $playlist_index {- {size $playlist} 1}} $shuffle}
          {comp_selsong.btn set_localized_text "NEXT SONG"}}
       {$this set_focus comp_selsong.btn})

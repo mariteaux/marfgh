@@ -240,9 +240,9 @@
 (horse_shudders "Horse shudders")
 
 ; "Dimension"
-(dimension_1 "Another dimension!")
-(dimension_2 "Another dimension!!")
-(dimension_3 "Another dimension!!!")
+(dimension_1 "Dimension!")
+(dimension_2 "Dimension!!")
+(dimension_3 "Dimension!!!")
 
 ; "XLR8R"
 (lead_enters "Lead gtr enters")
@@ -251,11 +251,12 @@
 (piano_intro "Piano intro")
 
 ; "Retribution"
-(spiral_riff_1a "Spiral riff 1a")
-(spiral_riff_1b "Spiral riff 1b")
-(spiral_riff_2a "Spiral riff 2a")
-(spiral_riff_2b "Spiral riff 2b")
+(spiral_riff_1 "Spiral riff 1")
+(spiral_riff_2 "Spiral riff 2")
 (spiral_riff_3 "Spiral riff 3")
+
+; "December"
+(buildup "Buildup")
 
 ; "Even Rats"
 (hazy_intro "Hazy intro")
@@ -292,13 +293,23 @@
 
 ; "Dreams"
 (prechorus_3 "Prechorus 3")
-(not_quite_the_riff "Not quite the riff")
+(not_quite_the_riff "Not the riff")
 (postchorus_3 "Postchorus 3")
 
 ; "Superunknown"
 (gtr_lick "Gtr lick")
 
+; "Layla"
+(piano_exit "Piano exit")
+
+; "Crazy Bitch"
+(postchorus "Postchorus")
+
 ; "New Orleans is Sinking"
 (gtr_solo_1f "Gtr solo 1f")
 (gtr_fill_1 "Gtr fill 1")
 (gtr_fill_2 "Gtr fill 2")
+
+; "Flying High Again"
+(preverse_1 "Preverse 1")
+(preverse_2 "Preverse 2")

@@ -29,6 +29,7 @@
    (difficulty_tip2 (diff kDifficultyEasy kDifficultyMedium kDifficultyHard))
    (difficulty_tip3 (diff kDifficultyEasy kDifficultyMedium kDifficultyHard))
    (difficulty_tip4 (diff kDifficultyEasy kDifficultyMedium kDifficultyHard))
+   (difficulty_tip5 (diff kDifficultyEasy kDifficultyMedium kDifficultyHard))
    (advanced_tip1 (diff kDifficultyMedium kDifficultyHard kDifficultyExpert))
    (advanced_tip2 (diff kDifficultyMedium kDifficultyHard kDifficultyExpert))
    (advanced_tip3 (diff kDifficultyMedium kDifficultyHard kDifficultyExpert))

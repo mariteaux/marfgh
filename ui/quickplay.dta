@@ -5,7 +5,8 @@
       (default
          ((fret1 help_continue)
             (fret2 help_back)
-            (fret3 help_randomsong))))
+            (fret3 help_randomsong)
+            (start help_modifiers))))
    (sel_song_career FALSE)
    (BUTTON_DOWN_MSG
       {switch $button
@@ -92,6 +93,9 @@
          {part2.btn set_state kDisabled}
          {part2.btn set_showing FALSE}})
    (enter
+      {player0.lbl set_local_pos -120 0 135}
+      {part0.btn set_local_pos 80 0 70}
+      {part1.btn set_local_pos -70 0 -110}
       {do
          ($song {gamecfg get_song})
          {switch {song_provider get_instrument $song 1}
@@ -113,9 +117,12 @@
             (fret2 help_back)
             (strum help_updown))))}
 {new GHPanel sel_diff_qp_panel
-   (file sel_diff_qp.milo)
+   (file sel_difficulty.milo)
    SEL_DIFFICULTY_COMMON
    (enter
+      {sd_select.lbl set_wrap_width 400}
+      {sd_select.lbl set_local_pos 60 -350 75}
+      {sd_buttons.view set_local_pos -135 -140 60}
       {$this update_focus})
    (last_difficulty
       {game get_difficulty 0})
@@ -142,6 +149,8 @@
 {new GHPanel manage_gig_panel
    (file manage_gig.milo)
    (focus speed0.btn)
+   (enter
+      {buttons.view set_local_pos -70 -275 80})
    (set_button_text
     {if_else $focusmode
         {speed2.btn set_state kDisabled}
@@ -182,6 +191,7 @@
    (focus_component "")
    (orig_sync 0)
 (enter
+   {vs_title.lbl set_showing FALSE}
    {lefty1.chk set_check $songtitle}
    {fuck.chk set_check $cheat_enabled_horse_head_mode}
    {lefty3.chk set_check $barf_cheat}

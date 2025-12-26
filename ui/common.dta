@@ -86,9 +86,7 @@
          {character.lst set_selected {character_provider get_index $character}}
          {$this set old_scroll_pos {character.lst selected_pos}}
          {char_highlight.tnm set_frame [old_scroll_pos]}
-         {foreach
-            $c
-            CHARACTERS
+         {foreach $c CHARACTERS
             {do
                ($mesh {sprint "char_" $c ".mesh"})
                {if_else {campaign is_unlocked $c}
@@ -345,13 +343,16 @@
    (file sel_venue.milo)
    (focus sv_battle.btn)}
 {new GHPanel sel_song_panel
-   (file sel_song_quickplay.milo)
+   (file {if_else {== {gamecfg get mode} multi_coop} sel_song.milo $doodle_selection})
    (metamusic_on_exit TRUE)
    (focus ss_song.lst)
    (joypad
       (hold_ms 500)
       (repeat_ms 80))
    (enter
+      {if {!= {gamecfg get mode} multi_coop}
+         {doodle7.mesh set_local_pos 200 0 -800}
+         {doodle9.mesh set_local_pos 170 0 170}}
       {{ui current_screen} turn_off_ambient}
       {ss_song.lst set_provider song_provider}
       {song_provider set_quickplay TRUE}

@@ -15,6 +15,9 @@
          {options get guitar_volume_idx}
          {gs_sfx.sld current}}})
    (enter
+      {gs_sliders.view set_local_pos 135 0 -50}
+      {gs_buttons.view set_local_pos 65 0 -15}
+      {stereo.chk set_local_pos -105 0 -165}
       {gs_guitar.sld set_current {int {+ 0.5 {/ {+ {- $trackspd 1} 0.5} 0.1}}}}
       {gs_sfx.sld set_current
          {int {+ 0.5 {/ {- $speedmod 1} 0.05}}}}
