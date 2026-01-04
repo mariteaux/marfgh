@@ -454,3 +454,15 @@
    {resize $playlist 0}
    {set $playlist_localized ""}
    {set $playlist_index 0}}
+{func set_calibration
+   {do
+      {options set_sync_offset {* -1.0 $lag_video}} ; input offset (hit window, aka lag compensation)
+      {set $audio_offset {* -1.0 {- $lag_audio $lag_video}}} ; a/v offset (audio adjustment)
+      {if {! $audio_offset_set_once}
+         {set $audio_offset_set_once TRUE}
+         {set $audio_offset_setter {load_objects "ui/audio_lag.milo"}}}
+#ifdef _SHIP
+      {eval {eval {elem {$audio_offset_setter get set_audio_offset} 0}}}
+#endif
+   }
+}

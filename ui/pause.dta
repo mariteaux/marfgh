@@ -28,7 +28,12 @@
 #define PAUSE_SELECT_START_HANDLER
 ((SELECT_START_MSG
       {switch $component
-         (resume.btn {$this resume})
+         (resume.btn
+            {if_else $cal_from_pause ; force restart if calibrated
+               {do
+                  {$this restart}
+                  {set $cal_from_pause FALSE}}
+               {$this resume}})
          (restart.btn {$this restart})
          (change_speed.btn {ui goto_screen pause_audio_settings_screen})
          (section.btn {ui goto_screen pause_video_settings_screen})
@@ -52,7 +57,11 @@
    PAUSE_SELECT_START_HANDLER
    (BUTTON_DOWN_MSG
       {if {== $button kPad_Start}
-         {$this resume}}
+         {if_else $cal_from_pause ; force restart if calibrated
+            {do
+               {$this restart}
+               {set $cal_from_pause FALSE}}
+            {$this resume}}}
       kDataUnhandled)}
 {new GHPanel pract_pause_panel
    (file pract_pause.milo)
