@@ -47,7 +47,17 @@
          (quit.btn
             {clear_playlist}
             {set $shuffle FALSE}
-            {meta_loading_goto {gamecfg get continue_screen}})}))
+            {meta_loading_goto {gamecfg get continue_screen}})
+         (reset.btn
+            {switch [lefty_switch]
+               (0
+                  {options set_lefty 0 {! {options get_lefty 0}}})
+               (1
+                  {options set_lefty 1 {! {options get_lefty 1}}})
+               (2
+                  {options set_lefty 0 {! {options get_lefty 0}}}
+                  {options set_lefty 1 {! {options get_lefty 1}}})}
+            {ui goto_screen pause_video_settings_screen})}))
 {new GHScreen pause_screen
    (panels GAME_PANELS pause_panel)
    (focus pause_panel)
@@ -219,6 +229,22 @@
    (lefty_switch 0)
    PAUSE_SCREEN_HANDLERS
    PAUSE_SELECT_START_HANDLER
+   (helpbar
+      (default
+         ((fret1 help_continue))))}
+{new GHScreen calibration_restart_screen
+   (panels GAME_PANELS lefty_restart_panel helpbar)
+   (focus lefty_restart_panel)
+   (in_game TRUE)
+   (enter
+      {{lefty_restart_panel find lefty_restart_msg.lbl} set_localized_text {localize calibration_changed}})
+   PAUSE_SCREEN_HANDLERS
+   (SELECT_START_MSG
+      {switch $component
+         (restart.btn
+            {ui goto_screen pause_lag_screen})
+         (reset.btn
+            {ui goto_screen pause_video_settings_screen})})
    (helpbar
       (default
          ((fret1 help_continue))))}

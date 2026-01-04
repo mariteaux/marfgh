@@ -659,7 +659,7 @@
             {lag_panel set from_panel $this}
             {if_else {== $this video_settings_panel}
                {ui goto_screen lag_screen}
-               {ui goto_screen pause_lag_screen}})
+               {ui goto_screen calibration_restart_screen}})
          kDataUnhandled}
       {$this update_help_display}))
 {new SliderPanel video_settings_panel

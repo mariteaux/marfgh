@@ -114,6 +114,7 @@
 (CONTINUE "CONTINUE")
 (MORE_STATS "MORE STATS")
 (lefty_flip_changed "To change the lefty flip setting, this song must be restarted. OK to restart?")
+(calibration_changed "On returning from calibration, this song must be restarted. Is this OK?")
 (RESET "RESET")
 (CONTROLLER_LOSS "YOU ARE ROCKING OUT A BIT TOO HARD")
 (controller_loss_msg "Please ensure a Guitar Controller is connected to controller port 1")
