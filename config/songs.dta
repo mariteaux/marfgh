@@ -1,3 +1,154 @@
+(heartbreaker
+   (name "Heartbreaker")
+   (artist "Led Zeppelin")
+   (caption performed_by)
+   (song
+      (name songs/heartbreaker/heartbreaker)
+      (tracks
+         ((guitar 2)
+          (bass 3)))
+      (pans (-1.0 1.0 0.0 0.0))
+      (vols (0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 -1))
+      (midi_file songs/heartbreaker/heartbreaker.mid))
+   (anim_tempo kTempoMedium)
+   (preview 94800 137700)
+   (quickplay
+      (character_outfit rock2)
+      (guitar eds)
+      (venue theatre)))
+(stillofthenight
+   (name "Still of the Night")
+   (artist "Whitesnake")
+   (song
+      (name songs/stillofthenight/stillofthenight)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/stillofthenight/stillofthenight.mid))
+   (anim_tempo kTempoMedium)
+   (preview 13870 43250)
+   (quickplay
+      (character_outfit glam1)
+      (guitar lespaul)
+      (venue arena)))
+(wellthoughtouttwinkles
+   (name "Well Thought Out Twinkles")
+   (artist "Silversun Pickups")
+   (caption performed_by)
+   (song
+      (name songs/wellthoughtouttwinkles/wellthoughtouttwinkles)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/wellthoughtouttwinkles/wellthoughtouttwinkles.mid))
+   (anim_tempo kTempoMedium)
+   (preview 19377 49377)
+   (quickplay
+      (character_outfit alterna1)
+      (guitar epiphone_sheraton)
+      (venue small2)))
+(upupupupup
+   (name "Up Up Up Up Up")
+   (artist "State Shirt")
+   (caption performed_by)
+   (song
+      (name songs/upupupupup/upupupupup)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (-2.0 -2.0 -1.0 -1.0 -2.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/upupupupup/upupupupup.mid))
+   (anim_tempo kTempoMedium)
+   (preview 78800 122230)
+   (quickplay
+      (character_outfit goth2)
+      (guitar lespaul_sonex)
+      (venue theatre)))
+(foundaway
+   (name "Found a Way")
+   (artist "Failure")
+   (caption performed_by)
+   (song
+      (name songs/foundaway/foundaway)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/foundaway/foundaway.mid))
+   (anim_tempo kTempoMedium)
+   (preview 48000 78300)
+   (quickplay
+      (character_outfit alterna1)
+      (guitar lespaul_marauder)
+      (venue fest)))
+(introuble
+   (name "In Trouble")
+   (artist "Brad Sucks")
+   (caption performed_by)
+   (song
+      (name songs/introuble/introuble)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/introuble/introuble.mid))
+   (anim_tempo kTempoMedium)
+   (preview 29730 63690)
+   (quickplay
+      (character_outfit goth2)
+      (guitar sg)
+      (venue battle)))
+(creamandbastards
+   (name "Cream and Bastards Rise")
+   (artist "Harvey Danger")
+   (caption performed_by)
+   (song
+      (name songs/creamandbastards/creamandbastards)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/creamandbastards/creamandbastards.mid))
+   (anim_tempo kTempoFast)
+   (preview 51455 81455)
+   (quickplay
+      (character_outfit punk1)
+      (guitar sg)
+      (venue big)))
+(geekstink
+   (name "Geek Stink Breath")
+   (artist "Green Day")
+   (caption performed_by)
+   (song
+      (name {if_else $cheat_enabled_uncensored songs/geekstink/geekstink_uncensored songs/geekstink/geekstink})
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/geekstink/geekstink.mid))
+   (anim_tempo kTempoMedium)
+   (preview 24427 54427)
+   (quickplay
+      (character_outfit punk1)
+      (guitar lespaul_doublecut)
+      (venue battle)))
 (starch
    (name "Starch")
    (artist "Zeaver")
@@ -248,7 +399,7 @@
       (cores (-1 -1 1 1 -1))
       (midi_file songs/symphonyofdestruction/symphonyofdestruction.mid))
    (anim_tempo kTempoMedium)
-   (preview 14670 58420)
+   (preview 56045 86045)
    (quickplay
       (character_outfit metal1)
       (guitar sg)
@@ -352,7 +503,7 @@
    (artist "Pearl Jam")
    (caption performed_by)
    (song
-      (name songs/whygo/whygo)
+      (name {if_else $cheat_enabled_uncensored songs/whygo/whygo_uncensored songs/whygo/whygo})
       (tracks
         ((guitar (2 3))
         (bass 4)))
@@ -390,7 +541,7 @@
    (artist "Rage Against the Machine")
    (caption performed_by)
    (song
-      (name songs/bombtrack/bombtrack)
+      (name {if_else $cheat_enabled_uncensored songs/bombtrack/bombtrack_uncensored songs/bombtrack/bombtrack})
       (tracks
          ((guitar (2 3))
           (bass 4)))
@@ -670,10 +821,10 @@
       (name songs/xlr8r/xlr8r)
       (tracks
          ((guitar (2 3))
-          (rhythm (4 5))))
-      (pans (-1.0 1.0 -1.0 1.0 -1.0 1.0))
-      (vols (0.0 0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 1 1))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
       (midi_file songs/xlr8r/xlr8r.mid))
    (song_coop
       (name songs/xlr8r/xlr8r_coop)
@@ -682,7 +833,7 @@
           (rhythm (4 5))))
       (pans (-1.0 1.0 -1.0 1.0 -1.0 1.0))
       (vols (0.0 0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 1 1))
+      (cores (-1 -1 1 1 -1 -1))
       (midi_file songs/xlr8r/xlr8r_coop.mid))
    (anim_tempo kTempoMedium)
    (preview 26000 58000)
@@ -781,14 +932,14 @@
    (artist "Weezer")
    (caption performed_by)
    (song
-      (name songs/dopenose/dopenose_old)
+      (name {if_else $cheat_enabled_uncensored songs/dopenose/dopenose_uncensored songs/dopenose/dopenose})
       (tracks
          ((guitar (2 3))
           (bass 4)))
       (pans (-1.0 1.0 -1.0 1.0 0.0))
       (vols (0.0 0.0 0.0 0.0 0.0))
       (cores (-1 -1 1 1 -1))
-      (midi_file songs/dopenose/dopenose_old.mid))
+      (midi_file songs/dopenose/dopenose.mid))
    (anim_tempo kTempoMedium)
    (preview 22400 52600)
    (quickplay
