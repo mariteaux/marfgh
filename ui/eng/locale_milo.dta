@@ -52,20 +52,21 @@
 (extras_flaming "FLAMING HEAD")
 (extras_neckless "NECKLESS MODE")
 
+; Autoplay end results screen percentage
 (toogle_label "AUTOPLAY")
 
+; Video Options camera cuts disable
 (authored_cuts_enabled "TIMED CAMERA CUTS: ON")
 (authored_cuts_disabled "TIMED CAMERA CUTS: OFF")
 
+; Playlist select
 (current_song "SELECTED SONGS:")
 
+; Improved A/V sync
 (lag_audio_setting "Audio: %d ms")
 (lag_video_setting "Video: %d ms")
-
 (lag_info_howto_manual "Strum up or down to change the offset.")
-
 (lag_audio_test "Audio Test")
 (lag_info_howto_audio_test "Strum to the beat of the audible beeps.")
-
 (lag_video_test "Video Test")
-(lag_info_howto_video_test "Strum when the circle hits the target.")
+(lag_info_howto_video_test "Strum when the marf hits the target.")

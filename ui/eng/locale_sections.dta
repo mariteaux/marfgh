@@ -275,6 +275,9 @@
 (prechorus_1 "Prechorus 1")
 (prechorus_2 "Prechorus 2")
 
+; "Shooting Star"
+(intro_d "Intro d")
+
 ; "Strange Times"
 (drum_intro "Drum intro")
 
@@ -313,3 +316,13 @@
 ; "Flying High Again"
 (preverse_1 "Preverse 1")
 (preverse_2 "Preverse 2")
+
+; "Found a Way"
+(muffled_snaps "Muffled snaps")
+(louder_cracks "Louder cracks")
+(bendy_solo "Bendy solo")
+
+; "Still of the Night"
+(break_a "Break a")
+(break_b "Break b")
+(break_c "Break c")
