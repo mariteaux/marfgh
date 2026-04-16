@@ -6,3 +6,4 @@
 ; doesn't have specified coop_max_scores when playing co-op, so I like to
 ; include it. We think the game falls back to calculating it on the fly if
 ; it's not specified, and it's used for calculating star totals.
+(tutorial (14360 25399 34157 37397))

@@ -326,3 +326,6 @@
 (break_a "Break a")
 (break_b "Break b")
 (break_c "Break c")
+
+; "Cliffs of Dover"
+(bridge_2c "Bridge 2c")
