@@ -3,8 +3,8 @@
 (song
    (badattraction (price 200))
    (symphonyofdestruction (price 200))
-   (tutorial (price 200))
-   (starch (price 200)))
+   (starch (price 200))
+   (tutorial (price 200)))
 (character)
 (outfit)
 (video

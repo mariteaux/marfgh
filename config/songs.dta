@@ -59,7 +59,7 @@
    (anim_tempo kTempoMedium)
    (preview 44150 87500)
    (quickplay
-      (character_outfit rock2)
+      (character_outfit rock1)
       (guitar lespaul_marauder)
       (venue battle))
    (band metal_drummer metal_singer))
@@ -79,7 +79,7 @@
    (anim_tempo kTempoMedium)
    (preview 42573 72573)
    (quickplay
-      (character_outfit alterna1)
+      (character_outfit punk2)
       (guitar explorer)
       (venue small2)))
 (cliffsofdover
@@ -97,8 +97,8 @@
    (anim_tempo kTempoFast)
    (preview 59240 83240)
    (quickplay
-      (character_outfit classic)
-      (guitar epiphone_coronet)
+      (character_outfit rockabill2)
+      (guitar es335)
       (venue arena))
    (band metal_bass metal_drummer))
 (codemonkey
@@ -116,7 +116,7 @@
       (midi_file songs/codemonkey/codemonkey.mid)
       (hopo_threshold 250))
    (anim_tempo kTempoFast)
-   (preview 28735 56588)
+   (preview 26800 55088)
    (quickplay
       (character_outfit alterna1)
       (guitar epiphone_coronet)
@@ -137,7 +137,7 @@
    (anim_tempo kTempoMedium)
    (preview 74954 103096)
    (quickplay
-      (character_outfit alterna1)
+      (character_outfit classic)
       (guitar epiphone_casino)
       (venue big)))
 (dopenose
@@ -156,9 +156,9 @@
    (anim_tempo kTempoMedium)
    (preview 22400 52600)
    (quickplay
-      (character_outfit glam1)
+      (character_outfit glam2)
       (guitar sg)
-      (venue fest)))
+      (venue small2)))
 (facetothefloor
    (name "Face to the Floor")
    (artist "Chevelle")
@@ -175,7 +175,7 @@
    (anim_tempo kTempoMedium)
    (preview 45953 75953)
    (quickplay
-      (character_outfit rock2)
+      (character_outfit punk1)
       (guitar lespaul_sonex)
       (venue theatre)))
 (heartbreaker
@@ -194,7 +194,7 @@
    (anim_tempo kTempoMedium)
    (preview 94800 137700)
    (quickplay
-      (character_outfit rock2)
+      (character_outfit rock1)
       (guitar eds)
       (venue theatre)))
 (montyontherun
@@ -213,9 +213,9 @@
    (anim_tempo kTempoFast)
    (preview 30600 63800)
    (quickplay
-      (character_outfit goth2)
+      (character_outfit goth1)
       (guitar corvus)
-      (venue arena))
+      (venue big))
    (band metal_bass metal_drummer))
 (passport
    (name "Passport Please")
@@ -233,7 +233,7 @@
    (anim_tempo kTempoMedium)
    (preview 24680 57590)
    (quickplay
-      (character_outfit goth2)
+      (character_outfit funk1)
       (guitar redoctane)
       (venue arena))
    (band metal_drummer metal_bass metal_keyboard))
@@ -255,7 +255,7 @@
    (quickplay
       (character_outfit goth2)
       (guitar corvus)
-      (venue arena)))
+      (venue stone)))
 (soulsforsale
    (name "Souls for Sale (Circus Fire Scene)")
    (artist "Ben Minnotte")
@@ -272,8 +272,8 @@
    (anim_tempo kTempoMedium)
    (preview 31478 46531)
    (quickplay
-      (character_outfit classic)
-      (guitar es335)
+      (character_outfit rockabill1)
+      (guitar chet_atkins)
       (venue battle))
    (band metal_drummer))
 (starch
@@ -310,9 +310,9 @@
    (anim_tempo kTempoMedium)
    (preview 13870 43250)
    (quickplay
-      (character_outfit glam1)
+      (character_outfit glam2)
       (guitar lespaul)
-      (venue arena)))
+      (venue stone)))
 (substitution
    (name "Substitution")
    (artist "Silversun Pickups")
@@ -329,7 +329,7 @@
    (anim_tempo kTempoFast)
    (preview 39000 80000)
    (quickplay
-      (character_outfit alterna1)
+      (character_outfit alterna2)
       (guitar epiphone_sheraton)
       (venue small2)))
 (subterrain
@@ -348,7 +348,7 @@
    (anim_tempo kTempoMedium)
    (preview 57100 99550)
    (quickplay
-      (character_outfit goth2)
+      (character_outfit funk1)
       (guitar moderne)
       (venue stone))
    (band metal_bass metal_drummer metal_keyboard))
@@ -386,7 +386,7 @@
    (anim_tempo kTempoMedium)
    (preview 56045 86045)
    (quickplay
-      (character_outfit metal1)
+      (character_outfit metal2)
       (guitar sg)
       (venue big)))
 (tutorial
@@ -425,8 +425,8 @@
    (anim_tempo kTempoMedium)
    (preview 35805 65805)
    (quickplay
-      (character_outfit glam1)
-      (guitar lespaul)
+      (character_outfit deathmetal1)
+      (guitar lespaul_sonex)
       (venue small1)))
 (whygo
    (name "Why Go")
@@ -474,7 +474,7 @@
    (quickplay
       (character_outfit rock2)
       (guitar kramer_650)
-      (venue arena)))
+      (venue small1)))
 (playlist
    (name
       {if_else {== {gamecfg get mode} jukebox}

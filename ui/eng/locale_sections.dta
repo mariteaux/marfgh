@@ -284,11 +284,6 @@
 ; "Monty on the Run"
 (bass_break "Bass break")
 (gtr_solo_3d "Gtr solo 3d")
-(gtr_solo_3e "Gtr solo 3e")
-(gtr_solo_3f "Gtr solo 3f")
-(gtr_solo_4c "Gtr solo 4c")
-(gtr_solo_4d "Gtr solo 4d")
-(gtr_solo_4e "Gtr solo 4e")
 
 ; "My Own Summer"
 (postchorus_1 "Postchorus 1")
