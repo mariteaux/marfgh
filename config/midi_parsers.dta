@@ -643,7 +643,17 @@
                (()
                   {if_else {> $mp.length 0.3}
                      (strum_open)
-                     (strum_open)})))))
+                     (strum_open)})))
+      (StrumMap_punk
+         (events
+            (default
+               {if_else {> $mp.length 0.3}
+                  strum_short_04
+                  strum_short_01})
+            (()
+               {if_else {> $mp.length 0.3}
+                  (strum_long_01 strum_long_02 strum_long_03 strum_long_04)
+                  strum_short_01})))))
 (player0_fret_pos
    (type midi)
    (inverted TRUE)
