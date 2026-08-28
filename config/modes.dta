@@ -33,7 +33,8 @@
    (show_hud FALSE)
    (show_track FALSE)
    (force_autoplay TRUE)
-   (crowd_audio FALSE))
+   (crowd_audio FALSE)
+   (song_block song_jukebox))
 (credits
    (game_over_sequence FALSE)
    (star_power_disable TRUE)

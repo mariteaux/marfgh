@@ -1,3 +1,138 @@
+(lilslugger
+   (name "The Battle of Lil' Slugger (Remix)")
+   (artist "dB soundworks")
+   (caption arranged_by)
+   (song
+      (name songs/lilslugger/lilslugger)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/lilslugger/lilslugger.mid))
+   (anim_tempo kTempoMedium)
+   (preview 129000 159000)
+   (quickplay
+      (character_outfit glam1)
+      (guitar redoctane)
+      (venue arena))
+   (band metal_drummer metal_bass metal_keyboard))
+(umwelt
+   (name "Umwelt")
+   (artist "aphrodisiac")
+   (caption arranged_by)
+   (song
+      (name songs/umwelt/umwelt)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/umwelt/umwelt.mid))
+   (anim_tempo kTempoMedium)
+   (preview 75570 138700)
+   (quickplay
+      (character_outfit rockabill2)
+      (guitar chet_atkins)
+      (venue stone))
+   (practice_speeds (100 100 100 100))
+   (song_jukebox
+      (name songs/umwelt/umwelt_jukebox)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/umwelt/umwelt.mid))
+   (song_practice_1
+      (name songs/umwelt/umwelt_p90)
+      (tracks
+         ((guitar 0)
+          (bass 1)))
+      (pans (0.0 0.0))
+      (vols (0.0 0.0))
+      (cores (-1 -1))
+      (midi_file songs/umwelt/umwelt_p90.mid))
+   (song_practice_2
+      (name songs/umwelt/umwelt_p80)
+      (tracks
+         ((guitar 0)
+          (bass 1)))
+      (pans (0.0 0.0))
+      (vols (0.0 0.0))
+      (cores (-1 -1))
+      (midi_file songs/umwelt/umwelt_p80.mid))
+   (song_practice_3
+      (name songs/umwelt/umwelt_p60)
+      (tracks
+         ((guitar 0)
+          (bass 1)))
+      (pans (0.0 0.0))
+      (vols (0.0 0.0))
+      (cores (-1 -1))
+      (midi_file songs/umwelt/umwelt_p60.mid))
+   (band metal_drummer metal_bass))
+(entangled
+   (name "Entangled")
+   (artist "Honest Bob and the Factory-to-Dealer Incentives")
+   (caption performed_by)
+   (song
+      (name songs/entangled/entangled)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/entangled/entangled.mid))
+   (anim_tempo kTempoMedium)
+   (preview 44257 74257)
+   (quickplay
+      (character_outfit alterna1)
+      (guitar epiphone_coronet)
+      (venue small2)))
+(thisweekivebeen
+   (name {if_else {'||' {== {ui current_screen} qp_selsong_screen}{== {ui current_screen} practice_selsong_screen}{== {ui current_screen} multi_vs_selsong_screen}{== {ui current_screen} multi_fo_selsong_screen}} "This Week I've Been Mostly\nPlaying Guitar" "This Week I've Been Mostly Playing Guitar"})
+   (artist "Tommi Inkilä")
+   (caption performed_by)
+   (song
+      (name songs/thisweekivebeen/thisweekivebeen)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/thisweekivebeen/thisweekivebeen.mid))
+   (anim_tempo kTempoFast)
+   (preview 25860 65900)
+   (quickplay
+      (character_outfit glam2)
+      (guitar sg)
+      (venue arena))
+   (band metal_drummer metal_bass))
+(riseandshine
+   (name "Rise and Shine")
+   (artist "Anarchy Club")
+   (caption performed_by)
+   (song
+      (name {if_else $cheat_enabled_uncensored songs/riseandshine/riseandshine_uncensored songs/riseandshine/riseandshine})
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/riseandshine/riseandshine.mid))
+   (anim_tempo kTempoFast)
+   (preview 28000 58000)
+   (quickplay
+      (character_outfit metal2)
+      (guitar lespaul)
+      (venue stone)))
 (chivaree
    (name "Chivaree")
    (artist "Channels")
@@ -331,7 +466,7 @@
    (band metal_bass metal_drummer female_singer))
 (ubersong2
    (name "Shout at the Devil")
-   (artist "MÃ¶tley CrÃ¼e")
+   (artist "Mötley Crüe")
    (song
       (name songs/ubersong2/ubersong2)
       (tracks

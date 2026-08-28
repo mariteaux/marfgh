@@ -329,3 +329,10 @@
 
 ; "Cliffs of Dover"
 (bridge_2c "Bridge 2c")
+
+; "Entangled"
+(gtr_line "Gtr line")
+
+; "The Battle of Lil Slugger"
+(main_riff_1a "Main riff 1a")
+(main_riff_1b "Main riff 1b")

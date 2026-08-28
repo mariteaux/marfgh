@@ -12,15 +12,18 @@
 (starch_author "mariteaux")
 (station_author "mariteaux")
 (takeoutthetrash_author "mariteaux")
+(umwelt_author "mariteaux")
 (upsidedown_author "mariteaux")
 (upupupupup_author "mariteaux")
 (worstmistake_author "mariteaux")
 
 ; Modified/upgraded charts
+(thisweekivebeen_author "JappaWakka, mariteaux")
 
 ; RBDLC/on-disc ports
 (breakonthrough_author "Harmonix")
 (creamandbastards_author "Harmonix")
+(entangled_author "Harmonix")
 (geekstink_author "Harmonix")
 (iwannabeyourdog_author "Harmonix")
 (movinginstereo_author "Harmonix")
@@ -32,6 +35,8 @@
 ; RBN ports
 (evenrats_author "The Authority [RBN]")
 (incircles_author "RockGamer [RBN]")
+(lilslugger_author "FairwoodStudios [RBN]")
+(riseandshine_author "ThatAuthoringGroup [RBN]")
 (youreawolf_author "The Authority [RBN]")
 
 ; etc
