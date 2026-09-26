@@ -87,7 +87,7 @@
       {title.lbl set_text select_start_section}
       {set [section] 0}
       {meta_music stop}
-      {gamecfg set practice_speed 0}
+      {if {!= {gamecfg get_song} umwelt} {gamecfg set practice_speed 0}}
       {$this play_preview})
    (exit
       {song_preview ''}

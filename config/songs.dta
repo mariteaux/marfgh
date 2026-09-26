@@ -1,3 +1,42 @@
+(dontletmedownslowly
+   (name "Don't Let Me Down (Slowly)")
+   (artist "The Main Drag")
+   (caption performed_by)
+   (song
+      (name songs/dontletmedownslowly/dontletmedownslowly)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 -0.3))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/dontletmedownslowly/dontletmedownslowly.mid))
+   (anim_tempo kTempoFast)
+   (preview 25000 55000)
+   (quickplay
+      (character_outfit goth2)
+      (guitar lespaul_doublecut)
+      (venue battle)))
+(pandora
+   (name "Pandora")
+   (artist "Splashdown")
+   (caption performed_by)
+   (song
+      (name songs/pandora/pandora)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/pandora/pandora.mid))
+   (anim_tempo kTempoMedium)
+   (preview 28200 73370)
+   (quickplay
+      (character_outfit alterna1)
+      (guitar es335)
+      (venue big))
+   (band metal_drummer metal_bass female_singer))
 (lilslugger
    (name "The Battle of Lil' Slugger (Remix)")
    (artist "dB soundworks")
@@ -622,10 +661,11 @@
    (song
       (name songs/dearkate/dearkate)
       (tracks
-         ((guitar (2 3))))
-      (pans (-1.0 1.0 -1.0 1.0))
-      (vols (0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1))
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
       (midi_file songs/dearkate/dearkate.mid))
    (song_coop
       (name songs/dearkate/dearkate_coop)
@@ -635,8 +675,8 @@
       (pans (-1.0 1.0 -1.0 1.0 -1.0 1.0))
       (vols (0.0 0.0 0.0 0.0 0.0 0.0))
       (cores (-1 -1 1 1 -1 -1))
-      (midi_file songs/dearkate/dearkate.mid))
-   (anim_tempo kTempoFast)
+      (midi_file songs/dearkate/dearkate_coop.mid))
+   (anim_tempo kTempoMedium)
    (preview 16200 45800)
    (quickplay
       (character_outfit classic)

@@ -8,6 +8,7 @@
 (girlslikeyou_author "mariteaux")
 (ikea_author "mariteaux")
 (introuble_author "mariteaux")
+(pandora_author "mariteaux")
 (shootingstar_author "mariteaux")
 (starch_author "mariteaux")
 (station_author "mariteaux")
@@ -33,6 +34,7 @@
 ; Neversoft GH ports
 
 ; RBN ports
+(dontletmedownslowly_author "TheMainDrag [RBN]")
 (evenrats_author "The Authority [RBN]")
 (incircles_author "RockGamer [RBN]")
 (lilslugger_author "FairwoodStudios [RBN]")
