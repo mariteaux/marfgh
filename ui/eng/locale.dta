@@ -95,7 +95,7 @@
 (performed_by "as performed by")
 (packed_by "as packed into Windows 98 by")
 (backing_by "rocked to a backing track by")
-(arranged_by "as arranged by")
+(conceived_by "as rumblingly conceived by")
 (press_any_button " ") ; shown whenever in-game, can be used to force a message watermark over gameplay
 (pausetitle "PAUSED")
 (pause_resume "RESUME")

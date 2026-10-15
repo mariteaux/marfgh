@@ -1,3 +1,22 @@
+(allofthisrb2
+   (name "All of This")
+   (artist "Shaimus")
+   (caption performed_by)
+   (song
+      (name songs/allofthisrb2/allofthisrb2)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/allofthisrb2/allofthisrb2.mid))
+   (anim_tempo kTempoFast)
+   (preview 39694 69694)
+   (quickplay
+      (character_outfit punk1)
+      (guitar lespaul_doublecut)
+      (venue big)))
 (dontletmedownslowly
    (name "Don't Let Me Down (Slowly)")
    (artist "The Main Drag")
@@ -60,7 +79,7 @@
 (umwelt
    (name "Umwelt")
    (artist "aphrodisiac")
-   (caption arranged_by)
+   (caption conceived_by)
    (song
       (name songs/umwelt/umwelt)
       (tracks
@@ -77,6 +96,14 @@
       (guitar chet_atkins)
       (venue stone))
    (practice_speeds (100 100 100 100))
+   (song_vs
+      (name songs/umwelt/umwelt_vs)
+      (tracks
+         ((guitar (2 3))))
+      (pans (-1.0 1.0 -1.0 1.0))
+      (vols (0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1))
+      (midi_file songs/umwelt/umwelt_vs.mid))
    (song_jukebox
       (name songs/umwelt/umwelt_jukebox)
       (tracks
