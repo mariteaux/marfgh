@@ -336,3 +336,7 @@
 ; "The Battle of Lil Slugger"
 (main_riff_1a "Main riff 1a")
 (main_riff_1b "Main riff 1b")
+
+; "Vegas Ten Years Ago"
+(intro_d "Intro d")
+(intro_e "Intro e")

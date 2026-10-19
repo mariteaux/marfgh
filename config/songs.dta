@@ -1,3 +1,22 @@
+(vegastenyearsago
+   (name {if_else {== {gamecfg get mode} jukebox} "The Evening/Vegas Ten Years Ago" "Vegas Ten Years Ago"})
+   (artist "Midwestern Dirt")
+   (caption performed_by)
+   (song
+      (name {if_else {== {gamecfg get mode} jukebox} songs/vegastenyearsago/theeveningvegas songs/vegastenyearsago/vegastenyearsago})
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file {if_else {== {gamecfg get mode} jukebox} songs/vegastenyearsago/theeveningvegas.mid songs/vegastenyearsago/vegastenyearsago.mid}))
+   (anim_tempo kTempoMedium)
+   (preview 45770 80000)
+   (quickplay
+      (character_outfit classic)
+      (guitar lespaul_doublecut)
+      (venue big)))
 (allofthisrb2
    (name "All of This")
    (artist "Shaimus")
@@ -96,12 +115,21 @@
       (guitar chet_atkins)
       (venue stone))
    (practice_speeds (100 100 100 100))
+   (song_coop
+      (name songs/umwelt/umwelt_coop)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/umwelt/umwelt.mid))
    (song_vs
       (name songs/umwelt/umwelt_vs)
       (tracks
          ((guitar (2 3))))
       (pans (-1.0 1.0 -1.0 1.0))
-      (vols (0.0 0.0 0.0 0.0))
+      (vols (0.0 0.0 -4.0 -4.0))
       (cores (-1 -1 1 1))
       (midi_file songs/umwelt/umwelt_vs.mid))
    (song_jukebox
@@ -247,7 +275,7 @@
          ((guitar (2 3))
           (bass 4)))
       (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (-2.0 -2.0 -1.0 -1.0 -2.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
       (cores (-1 -1 1 1 -1))
       (midi_file songs/upupupupup/upupupupup.mid))
    (anim_tempo kTempoMedium)
