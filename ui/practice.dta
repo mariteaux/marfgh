@@ -9,7 +9,8 @@
    (sel_song_career FALSE)
    (enter {gamecfg set practice_speed 0})
    (SELECT_START_MSG
-      {ui goto_screen practice_selpart_screen}
+      {if {!= {game get_song} ripitup}
+         {ui goto_screen practice_selpart_screen}}
       kDataUnhandled)}
 {new UIPanel selpart_bg_panel
    (file selpart_bg.milo)}

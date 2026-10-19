@@ -474,19 +474,22 @@
    (SELECT_START_MSG
       {gamecfg set_track 0 0}
       {gamecfg set_track 1 1}
-      {if_else {'||' {song_provider has_instrument {gamecfg get_song} bass} {song_provider has_instrument {gamecfg get_song} rhythm}}
-         {ui goto_screen selpart_screen}
-         {ui goto_screen multi_coop_seldiff_screen}}
+      {if {!= {game get_song} ripitup}
+         {if_else {'||' {song_provider has_instrument {gamecfg get_song} bass} {song_provider has_instrument {gamecfg get_song} rhythm}}
+            {ui goto_screen selpart_screen}
+            {ui goto_screen multi_coop_seldiff_screen}}}
       kDataUnhandled)}
 {new GHScreen multi_vs_selsong_screen
    MULTI_SELSONG_SCREEN_HANDLERS
    (SELECT_START_MSG
-      {ui goto_screen multi_vs_seldiff_screen}
+      {if {!= {game get_song} ripitup}
+         {ui goto_screen multi_vs_seldiff_screen}}
       kDataUnhandled)}
 {new GHScreen multi_fo_selsong_screen
    MULTI_SELSONG_SCREEN_HANDLERS
    (SELECT_START_MSG
-      {ui goto_screen multi_fo_seldiff_screen}
+      {if {!= {game get_song} ripitup}
+         {ui goto_screen multi_fo_seldiff_screen}}
       kDataUnhandled)}
 #define MULTI_COMPETE_COMMON_PANEL_HANDLERS
 ((update_common_info

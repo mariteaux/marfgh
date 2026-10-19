@@ -19,14 +19,15 @@
             {random_song})}
       kDataUnhandled)
    (SELECT_START_MSG
-      {if_else {== {game get_song} playlist}
-         {if_else {== {gamecfg get mode} jukebox}
-            {do
-               {set $shuffle TRUE}
-               {random_song}
-               {post_song_select}}
-            {ui goto_screen qp_playlist_select}}
-         {post_song_select}}
+      {if {!= {game get_song} ripitup}
+         {if_else {== {game get_song} playlist}
+            {if_else {== {gamecfg get mode} jukebox}
+               {do
+                  {set $shuffle TRUE}
+                  {random_song}
+                  {post_song_select}}
+               {ui goto_screen qp_playlist_select}}
+            {post_song_select}}}
       kDataUnhandled)}
 {new GHPanel playlist_lister
    (file mtv_overlay.milo)
