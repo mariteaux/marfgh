@@ -1,47 +1,33 @@
 ; My customs
 (aspartame_author "mariteaux")
-(boom_author "mariteaux")
 (chivaree_author "mariteaux")
 (dearkate_author "mariteaux")
-(doctorworm_author "mariteaux")
 (foundaway_author "mariteaux")
 (girlslikeyou_author "mariteaux")
 (ikea_author "mariteaux")
 (introuble_author "mariteaux")
 (pandora_author "mariteaux")
 (shootingstar_author "mariteaux")
-(starch_author "mariteaux")
 (station_author "mariteaux")
-(takeoutthetrash_author "mariteaux")
 (umwelt_author "mariteaux")
-(upsidedown_author "mariteaux")
 (upupupupup_author "mariteaux")
 (vegastenyearsago_author "mariteaux")
-(worstmistake_author "mariteaux")
 
 ; Modified/upgraded charts
 (thisweekivebeen_author "JappaWakka, mariteaux")
 
 ; RBDLC/on-disc ports
 (allofthisrb2_author "Harmonix")
-(breakonthrough_author "Harmonix")
 (creamandbastards_author "Harmonix")
 (entangled_author "Harmonix")
-(geekstink_author "Harmonix")
-(iwannabeyourdog_author "Harmonix")
-(movinginstereo_author "Harmonix")
-(steadyasshegoes_author "Harmonix")
 (wellthoughtouttwinkles_author "Harmonix")
 
 ; Neversoft GH ports
 
 ; RBN ports
 (dontletmedownslowly_author "TheMainDrag [RBN]")
-(evenrats_author "The Authority [RBN]")
-(incircles_author "RockGamer [RBN]")
 (lilslugger_author "FairwoodStudios [RBN]")
 (riseandshine_author "ThatAuthoringGroup [RBN]")
 (youreawolf_author "The Authority [RBN]")
 
 ; etc
-(ubersong2_author "invader037")
