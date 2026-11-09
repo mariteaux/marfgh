@@ -14,8 +14,8 @@
    (anim_tempo kTempoFast)
    (preview 39694 69694)
    (quickplay
-      (character_outfit punk1)
-      (guitar lespaul_doublecut)
+      (character_outfit funk1)
+      (guitar firebird)
       (venue big)))
 (aspartame
    (name "Aspartame")
@@ -53,7 +53,7 @@
    (preview 20120 57900)
    (quickplay
       (character_outfit punk2)
-      (guitar lespaul_doublecut)
+      (guitar lespaul_doublecut_sticker)
       (venue small1)))
 (creamandbastards
    (name "Cream and Bastards Rise")
@@ -71,9 +71,9 @@
    (anim_tempo kTempoFast)
    (preview 51455 81455)
    (quickplay
-      (character_outfit punk1)
+      (character_outfit rock1)
       (guitar sg)
-      (venue big)))
+      (venue theatre)))
 (dearkate
    (name "Dear Kate")
    (artist "Ben Minnotte")
@@ -100,8 +100,8 @@
    (preview 16200 45800)
    (quickplay
       (character_outfit classic)
-      (guitar epiphone_coronet)
-      (venue small1)))
+      (guitar epiphone_casino)
+      (venue battle)))
 (dontletmedownslowly
    (name "Don't Let Me Down (Slowly)")
    (artist "The Main Drag")
@@ -119,7 +119,7 @@
    (preview 25000 55000)
    (quickplay
       (character_outfit goth2)
-      (guitar lespaul_doublecut)
+      (guitar moderne)
       (venue battle)))
 (entangled
    (name "Entangled")
@@ -137,7 +137,7 @@
    (anim_tempo kTempoMedium)
    (preview 44257 74257)
    (quickplay
-      (character_outfit alterna1)
+      (character_outfit alterna2)
       (guitar epiphone_coronet)
       (venue small2)))
 (foundaway
@@ -156,7 +156,7 @@
    (anim_tempo kTempoMedium)
    (preview 48000 78300)
    (quickplay
-      (character_outfit alterna1)
+      (character_outfit rock2)
       (guitar lespaul_marauder)
       (venue fest)))
 (girlslikeyou
@@ -175,8 +175,8 @@
    (anim_tempo kTempoFast)
    (preview 14670 58420)
    (quickplay
-      (character_outfit punk1)
-      (guitar sg)
+      (character_outfit glam2)
+      (guitar corvus)
       (venue fest)))
 (ikea
    (name "Ikea")
@@ -213,9 +213,9 @@
    (anim_tempo kTempoMedium)
    (preview 29730 63690)
    (quickplay
-      (character_outfit goth2)
+      (character_outfit funk1)
       (guitar sg)
-      (venue battle)))
+      (venue small2)))
 (lilslugger
    (name "The Battle of Lil' Slugger (Remix)")
    (artist "dB soundworks")
@@ -232,7 +232,7 @@
    (anim_tempo kTempoMedium)
    (preview 129000 159000)
    (quickplay
-      (character_outfit glam1)
+      (character_outfit deathmetal2)
       (guitar redoctane)
       (venue arena))
    (band metal_drummer metal_bass metal_keyboard))
@@ -252,29 +252,29 @@
    (anim_tempo kTempoMedium)
    (preview 28200 73370)
    (quickplay
-      (character_outfit alterna1)
+      (character_outfit goth2)
       (guitar es335)
-      (venue big))
+      (venue small1))
    (band metal_drummer metal_bass female_singer))
 (ripitup
-   (name "Rip it Up [NOT IMPLEMENTED]")
+   (name "Rip it Up")
    (artist "BAQSLASH")
    (caption performed_by)
    (song
-      (name songs/allofthisrb2/allofthisrb2)
+      (name songs/ripitup/ripitup)
       (tracks
-         ((guitar (2 3))
+         ((guitar 2)
           (bass 4)))
-      (pans (-1.0 1.0 -1.0 1.0 0.0))
-      (vols (0.0 0.0 0.0 0.0 0.0))
-      (cores (-1 -1 1 1 -1))
-      (midi_file songs/allofthisrb2/allofthisrb2.mid))
-   (anim_tempo kTempoFast)
-   (preview 1000 1000)
+      (pans (-1.0 1.0 0.0 0.0))
+      (vols (0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 -1))
+      (midi_file songs/ripitup/ripitup.mid))
+   (anim_tempo kTempoMedium)
+   (preview 66400 96400)
    (quickplay
-      (character_outfit punk1)
-      (guitar lespaul_doublecut)
-      (venue big)))
+      (character_outfit rock2)
+      (guitar lespaul_sonex)
+      (venue arena)))
 (riseandshine
    (name "Rise and Shine")
    (artist "Anarchy Club")
@@ -291,8 +291,8 @@
    (anim_tempo kTempoFast)
    (preview 28000 58000)
    (quickplay
-      (character_outfit metal2)
-      (guitar lespaul)
+      (character_outfit metal1)
+      (guitar kramer_650)
       (venue stone)))
 (shootingstar
    (name "Shooting Star")
@@ -310,8 +310,8 @@
    (anim_tempo kTempoFast)
    (preview 50680 82700)
    (quickplay
-      (character_outfit goth2)
-      (guitar epiphone_coronet)
+      (character_outfit goth1)
+      (guitar flying_v)
       (venue big)))
 (station
    (name "Stay Inside Your Station")
@@ -329,7 +329,7 @@
    (anim_tempo kTempoMedium)
    (preview 41000 68147)
    (quickplay
-      (character_outfit alterna1)
+      (character_outfit alterna2)
       (guitar lespaul)
       (venue fest)))
 (thisweekivebeen
@@ -349,7 +349,7 @@
    (preview 25860 65900)
    (quickplay
       (character_outfit glam2)
-      (guitar sg)
+      (guitar explorer)
       (venue arena))
    (band metal_drummer metal_bass))
 (umwelt
@@ -357,7 +357,7 @@
    (artist "aphrodisiac")
    (caption conceived_by)
    (song
-      (name songs/umwelt/umwelt)
+      (name {if_else $cheat_enabled_uncensored songs/umwelt/umwelt_coop songs/umwelt/umwelt})
       (tracks
          ((guitar (2 3))
           (bass 4)))
@@ -368,7 +368,7 @@
    (anim_tempo kTempoMedium)
    (preview 75570 138700)
    (quickplay
-      (character_outfit rockabill2)
+      (character_outfit grim)
       (guitar chet_atkins)
       (venue stone))
    (practice_speeds (100 100 100 100))
@@ -446,24 +446,33 @@
       (guitar lespaul_sonex)
       (venue theatre)))
 (vegastenyearsago
-   (name {if_else {== {gamecfg get mode} jukebox} "The Evening/Vegas Ten Years Ago" "Vegas Ten Years Ago"})
+   (name {if_else {|| $cheat_enabled_uncensored {== {gamecfg get mode} jukebox}} "The Evening/Vegas Ten Years Ago" "Vegas Ten Years Ago"})
    (artist "Midwestern Dirt")
    (caption performed_by)
    (song
-      (name {if_else {== {gamecfg get mode} jukebox} songs/vegastenyearsago/theeveningvegas songs/vegastenyearsago/vegastenyearsago})
+      (name {if_else $cheat_enabled_uncensored songs/vegastenyearsago/theeveningvegas songs/vegastenyearsago/vegastenyearsago})
       (tracks
          ((guitar (2 3))
           (bass 4)))
       (pans (-1.0 1.0 -1.0 1.0 0.0))
       (vols (0.0 0.0 0.0 0.0 0.0))
       (cores (-1 -1 1 1 -1))
-      (midi_file {if_else {== {gamecfg get mode} jukebox} songs/vegastenyearsago/theeveningvegas.mid songs/vegastenyearsago/vegastenyearsago.mid}))
+      (midi_file {if_else $cheat_enabled_uncensored songs/vegastenyearsago/theeveningvegas.mid songs/vegastenyearsago/vegastenyearsago.mid}))
    (anim_tempo kTempoMedium)
    (preview 45770 80000)
    (quickplay
       (character_outfit classic)
       (guitar lespaul_doublecut)
-      (venue big)))
+      (venue big))
+   (song_jukebox
+      (name songs/vegastenyearsago/theeveningvegas)
+      (tracks
+         ((guitar (2 3))
+          (bass 4)))
+      (pans (-1.0 1.0 -1.0 1.0 0.0))
+      (vols (0.0 0.0 0.0 0.0 0.0))
+      (cores (-1 -1 1 1 -1))
+      (midi_file songs/vegastenyearsago/theeveningvegas.mid)))
 (wellthoughtouttwinkles
    (name "Well Thought Out Twinkles")
    (artist "Silversun Pickups")
@@ -499,7 +508,7 @@
    (anim_tempo kTempoMedium)
    (preview 33700 62000)
    (quickplay
-      (character_outfit alterna1)
+      (character_outfit rockabill1)
       (guitar epiphone_sheraton)
       (venue theatre)))
 (playlist
