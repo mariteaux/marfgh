@@ -354,6 +354,7 @@
       (repeat_ms 80))
    (enter
       {if {!= {gamecfg get mode} multi_coop}
+         {doodle2.mesh set_showing FALSE}
          {doodle7.mesh set_local_pos 200 0 -800}
          {doodle9.mesh set_local_pos 170 0 170}}
       {{ui current_screen} turn_off_ambient}
